@@ -1,0 +1,3 @@
+/home/atifany/Desktop/CppGraphics/build/CMakeFiles/rebuild_cache.dir
+/home/atifany/Desktop/CppGraphics/build/CMakeFiles/edit_cache.dir
+/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir
