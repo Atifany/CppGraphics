@@ -3,5 +3,7 @@
 
 CMakeFiles/cpp_graphics.dir/sources/glad.c.o: ../sources/glad.c
 
+CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/fragmentShader.h
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/main.cpp
+CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/vertexShader.h
 

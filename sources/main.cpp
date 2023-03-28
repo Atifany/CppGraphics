@@ -3,17 +3,79 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+#include "vertexShader.h"
+#include "fragmentShader.h"
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+void processInput(GLFWwindow* window);
+
+static unsigned int CompileShader(unsigned int type, const std::string& src)
 {
-	glViewport(0, 0, width, height);
+	unsigned int id = glCreateShader(GL_VERTEX_SHADER);
+	const char* c_src = src.c_str();
+	glShaderSource(id, 1, &c_src, NULL);
+	glCompileShader(id);
+
+	int result;
+	glGetShaderiv(id, GL_COMPILE_STATUS, &result);
+	if (result == GL_FALSE)
+	{
+		int length;
+		glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length);
+		char* message = (char*)alloca(length * sizeof(char));
+		glGetShaderInfoLog(id, length, &length, message);
+		std::cout << "Error compiling ";
+		switch (type)
+		{
+			case GL_VERTEX_SHADER:
+				std::cout << "vertex shader: ";
+				break;
+			case GL_FRAGMENT_SHADER:
+				std::cout << "fragment shader: ";
+				break;
+		}
+		std::cout << message << "\n";
+		return 0;
+	}
+	return id;
 }
 
-void processInput(GLFWwindow* window)
+static unsigned int CreateShader(const std::string& vertexShader, const std::string& fragmentShader)
 {
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+	unsigned int program = glCreateProgram();
+	unsigned int vs = CompileShader(GL_VERTEX_SHADER, vertexShader);
+	unsigned int fs = CompileShader(GL_FRAGMENT_SHADER, fragmentShader);
+	if (vs == 0 || fs == 0)
 	{
-		glfwSetWindowShouldClose(window, true);
+		glDeleteShader(vs);
+		glDeleteShader(fs);
+		return 0;
 	}
+
+	glAttachShader(program, vs);
+	glAttachShader(program, fs);
+	glLinkProgram(program);
+	glValidateProgram(program);
+
+	int result;
+	glGetProgramiv(program, GL_VALIDATE_STATUS, &result);
+	if (result == GL_FALSE)
+	{
+		int length;
+		glGetProgramiv(program, GL_INFO_LOG_LENGTH, &length);
+		char* message = (char*)alloca(length * sizeof(char));
+		glGetProgramInfoLog(program, length, &length, message);
+		std::cout << "Error compiling shader program " << message << "\n";
+
+		glDeleteShader(vs);
+		glDeleteShader(fs);
+		return 0;
+	}
+
+	glDeleteShader(vs);
+	glDeleteShader(fs);
+
+	return program;
 }
 
 int main()
@@ -33,6 +95,8 @@ int main()
 		return -1;
 	}
 	glfwMakeContextCurrent(window);
+	// Set Viewport and adjust it with window resize.
+	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 	// Initialize GLAD.
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -41,11 +105,49 @@ int main()
 		return -1;
 	}
 
-	// Here goes any callbacks vvv
+	unsigned int shaderProgram = CreateShader(vertexShader, fragmentShader);
+	if (shaderProgram == 0)
+	{
+		//glDeleteProgram(shaderProgram);
+		glfwTerminate();
+		return -1;
+	}
 
-	// Set Viewport and adjust it with window resize.
-	glViewport(0, 0, 800, 600);
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+	// Sample verticies
+	float verticies[] = {
+		0.5f, 0.5f, 0.0f,
+		0.5f, -0.5f, 0.0f,
+		-0.5f, -0.5f, 0.0f,
+		-0.5f, 0.5f, 0.0f
+	};
+	unsigned int indices[] = {
+		0, 1, 3,
+		1, 2, 3
+	};
+
+	// Generate objects
+	unsigned int VBO, VAO, EBO;
+	glGenVertexArrays(1, &VAO);
+	glGenBuffers(1, &VBO);
+	glGenBuffers(1, &EBO);
+
+	glBindVertexArray(VAO);
+
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(verticies), verticies, GL_STATIC_DRAW);
+
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+
+	// unbind VBO
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	// Not allowed to unbind EBO
+	// glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+	// Not nessecary
+	glBindVertexArray(0);
 
 	// run the app
 	while (!glfwWindowShouldClose(window))
@@ -57,12 +159,33 @@ int main()
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
+		glUseProgram(shaderProgram);
+		glBindVertexArray(VAO);
+		glDrawElements(GL_TRIANGLES, sizeof(verticies)/sizeof(*verticies), GL_UNSIGNED_INT, 0);
+		
 		// Process callbacks and events.
 		glfwPollEvents();
 		// Swaps front and back screen buffers.
 		glfwSwapBuffers(window);
 	}
 	
+	glDeleteVertexArrays(1, &VAO);
+	glDeleteBuffers(1, &VBO);
+	glDeleteBuffers(1, &EBO);
+	glDeleteProgram(shaderProgram);
 	glfwTerminate();
 	return 0;
+}
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+	glViewport(0, 0, width, height);
+}
+
+void processInput(GLFWwindow* window)
+{
+	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+	{
+		glfwSetWindowShouldClose(window, true);
+	}
 }

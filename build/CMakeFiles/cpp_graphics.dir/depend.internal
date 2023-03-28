@@ -4,4 +4,6 @@
 CMakeFiles/cpp_graphics.dir/sources/glad.c.o
  /home/atifany/Desktop/CppGraphics/sources/glad.c
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o
+ /home/atifany/Desktop/CppGraphics/sources/fragmentShader.h
  /home/atifany/Desktop/CppGraphics/sources/main.cpp
+ /home/atifany/Desktop/CppGraphics/sources/vertexShader.h
