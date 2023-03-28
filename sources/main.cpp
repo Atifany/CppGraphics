@@ -9,9 +9,11 @@
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
 
+bool isWireFrameModeOn = false;
+
 static unsigned int CompileShader(unsigned int type, const std::string& src)
 {
-	unsigned int id = glCreateShader(GL_VERTEX_SHADER);
+	unsigned int id = glCreateShader(type);
 	const char* c_src = src.c_str();
 	glShaderSource(id, 1, &c_src, NULL);
 	glCompileShader(id);
@@ -49,17 +51,34 @@ static unsigned int CreateShader(const std::string& vertexShader, const std::str
 	{
 		glDeleteShader(vs);
 		glDeleteShader(fs);
+		glDeleteProgram(program);
 		return 0;
 	}
 
 	glAttachShader(program, vs);
 	glAttachShader(program, fs);
+	
 	glLinkProgram(program);
-	glValidateProgram(program);
+	int link_result;
+	glGetProgramiv(program, GL_LINK_STATUS, &link_result);
+	if (link_result == GL_FALSE)
+	{
+		int length;
+		glGetProgramiv(program, GL_INFO_LOG_LENGTH, &length);
+		char* message = (char*)alloca(length * sizeof(char));
+		glGetProgramInfoLog(program, length, &length, message);
+		std::cout << "Error linking shader program " << message << "\n";
 
-	int result;
-	glGetProgramiv(program, GL_VALIDATE_STATUS, &result);
-	if (result == GL_FALSE)
+		glDeleteShader(vs);
+		glDeleteShader(fs);
+		glDeleteProgram(program);
+		return 0;
+	}
+	
+	glValidateProgram(program);
+	int validate_result;
+	glGetProgramiv(program, GL_VALIDATE_STATUS, &validate_result);
+	if (validate_result == GL_FALSE)
 	{
 		int length;
 		glGetProgramiv(program, GL_INFO_LOG_LENGTH, &length);
@@ -69,6 +88,7 @@ static unsigned int CreateShader(const std::string& vertexShader, const std::str
 
 		glDeleteShader(vs);
 		glDeleteShader(fs);
+		glDeleteProgram(program);
 		return 0;
 	}
 
@@ -108,7 +128,7 @@ int main()
 	unsigned int shaderProgram = CreateShader(vertexShader, fragmentShader);
 	if (shaderProgram == 0)
 	{
-		//glDeleteProgram(shaderProgram);
+		glDeleteProgram(shaderProgram);
 		glfwTerminate();
 		return -1;
 	}
@@ -161,6 +181,11 @@ int main()
 
 		glUseProgram(shaderProgram);
 		glBindVertexArray(VAO);
+		if (isWireFrameModeOn == true)
+			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		else
+			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
 		glDrawElements(GL_TRIANGLES, sizeof(verticies)/sizeof(*verticies), GL_UNSIGNED_INT, 0);
 		
 		// Process callbacks and events.
@@ -187,5 +212,9 @@ void processInput(GLFWwindow* window)
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 	{
 		glfwSetWindowShouldClose(window, true);
+	}
+	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
+	{
+		isWireFrameModeOn = !isWireFrameModeOn;
 	}
 }
