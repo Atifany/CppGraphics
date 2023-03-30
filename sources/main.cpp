@@ -6,10 +6,13 @@
 #include "vertexShader.h"
 #include "fragmentShader.h"
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-void processInput(GLFWwindow* window);
+#include "core_data.h"
+#include "process_input.h"
 
-bool isWireFrameModeOn = false;
+CoreData cd;
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+void processInput(CoreData& cd);
 
 static unsigned int CompileShader(unsigned int type, const std::string& src)
 {
@@ -106,17 +109,19 @@ int main()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
+	cd = CoreData();
+
 	// Create window.
-	GLFWwindow* window = glfwCreateWindow(800, 600, "CppGraphics", NULL, NULL);
-	if (window == NULL)
+	cd.window = glfwCreateWindow(800, 600, "CppGraphics", NULL, NULL);
+	if (cd.window == NULL)
 	{
 		std::cout << "Error: failed to initialize window.\n";
 		glfwTerminate();
 		return -1;
 	}
-	glfwMakeContextCurrent(window);
+	glfwMakeContextCurrent(cd.window);
 	// Set Viewport and adjust it with window resize.
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+	glfwSetFramebufferSizeCallback(cd.window, framebuffer_size_callback);
 
 	// Initialize GLAD.
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -132,6 +137,9 @@ int main()
 		glfwTerminate();
 		return -1;
 	}
+
+	// User input callbacks
+	glfwSetKeyCallback(cd.window, KeyCallback);
 
 	// Sample verticies
 	float verticies[] = {
@@ -168,30 +176,21 @@ int main()
 	// glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	// Not nessecary
 	glBindVertexArray(0);
-
+	glUseProgram(shaderProgram);
+	glBindVertexArray(VAO);
 	// run the app
-	while (!glfwWindowShouldClose(window))
+	while (!glfwWindowShouldClose(cd.window))
 	{
-		// Runs user input.
-		processInput(window);
-
 		// Clears the window.
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
-
-		glUseProgram(shaderProgram);
-		glBindVertexArray(VAO);
-		if (isWireFrameModeOn == true)
-			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-		else
-			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 		glDrawElements(GL_TRIANGLES, sizeof(verticies)/sizeof(*verticies), GL_UNSIGNED_INT, 0);
 		
 		// Process callbacks and events.
 		glfwPollEvents();
 		// Swaps front and back screen buffers.
-		glfwSwapBuffers(window);
+		glfwSwapBuffers(cd.window);
 	}
 	
 	glDeleteVertexArrays(1, &VAO);
@@ -207,14 +206,3 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 	glViewport(0, 0, width, height);
 }
 
-void processInput(GLFWwindow* window)
-{
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-	{
-		glfwSetWindowShouldClose(window, true);
-	}
-	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
-	{
-		isWireFrameModeOn = !isWireFrameModeOn;
-	}
-}
