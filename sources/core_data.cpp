@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "core_data.h"
 
 CoreData::CoreData()
@@ -6,6 +8,7 @@ CoreData::CoreData()
 	this->windowWidth = 800;
 	this->windowHeight = 600;
 	this->isWireFrameModeOn = false;
+	std::cout << "CoreData object created.\n";
 }
 
 CoreData::CoreData(const CoreData& other)

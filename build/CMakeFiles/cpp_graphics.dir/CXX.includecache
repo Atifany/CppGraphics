@@ -12,15 +12,25 @@ glad/glad.h
 GLFW/glfw3.h
 -
 
-/home/atifany/Desktop/CppGraphics/sources/process_input.cpp
+/home/atifany/Desktop/CppGraphics/sources/fragmentShader.h
+
+/home/atifany/Desktop/CppGraphics/sources/main.cpp
+iostream
+-
 glad/glad.h
 -
 GLFW/glfw3.h
 -
-time.h
--
-iostream
--
+vertexShader.h
+/home/atifany/Desktop/CppGraphics/sources/vertexShader.h
+fragmentShader.h
+/home/atifany/Desktop/CppGraphics/sources/fragmentShader.h
 core_data.h
 /home/atifany/Desktop/CppGraphics/sources/core_data.h
+process_input.h
+/home/atifany/Desktop/CppGraphics/sources/process_input.h
+
+/home/atifany/Desktop/CppGraphics/sources/process_input.h
+
+/home/atifany/Desktop/CppGraphics/sources/vertexShader.h
 

@@ -14,7 +14,6 @@ void ESCKeyPressed()
 
 void SpaceKeyPressed()
 {
-	std::cout << "wat2?\n";
 	cd.isWireFrameModeOn = !cd.isWireFrameModeOn;
 	if (cd.isWireFrameModeOn == true)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -24,7 +23,6 @@ void SpaceKeyPressed()
 
 void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
-	std::cout << "wat1?\n";
 	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
 		ESCKeyPressed();
 	if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)

@@ -9,7 +9,7 @@
 #include "core_data.h"
 #include "process_input.h"
 
-CoreData cd;
+CoreData cd = CoreData();
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(CoreData& cd);
@@ -109,8 +109,6 @@ int main()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	cd = CoreData();
-
 	// Create window.
 	cd.window = glfwCreateWindow(800, 600, "CppGraphics", NULL, NULL);
 	if (cd.window == NULL)
@@ -178,12 +176,21 @@ int main()
 	glBindVertexArray(0);
 	glUseProgram(shaderProgram);
 	glBindVertexArray(VAO);
+
+	// keep the screen changing costantly
+	float redColor = 0.0f;
+	float speed = 0.01f;
 	// run the app
 	while (!glfwWindowShouldClose(cd.window))
 	{
 		// Clears the window.
-		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+		glClearColor(redColor, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
+		redColor += speed;
+		if (redColor > 0.5f)
+			speed = -0.01f;
+		if (redColor < 0.0f)
+			speed = 0.01f;
 
 		glDrawElements(GL_TRIANGLES, sizeof(verticies)/sizeof(*verticies), GL_UNSIGNED_INT, 0);
 		
