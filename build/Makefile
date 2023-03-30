@@ -123,6 +123,33 @@ cpp_graphics/fast:
 	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/build
 .PHONY : cpp_graphics/fast
 
+sources/core_data.o: sources/core_data.cpp.o
+
+.PHONY : sources/core_data.o
+
+# target to build an object file
+sources/core_data.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.o
+.PHONY : sources/core_data.cpp.o
+
+sources/core_data.i: sources/core_data.cpp.i
+
+.PHONY : sources/core_data.i
+
+# target to preprocess a source file
+sources/core_data.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.i
+.PHONY : sources/core_data.cpp.i
+
+sources/core_data.s: sources/core_data.cpp.s
+
+.PHONY : sources/core_data.s
+
+# target to generate assembly for a file
+sources/core_data.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.s
+.PHONY : sources/core_data.cpp.s
+
 sources/glad.o: sources/glad.c.o
 
 .PHONY : sources/glad.o
@@ -177,6 +204,33 @@ sources/main.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/main.cpp.s
 .PHONY : sources/main.cpp.s
 
+sources/process_input.o: sources/process_input.cpp.o
+
+.PHONY : sources/process_input.o
+
+# target to build an object file
+sources/process_input.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o
+.PHONY : sources/process_input.cpp.o
+
+sources/process_input.i: sources/process_input.cpp.i
+
+.PHONY : sources/process_input.i
+
+# target to preprocess a source file
+sources/process_input.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.i
+.PHONY : sources/process_input.cpp.i
+
+sources/process_input.s: sources/process_input.cpp.s
+
+.PHONY : sources/process_input.s
+
+# target to generate assembly for a file
+sources/process_input.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.s
+.PHONY : sources/process_input.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +240,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... cpp_graphics"
+	@echo "... sources/core_data.o"
+	@echo "... sources/core_data.i"
+	@echo "... sources/core_data.s"
 	@echo "... sources/glad.o"
 	@echo "... sources/glad.i"
 	@echo "... sources/glad.s"
 	@echo "... sources/main.o"
 	@echo "... sources/main.i"
 	@echo "... sources/main.s"
+	@echo "... sources/process_input.o"
+	@echo "... sources/process_input.i"
+	@echo "... sources/process_input.s"
 .PHONY : help
 
 

@@ -3,7 +3,15 @@
 
 CMakeFiles/cpp_graphics.dir/sources/glad.c.o: ../sources/glad.c
 
+CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.o: ../sources/core_data.cpp
+CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.o: ../sources/core_data.h
+
+CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/core_data.h
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/fragmentShader.h
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/main.cpp
+CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/process_input.h
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/vertexShader.h
+
+CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o: ../sources/core_data.h
+CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o: ../sources/process_input.cpp
 

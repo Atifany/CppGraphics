@@ -8,5 +8,15 @@
   "directory": "/home/atifany/Desktop/CppGraphics/build",
   "command": "/usr/bin/gcc   -g   -o CMakeFiles/cpp_graphics.dir/sources/glad.c.o   -c /home/atifany/Desktop/CppGraphics/sources/glad.c",
   "file": "/home/atifany/Desktop/CppGraphics/sources/glad.c"
+},
+{
+  "directory": "/home/atifany/Desktop/CppGraphics/build",
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/process_input.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/sources/process_input.cpp"
+},
+{
+  "directory": "/home/atifany/Desktop/CppGraphics/build",
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/core_data.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/sources/core_data.cpp"
 }
 ]

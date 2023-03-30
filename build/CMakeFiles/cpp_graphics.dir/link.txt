@@ -1,1 +1,1 @@
-/usr/bin/g++  -g  -rdynamic CMakeFiles/cpp_graphics.dir/sources/main.cpp.o CMakeFiles/cpp_graphics.dir/sources/glad.c.o  -o cpp_graphics  -lglfw -ldl 
+/usr/bin/g++  -g  -rdynamic CMakeFiles/cpp_graphics.dir/sources/main.cpp.o CMakeFiles/cpp_graphics.dir/sources/glad.c.o CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.o  -o cpp_graphics  -lglfw -ldl 

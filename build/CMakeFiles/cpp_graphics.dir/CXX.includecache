@@ -6,19 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/atifany/Desktop/CppGraphics/sources/fragmentShader.h
-
-/home/atifany/Desktop/CppGraphics/sources/main.cpp
-iostream
--
+/home/atifany/Desktop/CppGraphics/sources/core_data.h
 glad/glad.h
 -
 GLFW/glfw3.h
 -
-vertexShader.h
-/home/atifany/Desktop/CppGraphics/sources/vertexShader.h
-fragmentShader.h
-/home/atifany/Desktop/CppGraphics/sources/fragmentShader.h
 
-/home/atifany/Desktop/CppGraphics/sources/vertexShader.h
+/home/atifany/Desktop/CppGraphics/sources/process_input.cpp
+glad/glad.h
+-
+GLFW/glfw3.h
+-
+time.h
+-
+iostream
+-
+core_data.h
+/home/atifany/Desktop/CppGraphics/sources/core_data.h
 

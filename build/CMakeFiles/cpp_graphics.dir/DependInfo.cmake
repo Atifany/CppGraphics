@@ -13,7 +13,9 @@ set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_TARGET_INCLUDE_PATH
   )
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/atifany/Desktop/CppGraphics/sources/core_data.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/main.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/main.cpp.o"
+  "/home/atifany/Desktop/CppGraphics/sources/process_input.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
