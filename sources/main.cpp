@@ -101,7 +101,7 @@ static unsigned int CreateShader(const std::string& vertexShader, const std::str
 	return program;
 }
 
-int main()
+static int InitGLFWWindow()
 {
 	// create context.
 	glfwInit();
@@ -120,13 +120,33 @@ int main()
 	glfwMakeContextCurrent(cd.window);
 	// Set Viewport and adjust it with window resize.
 	glfwSetFramebufferSizeCallback(cd.window, framebuffer_size_callback);
+	std::cout << "Debug: window object created.\n";
+	return 0;
+}
 
+static int InitGLAD()
+{
 	// Initialize GLAD.
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
 		std::cout << "Error: failed to initialize GLAD.\n";
 		return -1;
 	}
+	std::cout << "Debug: GLAD initialized.\n";
+	return 0;
+}
+
+int main()
+{
+	int errorCode = 0;
+
+	errorCode = InitGLFWWindow();
+	if (errorCode != 0)
+		return errorCode;
+	
+	errorCode = InitGLAD();
+	if (errorCode != 0)
+		return errorCode;
 
 	unsigned int shaderProgram = CreateShader(vertexShader, fragmentShader);
 	if (shaderProgram == 0)
@@ -135,6 +155,7 @@ int main()
 		glfwTerminate();
 		return -1;
 	}
+	std::cout << "Debug: shader program created.\n";
 
 	// User input callbacks
 	glfwSetKeyCallback(cd.window, KeyCallback);
@@ -153,8 +174,11 @@ int main()
 
 	// Generate objects
 	unsigned int VBO, VAO, EBO;
+	// Defines vertex attributes only once in here and not every frame.
 	glGenVertexArrays(1, &VAO);
+	// Stores vertecies in GPU.
 	glGenBuffers(1, &VBO);
+	// Stores indices in GPU.
 	glGenBuffers(1, &EBO);
 
 	glBindVertexArray(VAO);
@@ -165,18 +189,19 @@ int main()
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
+	// defines what a vertex is. In here it is just vec3 of type float.
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
 	// unbind VBO
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	// Not allowed to unbind EBO
+	// Not allowed to unbind EBO before VAO.
+	// While VAO is bound it stores all EBO bounds and unbounds.
 	// glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-	// Not nessecary
-	glBindVertexArray(0);
-	glUseProgram(shaderProgram);
-	glBindVertexArray(VAO);
+	// Not nessecary unbinding.
+	// glBindVertexArray(0);
 
+	std::cout << "Debug: starting main loop.\n";
 	// keep the screen changing costantly
 	float redColor = 0.0f;
 	float speed = 0.01f;
@@ -192,8 +217,11 @@ int main()
 		if (redColor < 0.0f)
 			speed = 0.01f;
 
+		glUseProgram(shaderProgram);
+		glBindVertexArray(VAO);
 		glDrawElements(GL_TRIANGLES, sizeof(verticies)/sizeof(*verticies), GL_UNSIGNED_INT, 0);
-		
+		glBindVertexArray(0);
+
 		// Process callbacks and events.
 		glfwPollEvents();
 		// Swaps front and back screen buffers.
