@@ -20,9 +20,7 @@ Shader::Shader(const std::string& vertexShaderPath, const std::string& fragmentS
 	fragmentFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
 	try
 	{
-		std::cout << "Debug1\n";
 		vertexFile.open(vertexShaderPath);
-		std::cout << "Debug2\n";
 		std::stringstream vertexShaderStream;
 		vertexShaderStream << vertexFile.rdbuf();
 		vertexCode = vertexShaderStream.str();
@@ -34,7 +32,7 @@ Shader::Shader(const std::string& vertexShaderPath, const std::string& fragmentS
 		fragmentCode = fragmentShaderStream.str();
 		fragmentFile.close();
 	}
-	catch(std::ifstream::failure e)
+	catch(std::ifstream::failure& e)
 	{
 		std::cout << "Error: failed to read shader files: " << e.what() << "\n";
 		this->program = 0;

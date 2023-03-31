@@ -9,8 +9,8 @@
 #include "process_input.h"
 #include "shader.h"
 
-static const std::string vertexShaderPath = "sources/shaders/vertex_shader.shader";
-static const std::string fragmentShaderPath = "sources/shaders/fragment_shader.shader";
+static const std::string vertexShaderPath = "../sources/shaders/vertex_shader.shader";
+static const std::string fragmentShaderPath = "../sources/shaders/fragment_shader.shader";
 
 CoreData cd = CoreData();
 
