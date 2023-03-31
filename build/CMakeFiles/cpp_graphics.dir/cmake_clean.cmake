@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/cpp_graphics.dir/sources/glad.c.o"
   "CMakeFiles/cpp_graphics.dir/sources/main.cpp.o"
   "CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o"
+  "CMakeFiles/cpp_graphics.dir/sources/shader.cpp.o"
   "cpp_graphics"
   "cpp_graphics.pdb"
 )

@@ -6,31 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/atifany/Desktop/CppGraphics/sources/core_data.h
-glad/glad.h
--
-GLFW/glfw3.h
+/home/atifany/Desktop/CppGraphics/sources/glad.h
+KHR/khrplatform.h
 -
 
-/home/atifany/Desktop/CppGraphics/sources/fragmentShader.h
-
-/home/atifany/Desktop/CppGraphics/sources/main.cpp
+/home/atifany/Desktop/CppGraphics/sources/shader.cpp
+shader.h
+/home/atifany/Desktop/CppGraphics/sources/shader.h
+glad.h
+/home/atifany/Desktop/CppGraphics/sources/glad.h
+fstream
+-
+sstream
+-
 iostream
 -
-glad/glad.h
--
-GLFW/glfw3.h
--
-vertexShader.h
-/home/atifany/Desktop/CppGraphics/sources/vertexShader.h
-fragmentShader.h
-/home/atifany/Desktop/CppGraphics/sources/fragmentShader.h
-core_data.h
-/home/atifany/Desktop/CppGraphics/sources/core_data.h
-process_input.h
-/home/atifany/Desktop/CppGraphics/sources/process_input.h
 
-/home/atifany/Desktop/CppGraphics/sources/process_input.h
-
-/home/atifany/Desktop/CppGraphics/sources/vertexShader.h
+/home/atifany/Desktop/CppGraphics/sources/shader.h
+string
+-
+vector
+-
 

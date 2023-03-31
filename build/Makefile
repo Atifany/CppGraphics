@@ -231,6 +231,33 @@ sources/process_input.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.s
 .PHONY : sources/process_input.cpp.s
 
+sources/shader.o: sources/shader.cpp.o
+
+.PHONY : sources/shader.o
+
+# target to build an object file
+sources/shader.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/shader.cpp.o
+.PHONY : sources/shader.cpp.o
+
+sources/shader.i: sources/shader.cpp.i
+
+.PHONY : sources/shader.i
+
+# target to preprocess a source file
+sources/shader.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/shader.cpp.i
+.PHONY : sources/shader.cpp.i
+
+sources/shader.s: sources/shader.cpp.s
+
+.PHONY : sources/shader.s
+
+# target to generate assembly for a file
+sources/shader.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/shader.cpp.s
+.PHONY : sources/shader.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -252,6 +279,9 @@ help:
 	@echo "... sources/process_input.o"
 	@echo "... sources/process_input.i"
 	@echo "... sources/process_input.s"
+	@echo "... sources/shader.o"
+	@echo "... sources/shader.i"
+	@echo "... sources/shader.s"
 .PHONY : help
 
 

@@ -18,5 +18,10 @@
   "directory": "/home/atifany/Desktop/CppGraphics/build",
   "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/core_data.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/sources/core_data.cpp"
+},
+{
+  "directory": "/home/atifany/Desktop/CppGraphics/build",
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/shader.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/shader.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/sources/shader.cpp"
 }
 ]

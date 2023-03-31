@@ -5,11 +5,11 @@ add_executable(cpp_graphics
 	sources/main.cpp
 	sources/glad.c
 	sources/glad.h
-	sources/vertexShader.h
-	sources/fragmentShader.h
 	sources/process_input.cpp
 	sources/core_data.h
 	sources/core_data.cpp
+	sources/shader.h
+	sources/shader.cpp
 )
 
 target_link_libraries(cpp_graphics glfw ${CMAKE_DL_LIBS})

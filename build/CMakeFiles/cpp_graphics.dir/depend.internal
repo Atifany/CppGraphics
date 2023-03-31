@@ -8,10 +8,13 @@ CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/core_data.h
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/core_data.h
- /home/atifany/Desktop/CppGraphics/sources/fragmentShader.h
  /home/atifany/Desktop/CppGraphics/sources/main.cpp
  /home/atifany/Desktop/CppGraphics/sources/process_input.h
- /home/atifany/Desktop/CppGraphics/sources/vertexShader.h
+ /home/atifany/Desktop/CppGraphics/sources/shader.h
 CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/core_data.h
  /home/atifany/Desktop/CppGraphics/sources/process_input.cpp
+CMakeFiles/cpp_graphics.dir/sources/shader.cpp.o
+ /home/atifany/Desktop/CppGraphics/sources/glad.h
+ /home/atifany/Desktop/CppGraphics/sources/shader.cpp
+ /home/atifany/Desktop/CppGraphics/sources/shader.h
