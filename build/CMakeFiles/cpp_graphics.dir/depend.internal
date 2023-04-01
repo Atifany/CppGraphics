@@ -11,6 +11,7 @@ CMakeFiles/cpp_graphics.dir/sources/main.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/main.cpp
  /home/atifany/Desktop/CppGraphics/sources/process_input.h
  /home/atifany/Desktop/CppGraphics/sources/shader.h
+ /home/atifany/Desktop/CppGraphics/sources/stb_image/stb_image.h
 CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/core_data.h
  /home/atifany/Desktop/CppGraphics/sources/process_input.cpp
@@ -18,3 +19,6 @@ CMakeFiles/cpp_graphics.dir/sources/shader.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glad.h
  /home/atifany/Desktop/CppGraphics/sources/shader.cpp
  /home/atifany/Desktop/CppGraphics/sources/shader.h
+CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.o
+ /home/atifany/Desktop/CppGraphics/sources/stb_image/stb_image.h
+ /home/atifany/Desktop/CppGraphics/sources/stb_image/stb_image_implementation.cpp

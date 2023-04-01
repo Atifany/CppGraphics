@@ -3,13 +3,19 @@ project(cpp_graphics VERSION 0.1.0)
 
 add_executable(cpp_graphics
 	sources/main.cpp
-	sources/glad.c
-	sources/glad.h
 	sources/process_input.cpp
 	sources/core_data.h
 	sources/core_data.cpp
 	sources/shader.h
 	sources/shader.cpp
+
+#	GLAD library
+	sources/glad.c
+	sources/glad.h
+
+#	stb_image library
+	sources/stb_image/stb_image_implementation.cpp
+	sources/stb_image/stb_image.h
 )
 
 target_link_libraries(cpp_graphics glfw ${CMAKE_DL_LIBS})

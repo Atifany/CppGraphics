@@ -6,11 +6,6 @@
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/gcc   -g   -o CMakeFiles/cpp_graphics.dir/sources/glad.c.o   -c /home/atifany/Desktop/CppGraphics/sources/glad.c",
-  "file": "/home/atifany/Desktop/CppGraphics/sources/glad.c"
-},
-{
-  "directory": "/home/atifany/Desktop/CppGraphics/build",
   "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/process_input.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/sources/process_input.cpp"
 },
@@ -23,5 +18,15 @@
   "directory": "/home/atifany/Desktop/CppGraphics/build",
   "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/shader.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/shader.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/sources/shader.cpp"
+},
+{
+  "directory": "/home/atifany/Desktop/CppGraphics/build",
+  "command": "/usr/bin/gcc   -g   -o CMakeFiles/cpp_graphics.dir/sources/glad.c.o   -c /home/atifany/Desktop/CppGraphics/sources/glad.c",
+  "file": "/home/atifany/Desktop/CppGraphics/sources/glad.c"
+},
+{
+  "directory": "/home/atifany/Desktop/CppGraphics/build",
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/stb_image/stb_image_implementation.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/sources/stb_image/stb_image_implementation.cpp"
 }
 ]

@@ -258,6 +258,33 @@ sources/shader.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/shader.cpp.s
 .PHONY : sources/shader.cpp.s
 
+sources/stb_image/stb_image_implementation.o: sources/stb_image/stb_image_implementation.cpp.o
+
+.PHONY : sources/stb_image/stb_image_implementation.o
+
+# target to build an object file
+sources/stb_image/stb_image_implementation.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.o
+.PHONY : sources/stb_image/stb_image_implementation.cpp.o
+
+sources/stb_image/stb_image_implementation.i: sources/stb_image/stb_image_implementation.cpp.i
+
+.PHONY : sources/stb_image/stb_image_implementation.i
+
+# target to preprocess a source file
+sources/stb_image/stb_image_implementation.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.i
+.PHONY : sources/stb_image/stb_image_implementation.cpp.i
+
+sources/stb_image/stb_image_implementation.s: sources/stb_image/stb_image_implementation.cpp.s
+
+.PHONY : sources/stb_image/stb_image_implementation.s
+
+# target to generate assembly for a file
+sources/stb_image/stb_image_implementation.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.s
+.PHONY : sources/stb_image/stb_image_implementation.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -282,6 +309,9 @@ help:
 	@echo "... sources/shader.o"
 	@echo "... sources/shader.i"
 	@echo "... sources/shader.s"
+	@echo "... sources/stb_image/stb_image_implementation.o"
+	@echo "... sources/stb_image/stb_image_implementation.i"
+	@echo "... sources/stb_image/stb_image_implementation.s"
 .PHONY : help
 
 

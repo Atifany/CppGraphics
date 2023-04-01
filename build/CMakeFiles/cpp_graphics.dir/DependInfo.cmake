@@ -17,6 +17,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/atifany/Desktop/CppGraphics/sources/main.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/main.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/process_input.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/shader.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/shader.cpp.o"
+  "/home/atifany/Desktop/CppGraphics/sources/stb_image/stb_image_implementation.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
