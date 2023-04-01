@@ -69,13 +69,14 @@ int main()
 	Shader shader(vertexShaderPath, fragmentShaderPath);
 	if (shader.program == 0)
 		return -1;
+		
+	// User input callbacks
+	glfwSetKeyCallback(cd.window, KeyCallback);
 
 	// Enable transparency component
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-	// User input callbacks
-	glfwSetKeyCallback(cd.window, KeyCallback);
 
 	// Sample verticies
 	float verticies[] = {
