@@ -2,6 +2,8 @@
 
 #include <string>
 #include <vector>
+#include "glm/glm.hpp"
+#include "glm/gtc/type_ptr.hpp"
 
 class Shader
 {
@@ -15,6 +17,7 @@ class Shader
 		void UniformSetInt(const std::string& name, int value) const;
 		void UniformSetFloat(const std::string& name, float value) const;
 		void UniformSetFloatV(const std::string& name, std::vector<float> value) const;
+		void UniformSetMat4(const std::string& name, glm::mat4 value) const;
 
 		// Shader program.
 		unsigned int program;
