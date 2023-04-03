@@ -19,10 +19,19 @@ static const std::string vertexShaderPath = "../sources/shaders/vertex_shader.sh
 static const std::string fragmentShaderPath = "../sources/shaders/fragment_shader.shader";
 static const std::string texturePath = "../textures/GrassSide.png";
 
+float deltaTime = 0.0f;
+static float lastFrame = 0.0f;
+
+// Setup camera
+float cameraSpeed = 4.0f;
+glm::vec3 cameraPos = glm::vec3(-5.0f, 0.0f, 0.0f);
+glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
+
 CoreData cd = CoreData();
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-void processInput(CoreData& cd);
+void CalculateDeltaTime();
 
 static int InitGLFWWindow()
 {
@@ -77,6 +86,8 @@ int main()
 		
 	// User input callbacks
 	glfwSetKeyCallback(cd.window, KeyCallback);
+	glfwSetInputMode(cd.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	glfwSetCursorPosCallback(cd.window, MouseCallback);
 
 	// Enable transparency component
 	glEnable(GL_BLEND);
@@ -186,36 +197,27 @@ int main()
 	shader.Use();
 	shader.UniformSetInt("textureToDraw", 0);
 
-
 	std::cout << "Debug: starting main loop.\n";
-	// keep the screen changing costantly
-	float redColor = 0.0f;
-	float speed = 0.01f;
 	// run the app
 	while (!glfwWindowShouldClose(cd.window))
 	{
+		CalculateDeltaTime();
+
 		// Clears the window.
-		glClearColor(redColor, 0.3f, 0.3f, 1.0f);
+		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		redColor += speed;
-		if (redColor > 0.5f)
-			speed = -0.01f;
-		if (redColor < 0.0f)
-			speed = 0.01f;
 
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, texture);
 		// Activating shaders.
 		shader.Use();
 
-		float curRotation = (float)(sin(glfwGetTime())) * 360.0f;
-
 		// Matrices calculation:
 		glm::mat4 modelMatrix = glm::mat4(1.0f);
-		modelMatrix = glm::rotate(modelMatrix, glm::radians(curRotation), glm::vec3(1.0f, 1.0f, 0.5f));
+		modelMatrix = glm::rotate(modelMatrix, 0.0f, glm::vec3(1.0f, 1.0f, 0.5f));
 
-		glm::mat4 viewMatrix = glm::mat4(1.0f);
-		viewMatrix = glm::translate(viewMatrix, glm::vec3(0.0f, 0.0f, -2.0f));
+		// std::cout << cameraPos.x << " " << cameraPos.z << "\n";
+		glm::mat4 viewMatrix = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
 
 		glm::mat4 projectionMatrix = glm::mat4(1.0f);
 		projectionMatrix = glm::perspective(glm::radians(fov), 800.0f / 600.0f, 0.1f, 100.0f);
@@ -247,3 +249,9 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 	glViewport(0, 0, width, height);
 }
 
+void CalculateDeltaTime()
+{
+	float curTime = glfwGetTime();
+	deltaTime = curTime - lastFrame;
+	lastFrame = curTime;
+}
