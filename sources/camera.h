@@ -1,0 +1,20 @@
+#pragma once
+
+#include "transform.h"
+#include "glm/glm.hpp"
+
+class Camera
+{
+	public:
+		Camera();
+		~Camera();
+		Camera(const Camera& other);
+		Camera& operator=(const Camera& other);
+
+		Transform	transform;
+		glm::vec3	viewDirection;
+		glm::vec3	upDirection;
+		float		sensivity;
+
+	private:
+};

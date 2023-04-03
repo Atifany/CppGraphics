@@ -123,6 +123,33 @@ cpp_graphics/fast:
 	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/build
 .PHONY : cpp_graphics/fast
 
+sources/camera.o: sources/camera.cpp.o
+
+.PHONY : sources/camera.o
+
+# target to build an object file
+sources/camera.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o
+.PHONY : sources/camera.cpp.o
+
+sources/camera.i: sources/camera.cpp.i
+
+.PHONY : sources/camera.i
+
+# target to preprocess a source file
+sources/camera.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/camera.cpp.i
+.PHONY : sources/camera.cpp.i
+
+sources/camera.s: sources/camera.cpp.s
+
+.PHONY : sources/camera.s
+
+# target to generate assembly for a file
+sources/camera.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/camera.cpp.s
+.PHONY : sources/camera.cpp.s
+
 sources/core_data.o: sources/core_data.cpp.o
 
 .PHONY : sources/core_data.o
@@ -150,32 +177,32 @@ sources/core_data.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.s
 .PHONY : sources/core_data.cpp.s
 
-sources/glad.o: sources/glad.c.o
+sources/glad/glad.o: sources/glad/glad.c.o
 
-.PHONY : sources/glad.o
+.PHONY : sources/glad/glad.o
 
 # target to build an object file
-sources/glad.c.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/glad.c.o
-.PHONY : sources/glad.c.o
+sources/glad/glad.c.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.o
+.PHONY : sources/glad/glad.c.o
 
-sources/glad.i: sources/glad.c.i
+sources/glad/glad.i: sources/glad/glad.c.i
 
-.PHONY : sources/glad.i
+.PHONY : sources/glad/glad.i
 
 # target to preprocess a source file
-sources/glad.c.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/glad.c.i
-.PHONY : sources/glad.c.i
+sources/glad/glad.c.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.i
+.PHONY : sources/glad/glad.c.i
 
-sources/glad.s: sources/glad.c.s
+sources/glad/glad.s: sources/glad/glad.c.s
 
-.PHONY : sources/glad.s
+.PHONY : sources/glad/glad.s
 
 # target to generate assembly for a file
-sources/glad.c.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/glad.c.s
-.PHONY : sources/glad.c.s
+sources/glad/glad.c.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.s
+.PHONY : sources/glad/glad.c.s
 
 sources/main.o: sources/main.cpp.o
 
@@ -285,6 +312,33 @@ sources/stb_image/stb_image_implementation.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.s
 .PHONY : sources/stb_image/stb_image_implementation.cpp.s
 
+sources/transform.o: sources/transform.cpp.o
+
+.PHONY : sources/transform.o
+
+# target to build an object file
+sources/transform.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o
+.PHONY : sources/transform.cpp.o
+
+sources/transform.i: sources/transform.cpp.i
+
+.PHONY : sources/transform.i
+
+# target to preprocess a source file
+sources/transform.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/transform.cpp.i
+.PHONY : sources/transform.cpp.i
+
+sources/transform.s: sources/transform.cpp.s
+
+.PHONY : sources/transform.s
+
+# target to generate assembly for a file
+sources/transform.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/transform.cpp.s
+.PHONY : sources/transform.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -294,12 +348,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... cpp_graphics"
+	@echo "... sources/camera.o"
+	@echo "... sources/camera.i"
+	@echo "... sources/camera.s"
 	@echo "... sources/core_data.o"
 	@echo "... sources/core_data.i"
 	@echo "... sources/core_data.s"
-	@echo "... sources/glad.o"
-	@echo "... sources/glad.i"
-	@echo "... sources/glad.s"
+	@echo "... sources/glad/glad.o"
+	@echo "... sources/glad/glad.i"
+	@echo "... sources/glad/glad.s"
 	@echo "... sources/main.o"
 	@echo "... sources/main.i"
 	@echo "... sources/main.s"
@@ -312,6 +369,9 @@ help:
 	@echo "... sources/stb_image/stb_image_implementation.o"
 	@echo "... sources/stb_image/stb_image_implementation.i"
 	@echo "... sources/stb_image/stb_image_implementation.s"
+	@echo "... sources/transform.o"
+	@echo "... sources/transform.i"
+	@echo "... sources/transform.s"
 .PHONY : help
 
 

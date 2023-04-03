@@ -109,22 +109,48 @@ CMakeFiles/cpp_graphics.dir/sources/shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp_graphics.dir/sources/shader.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/atifany/Desktop/CppGraphics/sources/shader.cpp -o CMakeFiles/cpp_graphics.dir/sources/shader.cpp.s
 
-CMakeFiles/cpp_graphics.dir/sources/glad.c.o: CMakeFiles/cpp_graphics.dir/flags.make
-CMakeFiles/cpp_graphics.dir/sources/glad.c.o: ../sources/glad.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/cpp_graphics.dir/sources/glad.c.o"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cpp_graphics.dir/sources/glad.c.o   -c /home/atifany/Desktop/CppGraphics/sources/glad.c
+CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o: CMakeFiles/cpp_graphics.dir/flags.make
+CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o: ../sources/transform.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/transform.cpp
 
-CMakeFiles/cpp_graphics.dir/sources/glad.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpp_graphics.dir/sources/glad.c.i"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atifany/Desktop/CppGraphics/sources/glad.c > CMakeFiles/cpp_graphics.dir/sources/glad.c.i
+CMakeFiles/cpp_graphics.dir/sources/transform.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp_graphics.dir/sources/transform.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/atifany/Desktop/CppGraphics/sources/transform.cpp > CMakeFiles/cpp_graphics.dir/sources/transform.cpp.i
 
-CMakeFiles/cpp_graphics.dir/sources/glad.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpp_graphics.dir/sources/glad.c.s"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atifany/Desktop/CppGraphics/sources/glad.c -o CMakeFiles/cpp_graphics.dir/sources/glad.c.s
+CMakeFiles/cpp_graphics.dir/sources/transform.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp_graphics.dir/sources/transform.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/atifany/Desktop/CppGraphics/sources/transform.cpp -o CMakeFiles/cpp_graphics.dir/sources/transform.cpp.s
+
+CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o: CMakeFiles/cpp_graphics.dir/flags.make
+CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o: ../sources/camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/camera.cpp
+
+CMakeFiles/cpp_graphics.dir/sources/camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp_graphics.dir/sources/camera.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/atifany/Desktop/CppGraphics/sources/camera.cpp > CMakeFiles/cpp_graphics.dir/sources/camera.cpp.i
+
+CMakeFiles/cpp_graphics.dir/sources/camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp_graphics.dir/sources/camera.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/atifany/Desktop/CppGraphics/sources/camera.cpp -o CMakeFiles/cpp_graphics.dir/sources/camera.cpp.s
+
+CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.o: CMakeFiles/cpp_graphics.dir/flags.make
+CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.o: ../sources/glad/glad.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.o"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.o   -c /home/atifany/Desktop/CppGraphics/sources/glad/glad.c
+
+CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.i"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atifany/Desktop/CppGraphics/sources/glad/glad.c > CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.i
+
+CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.s"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atifany/Desktop/CppGraphics/sources/glad/glad.c -o CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.s
 
 CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.o: CMakeFiles/cpp_graphics.dir/flags.make
 CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.o: ../sources/stb_image/stb_image_implementation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/stb_image/stb_image_implementation.cpp
 
 CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.i: cmake_force
@@ -141,7 +167,9 @@ cpp_graphics_OBJECTS = \
 "CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o" \
 "CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.o" \
 "CMakeFiles/cpp_graphics.dir/sources/shader.cpp.o" \
-"CMakeFiles/cpp_graphics.dir/sources/glad.c.o" \
+"CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o" \
+"CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o" \
+"CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.o" \
 "CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.o"
 
 # External object files for target cpp_graphics
@@ -151,11 +179,13 @@ cpp_graphics: CMakeFiles/cpp_graphics.dir/sources/main.cpp.o
 cpp_graphics: CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o
 cpp_graphics: CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.o
 cpp_graphics: CMakeFiles/cpp_graphics.dir/sources/shader.cpp.o
-cpp_graphics: CMakeFiles/cpp_graphics.dir/sources/glad.c.o
+cpp_graphics: CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o
+cpp_graphics: CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o
+cpp_graphics: CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.o
 cpp_graphics: CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.o
 cpp_graphics: CMakeFiles/cpp_graphics.dir/build.make
 cpp_graphics: CMakeFiles/cpp_graphics.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable cpp_graphics"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable cpp_graphics"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cpp_graphics.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

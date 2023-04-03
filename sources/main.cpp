@@ -12,6 +12,7 @@
 #include "core_data.h"
 #include "process_input.h"
 #include "shader.h"
+#include "camera.h"
 
 static const float fov = 45.0f;
 
@@ -23,10 +24,8 @@ float deltaTime = 0.0f;
 static float lastFrame = 0.0f;
 
 // Setup camera
-float cameraSpeed = 4.0f;
-glm::vec3 cameraPos = glm::vec3(-5.0f, 0.0f, 0.0f);
-glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
-glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
+float cameraSpeed = 4.0f; // player movespeed
+Camera camera = Camera();
 
 CoreData cd = CoreData();
 
@@ -83,7 +82,9 @@ int main()
 	Shader shader(vertexShaderPath, fragmentShaderPath);
 	if (shader.program == 0)
 		return -1;
-		
+	
+	camera.transform.position.z = -1.0f;
+
 	// User input callbacks
 	glfwSetKeyCallback(cd.window, KeyCallback);
 	glfwSetInputMode(cd.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
@@ -214,10 +215,13 @@ int main()
 
 		// Matrices calculation:
 		glm::mat4 modelMatrix = glm::mat4(1.0f);
-		modelMatrix = glm::rotate(modelMatrix, 0.0f, glm::vec3(1.0f, 1.0f, 0.5f));
+		// modelMatrix = glm::rotate(modelMatrix, 0.0f, glm::vec3(1.0f, 1.0f, 0.5f));
 
 		// std::cout << cameraPos.x << " " << cameraPos.z << "\n";
-		glm::mat4 viewMatrix = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+		glm::mat4 viewMatrix = glm::lookAt(
+			camera.transform.position,
+			camera.transform.position + camera.viewDirection,
+			camera.upDirection);
 
 		glm::mat4 projectionMatrix = glm::mat4(1.0f);
 		projectionMatrix = glm::perspective(glm::radians(fov), 800.0f / 600.0f, 0.1f, 100.0f);

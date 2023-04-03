@@ -21,8 +21,18 @@
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/gcc   -g   -o CMakeFiles/cpp_graphics.dir/sources/glad.c.o   -c /home/atifany/Desktop/CppGraphics/sources/glad.c",
-  "file": "/home/atifany/Desktop/CppGraphics/sources/glad.c"
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/transform.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/sources/transform.cpp"
+},
+{
+  "directory": "/home/atifany/Desktop/CppGraphics/build",
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/camera.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/sources/camera.cpp"
+},
+{
+  "directory": "/home/atifany/Desktop/CppGraphics/build",
+  "command": "/usr/bin/gcc   -g   -o CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.o   -c /home/atifany/Desktop/CppGraphics/sources/glad/glad.c",
+  "file": "/home/atifany/Desktop/CppGraphics/sources/glad/glad.c"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",

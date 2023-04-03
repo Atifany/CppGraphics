@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "core_data.h"
+#include "camera.h"
 
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
@@ -11,15 +12,11 @@
 extern CoreData cd;
 
 extern float cameraSpeed;
-extern glm::vec3 cameraPos;
-extern glm::vec3 cameraFront;
-extern glm::vec3 cameraUp;
+extern Camera camera;
 
 extern float deltaTime;
 
 float cameraSensivity = 0.15f;
-float cameraPitch = 0.0f;
-float cameraYaw = 0.0f;
 
 void ESCKeyPressed()
 {
@@ -43,7 +40,7 @@ void WireFrameKeyPressed()
 
 void MoveCamera(glm::vec3 newPos)
 {
-	cameraPos += newPos;
+	camera.transform.position += newPos;
 }
 
 void MouseCallback(GLFWwindow* window, double xpos, double ypos)
@@ -51,6 +48,8 @@ void MouseCallback(GLFWwindow* window, double xpos, double ypos)
 	static bool isFirstTime = true;
 	static float lastX = 400.0f;
 	static float lastY = 300.0f;
+	static float cameraYaw = 0.0f;
+	static float cameraPitch = 0.0f;
 	
 	if (isFirstTime == true)
 	{
@@ -76,7 +75,7 @@ void MouseCallback(GLFWwindow* window, double xpos, double ypos)
 	cameraDirection.x = cos(glm::radians(cameraYaw)) * cos(glm::radians(cameraPitch));
 	cameraDirection.y = sin(glm::radians(cameraPitch));
 	cameraDirection.z = sin(glm::radians(cameraYaw)) * cos(glm::radians(cameraPitch));
-	cameraFront = glm::normalize(cameraDirection);
+	camera.viewDirection = glm::normalize(cameraDirection);
 }
 
 void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
@@ -86,15 +85,15 @@ void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 	if (key == GLFW_KEY_R && action == GLFW_PRESS)
 		WireFrameKeyPressed();
 	if (key == GLFW_KEY_W)
-		MoveCamera(cameraFront * cameraSpeed * deltaTime);
+		MoveCamera(camera.viewDirection * cameraSpeed * deltaTime);
 	if (key == GLFW_KEY_A)
-		MoveCamera(- glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed * deltaTime);
+		MoveCamera(- glm::normalize(glm::cross(camera.viewDirection, camera.upDirection)) * cameraSpeed * deltaTime);
 	if (key == GLFW_KEY_S)
-		MoveCamera(- cameraFront * cameraSpeed * deltaTime);
+		MoveCamera(- camera.viewDirection * cameraSpeed * deltaTime);
 	if (key == GLFW_KEY_D)
-		MoveCamera(glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed * deltaTime);
+		MoveCamera(glm::normalize(glm::cross(camera.viewDirection, camera.upDirection)) * cameraSpeed * deltaTime);
 	if (key == GLFW_KEY_SPACE)
-		MoveCamera(cameraUp * cameraSpeed * deltaTime);
+		MoveCamera(camera.upDirection * cameraSpeed * deltaTime);
 	if (key == GLFW_KEY_LEFT_SHIFT)
-		MoveCamera(- cameraUp * cameraSpeed * deltaTime);
+		MoveCamera(- camera.upDirection * cameraSpeed * deltaTime);
 }

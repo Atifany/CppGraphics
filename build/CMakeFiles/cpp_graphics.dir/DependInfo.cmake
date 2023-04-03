@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/atifany/Desktop/CppGraphics/sources/glad.c" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/glad.c.o"
+  "/home/atifany/Desktop/CppGraphics/sources/glad/glad.c" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -13,11 +13,13 @@ set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_TARGET_INCLUDE_PATH
   )
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/atifany/Desktop/CppGraphics/sources/camera.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/core_data.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/main.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/main.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/process_input.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/shader.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/shader.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/stb_image/stb_image_implementation.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.o"
+  "/home/atifany/Desktop/CppGraphics/sources/transform.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
