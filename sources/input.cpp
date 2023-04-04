@@ -24,7 +24,7 @@ void Input::KeyCallback(int key,int action)
 	if (action == GLFW_RELEASE)
 	{
 		if (this->keysPressed.count(key) != 0)
-			this->keysPressed.erase(key);
+			this->keysPressed[key] = I_KEY_RELEASE;
 	}
 
 
@@ -48,5 +48,14 @@ void Input::KeyCallBackProcess()
 	{
 		if (x.second == I_KEY_SINGLE_PRESS)
 			x.second = I_KEY_CONT_PRESS;
+	}
+
+	std::map<int, int>::iterator it = this->keysPressed.begin();
+	while (it != this->keysPressed.end())
+	{
+		if ((*it).second == I_KEY_RELEASE)
+			it = this->keysPressed.erase(it);
+		else
+			it++;
 	}
 }
