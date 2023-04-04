@@ -172,6 +172,9 @@ CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o: ../sources/transform.h
 CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.o: ../sources/core_data.cpp
 CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.o: ../sources/core_data.h
 
+CMakeFiles/cpp_graphics.dir/sources/input.cpp.o: ../sources/input.cpp
+CMakeFiles/cpp_graphics.dir/sources/input.cpp.o: ../sources/input.h
+
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/camera.h
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/core_data.h
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/glm/common.hpp
@@ -375,6 +378,7 @@ CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/glm/vec2.hpp
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/glm/vec3.hpp
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/glm/vec4.hpp
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/glm/vector_relational.hpp
+CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/input.h
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/main.cpp
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/process_input.h
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../sources/shader.h
@@ -545,6 +549,7 @@ CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o: ../sources/glm/vec2.hpp
 CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o: ../sources/glm/vec3.hpp
 CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o: ../sources/glm/vec4.hpp
 CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o: ../sources/glm/vector_relational.hpp
+CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o: ../sources/input.h
 CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o: ../sources/process_input.cpp
 CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o: ../sources/transform.h
 

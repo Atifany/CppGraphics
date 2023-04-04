@@ -8,6 +8,7 @@ add_executable(cpp_graphics
 	sources/shader.cpp
 	sources/transform.cpp
 	sources/camera.cpp
+	sources/input.cpp
 
 #	GLAD library
 	sources/glad/glad.c

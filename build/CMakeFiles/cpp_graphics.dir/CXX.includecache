@@ -6,15 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/atifany/Desktop/CppGraphics/sources/camera.cpp
-camera.h
-/home/atifany/Desktop/CppGraphics/sources/camera.h
-
 /home/atifany/Desktop/CppGraphics/sources/camera.h
 transform.h
 /home/atifany/Desktop/CppGraphics/sources/transform.h
 glm/glm.hpp
 /home/atifany/Desktop/CppGraphics/sources/glm/glm.hpp
+
+/home/atifany/Desktop/CppGraphics/sources/core_data.h
+glad/glad.h
+-
+GLFW/glfw3.h
+-
 
 /home/atifany/Desktop/CppGraphics/sources/glm/common.hpp
 detail/qualifier.hpp
@@ -1105,6 +1107,34 @@ detail/setup.hpp
 /home/atifany/Desktop/CppGraphics/sources/glm/detail/setup.hpp
 detail/func_vector_relational.inl
 /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_vector_relational.inl
+
+/home/atifany/Desktop/CppGraphics/sources/input.h
+map
+-
+glad/glad.h
+-
+GLFW/glfw3.h
+-
+
+/home/atifany/Desktop/CppGraphics/sources/process_input.cpp
+glad/glad.h
+-
+GLFW/glfw3.h
+-
+time.h
+-
+iostream
+-
+core_data.h
+/home/atifany/Desktop/CppGraphics/sources/core_data.h
+camera.h
+/home/atifany/Desktop/CppGraphics/sources/camera.h
+input.h
+/home/atifany/Desktop/CppGraphics/sources/input.h
+glm/glm.hpp
+/home/atifany/Desktop/CppGraphics/sources/glm/glm.hpp
+glm/gtc/matrix_transform.hpp
+/home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_transform.hpp
 
 /home/atifany/Desktop/CppGraphics/sources/transform.h
 glm/glm.hpp

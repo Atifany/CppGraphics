@@ -204,6 +204,33 @@ sources/glad/glad.c.s:
 	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.s
 .PHONY : sources/glad/glad.c.s
 
+sources/input.o: sources/input.cpp.o
+
+.PHONY : sources/input.o
+
+# target to build an object file
+sources/input.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/input.cpp.o
+.PHONY : sources/input.cpp.o
+
+sources/input.i: sources/input.cpp.i
+
+.PHONY : sources/input.i
+
+# target to preprocess a source file
+sources/input.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/input.cpp.i
+.PHONY : sources/input.cpp.i
+
+sources/input.s: sources/input.cpp.s
+
+.PHONY : sources/input.s
+
+# target to generate assembly for a file
+sources/input.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/input.cpp.s
+.PHONY : sources/input.cpp.s
+
 sources/main.o: sources/main.cpp.o
 
 .PHONY : sources/main.o
@@ -357,6 +384,9 @@ help:
 	@echo "... sources/glad/glad.o"
 	@echo "... sources/glad/glad.i"
 	@echo "... sources/glad/glad.s"
+	@echo "... sources/input.o"
+	@echo "... sources/input.i"
+	@echo "... sources/input.s"
 	@echo "... sources/main.o"
 	@echo "... sources/main.i"
 	@echo "... sources/main.s"

@@ -15,6 +15,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/atifany/Desktop/CppGraphics/sources/camera.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/core_data.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.o"
+  "/home/atifany/Desktop/CppGraphics/sources/input.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/input.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/main.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/main.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/process_input.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/shader.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/cpp_graphics.dir/sources/shader.cpp.o"

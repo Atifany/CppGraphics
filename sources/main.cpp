@@ -13,6 +13,7 @@
 #include "process_input.h"
 #include "shader.h"
 #include "camera.h"
+#include "input.h"
 
 static const float fov = 45.0f;
 
@@ -28,6 +29,7 @@ float cameraSpeed = 4.0f; // player movespeed
 Camera camera = Camera();
 
 CoreData cd = CoreData();
+Input input = Input();
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void CalculateDeltaTime();
@@ -86,7 +88,7 @@ int main()
 	camera.transform.position.z = -1.0f;
 
 	// User input callbacks
-	glfwSetKeyCallback(cd.window, KeyCallback);
+	glfwSetKeyCallback(cd.window, KeyCallbackSet);
 	glfwSetInputMode(cd.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	glfwSetCursorPosCallback(cd.window, MouseCallback);
 
@@ -238,6 +240,10 @@ int main()
 		glfwSwapBuffers(cd.window);
 		// Process callbacks and events.
 		glfwPollEvents();
+		// User input.
+		KeyCallback();
+		// set values to keys.
+		input.KeyCallBackProcess();
 	}
 	
 	glDeleteVertexArrays(1, &VAO);

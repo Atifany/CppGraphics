@@ -5,11 +5,13 @@
 
 #include "core_data.h"
 #include "camera.h"
+#include "input.h"
 
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 
 extern CoreData cd;
+extern Input input;
 
 extern float cameraSpeed;
 extern Camera camera;
@@ -78,22 +80,54 @@ void MouseCallback(GLFWwindow* window, double xpos, double ypos)
 	camera.viewDirection = glm::normalize(cameraDirection);
 }
 
-void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
+void KeyCallbackSet(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
-	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+	input.KeyCallback(key, action);
+}
+
+void KeyCallback()
+{
+	if (input.GetKey(GLFW_KEY_ESCAPE) == I_KEY_SINGLE_PRESS)
 		ESCKeyPressed();
-	if (key == GLFW_KEY_R && action == GLFW_PRESS)
+	if (input.GetKey(GLFW_KEY_R) == I_KEY_SINGLE_PRESS)
 		WireFrameKeyPressed();
-	if (key == GLFW_KEY_W)
+
+	if (input.GetKey(GLFW_KEY_W) == I_KEY_CONT_PRESS ||
+		input.GetKey(GLFW_KEY_W) == I_KEY_SINGLE_PRESS) // not even noticeble
 		MoveCamera(camera.viewDirection * cameraSpeed * deltaTime);
-	if (key == GLFW_KEY_A)
-		MoveCamera(- glm::normalize(glm::cross(camera.viewDirection, camera.upDirection)) * cameraSpeed * deltaTime);
-	if (key == GLFW_KEY_S)
+	if (input.GetKey(GLFW_KEY_S) == I_KEY_CONT_PRESS ||
+		input.GetKey(GLFW_KEY_S) == I_KEY_SINGLE_PRESS)
 		MoveCamera(- camera.viewDirection * cameraSpeed * deltaTime);
-	if (key == GLFW_KEY_D)
+	if (input.GetKey(GLFW_KEY_A) == I_KEY_CONT_PRESS ||
+		input.GetKey(GLFW_KEY_A) == I_KEY_SINGLE_PRESS)
+		MoveCamera(- glm::normalize(glm::cross(camera.viewDirection, camera.upDirection)) * cameraSpeed * deltaTime);
+	if (input.GetKey(GLFW_KEY_D) == I_KEY_CONT_PRESS ||
+		input.GetKey(GLFW_KEY_D) == I_KEY_SINGLE_PRESS)
 		MoveCamera(glm::normalize(glm::cross(camera.viewDirection, camera.upDirection)) * cameraSpeed * deltaTime);
-	if (key == GLFW_KEY_SPACE)
+
+	if (input.GetKey(GLFW_KEY_SPACE) == I_KEY_CONT_PRESS ||
+		input.GetKey(GLFW_KEY_SPACE) == I_KEY_SINGLE_PRESS)
 		MoveCamera(camera.upDirection * cameraSpeed * deltaTime);
-	if (key == GLFW_KEY_LEFT_SHIFT)
+	if (input.GetKey(GLFW_KEY_LEFT_SHIFT) == I_KEY_CONT_PRESS ||
+		input.GetKey(GLFW_KEY_LEFT_SHIFT) == I_KEY_SINGLE_PRESS)
 		MoveCamera(- camera.upDirection * cameraSpeed * deltaTime);
+
+	// if (glfwGetKey(cd.window, GLFW_KEY_W) == GLFW_PRESS)
+	// 	MoveCamera(camera.viewDirection * cameraSpeed * deltaTime);
+	// if (glfwGetKey(cd.window, GLFW_KEY_S) == GLFW_PRESS)
+	// 	MoveCamera(- camera.viewDirection * cameraSpeed * deltaTime);
+	// if (glfwGetKey(cd.window, GLFW_KEY_A) == GLFW_PRESS)
+	// 	MoveCamera(- glm::normalize(glm::cross(camera.viewDirection, camera.upDirection)) * cameraSpeed * deltaTime);
+	// if (glfwGetKey(cd.window, GLFW_KEY_D) == GLFW_PRESS)
+	// 	MoveCamera(glm::normalize(glm::cross(camera.viewDirection, camera.upDirection)) * cameraSpeed * deltaTime);
+
+	// if (glfwGetKey(cd.window, GLFW_KEY_SPACE) == GLFW_PRESS)
+	// 	MoveCamera(camera.upDirection * cameraSpeed * deltaTime);
+	// if (glfwGetKey(cd.window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
+	// 	MoveCamera(- camera.upDirection * cameraSpeed * deltaTime);
+
+	// if (glfwGetKey(cd.window, GLFW_KEY_R) == GLFW_PRESS)
+	// 	WireFrameKeyPressed();
+	// if (glfwGetKey(cd.window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+	// 	ESCKeyPressed();
 }
