@@ -10,6 +10,8 @@
 #define I_KEY_HOLD			3
 #define I_KEY_RELEASE		4
 
+// This class contains a list of all keys currently pressed.
+// To retrieve key's state use function GetKey().
 class Input
 {
 	public:

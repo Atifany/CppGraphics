@@ -5,17 +5,9 @@
 Input::Input() {}
 Input::~Input() {}
 
+// Detects keys being pressed and released and sets an appropriate state to each key.
 void Input::KeyCallback(int key,int action)
 {
-	//std::cout << "Debug: Caution warning START!\n";
-
-
-	//this->ClearSinglePresses();
-
-
-	//std::cout << "Debug: Caution warning MIDDLE!\n";
-
-
 	if (action == GLFW_PRESS)
 	{
 		if (this->keysPressed.count(key) == 0)
@@ -26,12 +18,9 @@ void Input::KeyCallback(int key,int action)
 		if (this->keysPressed.count(key) != 0)
 			this->keysPressed[key] = I_KEY_RELEASE;
 	}
-
-
-
-	//std::cout << "Debug: Caution warning END!\n";
 }
 
+// Return the current state of a given key.
 int Input::GetKey(int key)
 {
 	for (auto& x : this->keysPressed)
@@ -42,14 +31,18 @@ int Input::GetKey(int key)
 	return I_KEY_NOT_PRESSED;
 }
 
+// Automatically decides the state of keys and removes those,
+// which are no longer pressed.
 void Input::KeyCallBackProcess()
 {
+	// Change single_press state to cont_press
 	for (auto& x : this->keysPressed)
 	{
 		if (x.second == I_KEY_SINGLE_PRESS)
 			x.second = I_KEY_CONT_PRESS;
 	}
 
+	// remove all keys marked with release state
 	std::map<int, int>::iterator it = this->keysPressed.begin();
 	while (it != this->keysPressed.end())
 	{

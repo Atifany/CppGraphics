@@ -80,12 +80,22 @@ void MouseCallback(GLFWwindow* window, double xpos, double ypos)
 	camera.viewDirection = glm::normalize(cameraDirection);
 }
 
+// Buffer function wich sends all input data from callBack to Input class.
 void KeyCallbackSet(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
 	input.KeyCallback(key, action);
 }
 
-void KeyCallback()
+/* TODO:
+Think of where to store direction vector: in transform or camera class?
+^^ 
+It would be stored in transform.
+
+After that add .Forward() .Left() .Right() and .Backwards() function to return
+a corresponding vector calculated from direction vector define before.
+*/
+
+void KeyReciever()
 {
 	if (input.GetKey(GLFW_KEY_ESCAPE) == I_KEY_SINGLE_PRESS)
 		ESCKeyPressed();
@@ -111,23 +121,4 @@ void KeyCallback()
 	if (input.GetKey(GLFW_KEY_LEFT_SHIFT) == I_KEY_CONT_PRESS ||
 		input.GetKey(GLFW_KEY_LEFT_SHIFT) == I_KEY_SINGLE_PRESS)
 		MoveCamera(- camera.upDirection * cameraSpeed * deltaTime);
-
-	// if (glfwGetKey(cd.window, GLFW_KEY_W) == GLFW_PRESS)
-	// 	MoveCamera(camera.viewDirection * cameraSpeed * deltaTime);
-	// if (glfwGetKey(cd.window, GLFW_KEY_S) == GLFW_PRESS)
-	// 	MoveCamera(- camera.viewDirection * cameraSpeed * deltaTime);
-	// if (glfwGetKey(cd.window, GLFW_KEY_A) == GLFW_PRESS)
-	// 	MoveCamera(- glm::normalize(glm::cross(camera.viewDirection, camera.upDirection)) * cameraSpeed * deltaTime);
-	// if (glfwGetKey(cd.window, GLFW_KEY_D) == GLFW_PRESS)
-	// 	MoveCamera(glm::normalize(glm::cross(camera.viewDirection, camera.upDirection)) * cameraSpeed * deltaTime);
-
-	// if (glfwGetKey(cd.window, GLFW_KEY_SPACE) == GLFW_PRESS)
-	// 	MoveCamera(camera.upDirection * cameraSpeed * deltaTime);
-	// if (glfwGetKey(cd.window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
-	// 	MoveCamera(- camera.upDirection * cameraSpeed * deltaTime);
-
-	// if (glfwGetKey(cd.window, GLFW_KEY_R) == GLFW_PRESS)
-	// 	WireFrameKeyPressed();
-	// if (glfwGetKey(cd.window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-	// 	ESCKeyPressed();
 }

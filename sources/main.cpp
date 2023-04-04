@@ -240,8 +240,9 @@ int main()
 		glfwSwapBuffers(cd.window);
 		// Process callbacks and events.
 		glfwPollEvents();
+
 		// User input.
-		KeyCallback();
+		KeyReciever();
 		// set values to keys.
 		input.KeyCallBackProcess();
 	}
