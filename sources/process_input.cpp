@@ -50,7 +50,7 @@ void MouseCallback(GLFWwindow* window, double xpos, double ypos)
 	static bool isFirstTime = true;
 	static float lastX = 400.0f;
 	static float lastY = 300.0f;
-	static float cameraYaw = 0.0f;
+	static float cameraYaw = 90.0f;
 	static float cameraPitch = 0.0f;
 	
 	if (isFirstTime == true)

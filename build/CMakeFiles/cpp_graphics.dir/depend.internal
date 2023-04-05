@@ -31,6 +31,7 @@ CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_vector_relational_simd.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/qualifier.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/setup.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_float.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_half.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_half.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat2x2.hpp
@@ -52,6 +53,9 @@ CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_quat.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_quat.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_quat_simd.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec1.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec1.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec2.hpp
@@ -103,6 +107,23 @@ CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_projection.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_projection.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_transform.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_double.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_double_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_exponential.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_exponential.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_float.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_float_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_geometric.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_geometric.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_relational.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_relational.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_transform.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_transform.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_trigonometric.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_trigonometric.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_constants.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_constants.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_int_sized.hpp
@@ -131,6 +152,8 @@ CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int3_sized.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int4.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int4_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_relational.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_relational.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint2.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint2_sized.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint3.hpp
@@ -142,8 +165,18 @@ CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/glm.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/constants.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/constants.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/epsilon.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/epsilon.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_transform.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_transform.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/component_wise.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/component_wise.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/norm.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/norm.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/quaternion.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/integer.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/mat2x2.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/mat2x3.hpp
@@ -176,6 +209,402 @@ CMakeFiles/cpp_graphics.dir/sources/input.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/input.cpp
  /home/atifany/Desktop/CppGraphics/sources/input.h
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o
+ /home/atifany/Desktop/CppGraphics/sources/camera.h
+ /home/atifany/Desktop/CppGraphics/sources/core_data.h
+ /home/atifany/Desktop/CppGraphics/sources/glm/common.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/_fixes.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/_noise.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/_swizzle.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/_swizzle_func.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/_vectorize.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/compute_common.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/compute_vector_relational.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_common.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_common_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_exponential.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_exponential_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_geometric.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_geometric_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_integer.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_integer_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_matrix.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_matrix_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_packing.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_packing_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_trigonometric.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_trigonometric_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_vector_relational.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_vector_relational_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/qualifier.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/setup.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_float.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_half.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_half.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat2x2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat2x2.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat2x3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat2x3.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat2x4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat2x4.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat3x2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat3x2.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat3x3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat3x3.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat3x4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat3x4.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x2.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x3.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_quat.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_quat.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_quat_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec1.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec1.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec2.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec3.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec4.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec4_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/exponential.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/_matrix_vectorize.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_clip_space.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_clip_space.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_common.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_common.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double2x2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double2x2_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double2x3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double2x3_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double2x4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double2x4_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double3x2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double3x2_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double3x3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double3x3_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double3x4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double3x4_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double4x2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double4x2_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double4x3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double4x3_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double4x4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double4x4_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float2x2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float2x2_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float2x3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float2x3_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float2x4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float2x4_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float3x2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float3x2_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float3x3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float3x3_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float3x4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float3x4_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float4x2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float4x2_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float4x3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float4x3_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float4x4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float4x4_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_int2x2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_int2x2_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_int2x3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_int2x3_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_int2x4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_int2x4_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_int3x2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_int3x2_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_int3x3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_int3x3_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_int3x4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_int3x4_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_int4x2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_int4x2_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_int4x3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_int4x3_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_int4x4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_int4x4_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_projection.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_projection.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_relational.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_relational.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_transform.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_uint2x2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_uint2x2_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_uint2x3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_uint2x3_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_uint2x4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_uint2x4_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_uint3x2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_uint3x2_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_uint3x3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_uint3x3_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_uint3x4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_uint3x4_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_uint4x2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_uint4x2_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_uint4x3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_uint4x3_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_uint4x4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_uint4x4_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_double.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_double_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_exponential.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_exponential.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_float.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_float_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_geometric.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_geometric.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_relational.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_relational.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_transform.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_transform.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_trigonometric.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_trigonometric.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_common.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_common.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_constants.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_constants.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_int_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_integer.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_integer.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_packing.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_packing.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_reciprocal.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_reciprocal.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_relational.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_relational.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_uint_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_ulp.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_ulp.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool1.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool1_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool2_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool3_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool4_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_common.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_common.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double1.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double1_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double2_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double3_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double4_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float1.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float1_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float2_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float3_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float4_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int1.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int1_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int2_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int3_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int4_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_integer.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_integer.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_packing.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_packing.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_reciprocal.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_reciprocal.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_relational.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_relational.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint1.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint1_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint2_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint3_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint4_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_ulp.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_ulp.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/fwd.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/geometric.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/glm.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/bitfield.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/bitfield.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/color_space.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/color_space.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/constants.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/constants.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/epsilon.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/epsilon.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/integer.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/integer.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_access.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_access.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_integer.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_inverse.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_inverse.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_transform.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_transform.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/noise.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/noise.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/packing.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/packing.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/random.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/random.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/reciprocal.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/round.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/round.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/type_aligned.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/type_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/type_precision.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/type_ptr.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/type_ptr.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/ulp.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/ulp.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/vec1.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/associated_min_max.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/associated_min_max.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/bit.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/bit.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/closest_point.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/closest_point.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/color_encoding.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/color_encoding.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/color_space.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/color_space_YCoCg.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/color_space_YCoCg.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/compatibility.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/compatibility.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/component_wise.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/component_wise.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/dual_quaternion.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/dual_quaternion.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/euler_angles.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/euler_angles.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/extend.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/extend.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/extended_min_max.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/extended_min_max.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/fast_exponential.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/fast_exponential.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/fast_square_root.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/fast_square_root.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/fast_trigonometry.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/fast_trigonometry.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/functions.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/functions.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/gradient_paint.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/gradient_paint.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/handed_coordinate_space.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/handed_coordinate_space.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/integer.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/intersect.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/intersect.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/log_base.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/log_base.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/matrix_cross_product.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/matrix_cross_product.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/matrix_interpolation.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/matrix_interpolation.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/matrix_major_storage.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/matrix_major_storage.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/matrix_operation.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/matrix_operation.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/matrix_query.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/matrix_query.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/mixed_product.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/mixed_product.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/norm.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/norm.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/normal.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/normal.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/normalize_dot.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/normalize_dot.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/number_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/number_precision.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/optimum_pow.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/optimum_pow.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/orthonormalize.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/orthonormalize.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/perpendicular.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/perpendicular.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/polar_coordinates.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/polar_coordinates.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/projection.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/projection.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/quaternion.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/range.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/raw_data.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/raw_data.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/rotate_vector.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/rotate_vector.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/scalar_multiplication.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/spline.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/spline.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/std_based_type.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/std_based_type.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/string_cast.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/string_cast.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/transform.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/transform.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/transform2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/transform2.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/vec_swizzle.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/vector_angle.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/vector_angle.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/vector_query.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/vector_query.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/wrap.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/wrap.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/integer.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/mat2x2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/mat2x3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/mat2x4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/mat3x2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/mat3x3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/mat3x4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/mat4x2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/mat4x3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/mat4x4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/matrix.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/packing.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/simd/common.h
+ /home/atifany/Desktop/CppGraphics/sources/glm/simd/exponential.h
+ /home/atifany/Desktop/CppGraphics/sources/glm/simd/geometric.h
+ /home/atifany/Desktop/CppGraphics/sources/glm/simd/integer.h
+ /home/atifany/Desktop/CppGraphics/sources/glm/simd/matrix.h
+ /home/atifany/Desktop/CppGraphics/sources/glm/simd/neon.h
+ /home/atifany/Desktop/CppGraphics/sources/glm/simd/platform.h
+ /home/atifany/Desktop/CppGraphics/sources/glm/trigonometric.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/vec2.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/vec3.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/vec4.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/vector_relational.hpp
+ /home/atifany/Desktop/CppGraphics/sources/input.h
+ /home/atifany/Desktop/CppGraphics/sources/main.cpp
+ /home/atifany/Desktop/CppGraphics/sources/process_input.h
+ /home/atifany/Desktop/CppGraphics/sources/shader.h
+ /home/atifany/Desktop/CppGraphics/sources/stb_image/stb_image.h
+ /home/atifany/Desktop/CppGraphics/sources/transform.h
+CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/camera.h
  /home/atifany/Desktop/CppGraphics/sources/core_data.h
  /home/atifany/Desktop/CppGraphics/sources/glm/common.hpp
@@ -284,6 +713,8 @@ CMakeFiles/cpp_graphics.dir/sources/main.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common_simd.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_double.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_double_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_exponential.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_exponential.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_float.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_float_precision.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_geometric.hpp
@@ -298,32 +729,24 @@ CMakeFiles/cpp_graphics.dir/sources/main.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_constants.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_int_sized.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_uint_sized.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool1.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool1_precision.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool2.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool2_precision.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool3.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool3_precision.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool4.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool4_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double1.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double1_precision.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double2.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double2_precision.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double3.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double3_precision.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double4.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double4_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float1.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float1_precision.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float2.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float2_precision.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float3.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float3_precision.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float4.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float4_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int1.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int1_sized.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int2.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int2_sized.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int3.hpp
@@ -332,8 +755,6 @@ CMakeFiles/cpp_graphics.dir/sources/main.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int4_sized.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_relational.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_relational.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint1.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint1_sized.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint2.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint2_sized.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint3.hpp
@@ -352,180 +773,11 @@ CMakeFiles/cpp_graphics.dir/sources/main.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/type_ptr.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/type_ptr.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/vec1.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/integer.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/mat2x2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/mat2x3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/mat2x4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/mat3x2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/mat3x3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/mat3x4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/mat4x2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/mat4x3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/mat4x4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/matrix.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/packing.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/simd/common.h
- /home/atifany/Desktop/CppGraphics/sources/glm/simd/exponential.h
- /home/atifany/Desktop/CppGraphics/sources/glm/simd/geometric.h
- /home/atifany/Desktop/CppGraphics/sources/glm/simd/integer.h
- /home/atifany/Desktop/CppGraphics/sources/glm/simd/matrix.h
- /home/atifany/Desktop/CppGraphics/sources/glm/simd/neon.h
- /home/atifany/Desktop/CppGraphics/sources/glm/simd/platform.h
- /home/atifany/Desktop/CppGraphics/sources/glm/trigonometric.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/vec2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/vec3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/vec4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/vector_relational.hpp
- /home/atifany/Desktop/CppGraphics/sources/input.h
- /home/atifany/Desktop/CppGraphics/sources/main.cpp
- /home/atifany/Desktop/CppGraphics/sources/process_input.h
- /home/atifany/Desktop/CppGraphics/sources/shader.h
- /home/atifany/Desktop/CppGraphics/sources/stb_image/stb_image.h
- /home/atifany/Desktop/CppGraphics/sources/transform.h
-CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o
- /home/atifany/Desktop/CppGraphics/sources/camera.h
- /home/atifany/Desktop/CppGraphics/sources/core_data.h
- /home/atifany/Desktop/CppGraphics/sources/glm/common.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/_fixes.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/_swizzle.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/_swizzle_func.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/_vectorize.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/compute_common.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/compute_vector_relational.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_common.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_common_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_exponential.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_exponential_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_geometric.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_geometric_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_integer.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_integer_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_matrix.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_matrix_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_packing.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_packing_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_trigonometric.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_trigonometric_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_vector_relational.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_vector_relational_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/qualifier.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/setup.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_half.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_half.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat2x2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat2x2.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat2x3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat2x3.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat2x4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat2x4.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat3x2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat3x2.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat3x3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat3x3.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat3x4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat3x4.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x2.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x3.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec1.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec1.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec2.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec3.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec4.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec4_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/exponential.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_clip_space.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_clip_space.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double2x2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double2x2_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double2x3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double2x3_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double2x4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double2x4_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double3x2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double3x2_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double3x3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double3x3_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double3x4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double3x4_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double4x2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double4x2_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double4x3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double4x3_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double4x4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_double4x4_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float2x2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float2x2_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float2x3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float2x3_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float2x4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float2x4_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float3x2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float3x2_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float3x3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float3x3_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float3x4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float3x4_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float4x2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float4x2_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float4x3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float4x3_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float4x4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_float4x4_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_projection.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_projection.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_transform.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_constants.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_constants.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_int_sized.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_uint_sized.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool2_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool3_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_bool4_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double2_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double3_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_double4_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float2_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float3_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_float4_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int2_sized.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int3_sized.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int4_sized.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint2.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint2_sized.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint3.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint3_sized.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint4.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint4_sized.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/fwd.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/geometric.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/glm.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/constants.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/constants.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_transform.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_transform.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/component_wise.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/component_wise.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/norm.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/norm.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/quaternion.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/integer.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/mat2x2.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/mat2x3.hpp
@@ -787,6 +1039,7 @@ CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_vector_relational_simd.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/qualifier.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/setup.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_float.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_half.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_half.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat2x2.hpp
@@ -808,6 +1061,9 @@ CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_quat.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_quat.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_quat_simd.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec1.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec1.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec2.hpp
@@ -859,6 +1115,23 @@ CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_projection.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_projection.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_transform.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_double.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_double_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_exponential.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_exponential.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_float.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_float_precision.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_geometric.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_geometric.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_relational.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_relational.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_transform.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_transform.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_trigonometric.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_trigonometric.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_constants.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_constants.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_int_sized.hpp
@@ -887,6 +1160,8 @@ CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int3_sized.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int4.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int4_sized.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_relational.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_relational.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint2.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint2_sized.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint3.hpp
@@ -898,8 +1173,18 @@ CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/glm.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/constants.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/constants.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/epsilon.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/epsilon.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_transform.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_transform.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion_simd.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/component_wise.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/component_wise.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/norm.hpp
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/norm.inl
+ /home/atifany/Desktop/CppGraphics/sources/glm/gtx/quaternion.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/integer.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/mat2x2.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/mat2x3.hpp

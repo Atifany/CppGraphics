@@ -8,6 +8,7 @@
 #include "stb_image/stb_image.h"
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
+#include "glm/ext.hpp"
 
 #include "core_data.h"
 #include "process_input.h"
@@ -15,7 +16,7 @@
 #include "camera.h"
 #include "input.h"
 
-static const float fov = 45.0f;
+static const float fov = 90.0f;
 
 static const std::string vertexShaderPath = "../sources/shaders/vertex_shader.shader";
 static const std::string fragmentShaderPath = "../sources/shaders/fragment_shader.shader";
@@ -230,7 +231,6 @@ int main()
 
 		glm::mat4 MVPmatrix = projectionMatrix * viewMatrix * modelMatrix;
 		shader.UniformSetMat4("MVPmatrix", MVPmatrix);
-
 
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
