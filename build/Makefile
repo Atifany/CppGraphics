@@ -285,6 +285,33 @@ sources/process_input.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.s
 .PHONY : sources/process_input.cpp.s
 
+sources/quaternion/quaternion.o: sources/quaternion/quaternion.cpp.o
+
+.PHONY : sources/quaternion/quaternion.o
+
+# target to build an object file
+sources/quaternion/quaternion.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/quaternion/quaternion.cpp.o
+.PHONY : sources/quaternion/quaternion.cpp.o
+
+sources/quaternion/quaternion.i: sources/quaternion/quaternion.cpp.i
+
+.PHONY : sources/quaternion/quaternion.i
+
+# target to preprocess a source file
+sources/quaternion/quaternion.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/quaternion/quaternion.cpp.i
+.PHONY : sources/quaternion/quaternion.cpp.i
+
+sources/quaternion/quaternion.s: sources/quaternion/quaternion.cpp.s
+
+.PHONY : sources/quaternion/quaternion.s
+
+# target to generate assembly for a file
+sources/quaternion/quaternion.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/quaternion/quaternion.cpp.s
+.PHONY : sources/quaternion/quaternion.cpp.s
+
 sources/shader.o: sources/shader.cpp.o
 
 .PHONY : sources/shader.o
@@ -393,6 +420,9 @@ help:
 	@echo "... sources/process_input.o"
 	@echo "... sources/process_input.i"
 	@echo "... sources/process_input.s"
+	@echo "... sources/quaternion/quaternion.o"
+	@echo "... sources/quaternion/quaternion.i"
+	@echo "... sources/quaternion/quaternion.s"
 	@echo "... sources/shader.o"
 	@echo "... sources/shader.i"
 	@echo "... sources/shader.s"

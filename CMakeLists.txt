@@ -9,6 +9,7 @@ add_executable(cpp_graphics
 	sources/transform.cpp
 	sources/camera.cpp
 	sources/input.cpp
+	sources/quaternion/quaternion.cpp
 
 #	GLAD library
 	sources/glad/glad.c

@@ -36,6 +36,11 @@
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/quaternion/quaternion.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/quaternion/quaternion.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/sources/quaternion/quaternion.cpp"
+},
+{
+  "directory": "/home/atifany/Desktop/CppGraphics/build",
   "command": "/usr/bin/gcc   -g   -o CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.o   -c /home/atifany/Desktop/CppGraphics/sources/glad/glad.c",
   "file": "/home/atifany/Desktop/CppGraphics/sources/glad/glad.c"
 },

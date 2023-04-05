@@ -8,9 +8,9 @@
 #include "stb_image/stb_image.h"
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
-#include "glm/ext.hpp"
 
 #include "core_data.h"
+#include "quaternion/quaternion.h"
 #include "process_input.h"
 #include "shader.h"
 #include "camera.h"
@@ -72,6 +72,12 @@ static int InitGLAD()
 
 int main()
 {
+	// Quaternion test!
+	Quaternion q1 = Quaternion(2.0f, 2.0f, 2.0f, 0.0f);
+	Quaternion q2 = Quaternion(-2.0f, 2.0f, -2.0f, 0.0f);
+	std::cout << q1+q2 << "\n";
+
+
 	int errorCode = 0;
 
 	errorCode = InitGLFWWindow();
