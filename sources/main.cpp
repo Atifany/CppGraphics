@@ -73,9 +73,14 @@ static int InitGLAD()
 int main()
 {
 	// Quaternion test!
-	Quaternion q1 = Quaternion(2.0f, 2.0f, 2.0f, 0.0f);
-	Quaternion q2 = Quaternion(-2.0f, 2.0f, -2.0f, 0.0f);
-	std::cout << q1+q2 << "\n";
+	Quaternion q1 = Quaternion(glm::vec3(0.0f, 0.0f, 0.0f));
+	std::cout << q1 << "\n";
+	
+	
+	Quaternion q2 = Quaternion(glm::vec3(0.0f, glm::radians(90.0f), 0.0f));
+	std::cout << q2 << "\n";
+	glm::vec3 ea = q2.EulerAngles();
+	std::cout << glm::degrees(ea.x) << " " << glm::degrees(ea.y) << " " << glm::degrees(ea.z) << "\n";
 
 
 	int errorCode = 0;
@@ -229,7 +234,7 @@ int main()
 		// std::cout << cameraPos.x << " " << cameraPos.z << "\n";
 		glm::mat4 viewMatrix = glm::lookAt(
 			camera.transform.position,
-			camera.transform.position + camera.viewDirection,
+			camera.transform.position + camera.quaternion.EulerAngles(),
 			camera.upDirection);
 
 		glm::mat4 projectionMatrix = glm::mat4(1.0f);

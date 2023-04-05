@@ -77,6 +77,8 @@ void MouseCallback(GLFWwindow* window, double xpos, double ypos)
 	cameraDirection.x = cos(glm::radians(cameraYaw)) * cos(glm::radians(cameraPitch));
 	cameraDirection.y = sin(glm::radians(cameraPitch));
 	cameraDirection.z = sin(glm::radians(cameraYaw)) * cos(glm::radians(cameraPitch));
+	camera.quaternion = Quaternion(glm::normalize(cameraDirection));
+	// delete it
 	camera.viewDirection = glm::normalize(cameraDirection);
 }
 

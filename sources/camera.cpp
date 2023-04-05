@@ -3,6 +3,7 @@
 Camera::Camera()
 {
 	this->transform = Transform();
+	this->quaternion = Quaternion(glm::vec3(0.0f, 0.0f, 0.0f));
 	// look forward
 	this->viewDirection = glm::vec3(0.0f, 0.0f, 1.0f);
 	this->upDirection = glm::vec3(0.0f, 1.0f, 0.0f);

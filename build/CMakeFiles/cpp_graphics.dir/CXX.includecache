@@ -9,6 +9,8 @@
 /home/atifany/Desktop/CppGraphics/sources/camera.h
 transform.h
 /home/atifany/Desktop/CppGraphics/sources/transform.h
+quaternion/quaternion.h
+/home/atifany/Desktop/CppGraphics/sources/quaternion/quaternion.h
 glm/glm.hpp
 /home/atifany/Desktop/CppGraphics/sources/glm/glm.hpp
 
@@ -1503,10 +1505,10 @@ glm/glm.hpp
 /home/atifany/Desktop/CppGraphics/sources/glm/glm.hpp
 glm/gtc/matrix_transform.hpp
 /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_transform.hpp
-quaternion/quaternion.h
-/home/atifany/Desktop/CppGraphics/sources/quaternion/quaternion.h
 core_data.h
 /home/atifany/Desktop/CppGraphics/sources/core_data.h
+quaternion/quaternion.h
+/home/atifany/Desktop/CppGraphics/sources/quaternion/quaternion.h
 process_input.h
 /home/atifany/Desktop/CppGraphics/sources/process_input.h
 shader.h
@@ -1516,17 +1518,33 @@ camera.h
 input.h
 /home/atifany/Desktop/CppGraphics/sources/input.h
 
-/home/atifany/Desktop/CppGraphics/sources/process_input.h
+/home/atifany/Desktop/CppGraphics/sources/process_input.cpp
+glad/glad.h
+-
+GLFW/glfw3.h
+-
+time.h
+-
+iostream
+-
+core_data.h
+/home/atifany/Desktop/CppGraphics/sources/core_data.h
+camera.h
+/home/atifany/Desktop/CppGraphics/sources/camera.h
+input.h
+/home/atifany/Desktop/CppGraphics/sources/input.h
+glm/glm.hpp
+/home/atifany/Desktop/CppGraphics/sources/glm/glm.hpp
+glm/gtc/matrix_transform.hpp
+/home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_transform.hpp
 
-/home/atifany/Desktop/CppGraphics/sources/quaternion/quaternion.cpp
-quaternion.h
-/home/atifany/Desktop/CppGraphics/sources/quaternion/quaternion.h
+/home/atifany/Desktop/CppGraphics/sources/process_input.h
 
 /home/atifany/Desktop/CppGraphics/sources/quaternion/quaternion.h
 iostream
 -
-glm/glm.hpp
-/home/atifany/Desktop/CppGraphics/sources/quaternion/glm/glm.hpp
+../glm/glm.hpp
+/home/atifany/Desktop/CppGraphics/sources/glm/glm.hpp
 
 /home/atifany/Desktop/CppGraphics/sources/shader.h
 string
