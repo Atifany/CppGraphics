@@ -44,7 +44,7 @@ static int InitGLFWWindow()
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	// Create window.
-	cd.window = glfwCreateWindow(800, 600, "CppGraphics", NULL, NULL);
+	cd.window = glfwCreateWindow(cd.windowWidth, cd.windowHeight, "ft_minecraft", NULL, NULL);
 	if (cd.window == NULL)
 	{
 		std::cout << "Error: failed to initialize window.\n";
@@ -72,6 +72,8 @@ static int InitGLAD()
 
 int main()
 {
+	cd.windowWidth = 1920;
+	cd.windowHeight = 1080;
 	int errorCode = 0;
 
 	errorCode = InitGLFWWindow();
@@ -226,7 +228,8 @@ int main()
 			camera.upDirection);
 
 		glm::mat4 projectionMatrix = glm::mat4(1.0f);
-		projectionMatrix = glm::perspective(glm::radians(fov), 800.0f / 600.0f, 0.1f, 100.0f);
+		projectionMatrix = glm::perspective(glm::radians(fov),
+			(float)cd.windowWidth / (float)cd.windowHeight, 0.1f, 100.0f);
 
 		glm::mat4 MVPmatrix = projectionMatrix * viewMatrix * modelMatrix;
 		shader.UniformSetMat4("MVPmatrix", MVPmatrix);
