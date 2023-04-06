@@ -2,8 +2,7 @@
 
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
-#include "glm/gtc/quaternion.hpp"
-#include "glm/gtx/quaternion.hpp"
+#include "quaternion/quaternion.h"
 
 class Transform
 {
@@ -13,8 +12,8 @@ class Transform
 		Transform(const Transform& other);
 		Transform& operator=(const Transform& other);
 
-		glm::vec3 position;
-		glm::vec3 rotation;
+		glm::vec3	position;
+		Quaternion	quaternion;
 
 	private:
 

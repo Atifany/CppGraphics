@@ -82,7 +82,7 @@ void MouseCallback(GLFWwindow* window, double xpos, double ypos)
 		glm::radians(cameraYaw),
 		glm::radians(cameraPitch),
 		glm::radians(0.0f));
-	camera.quaternion = Quaternion(viewRad);
+	camera.transform.quaternion = Quaternion(viewRad);
 }
 
 // Buffer function wich sends all input data from callBack to Input class.
@@ -100,16 +100,16 @@ void KeyReciever()
 
 	if (input.GetKey(GLFW_KEY_W) == I_KEY_CONT_PRESS ||
 		input.GetKey(GLFW_KEY_W) == I_KEY_SINGLE_PRESS) // not even noticeble
-		MoveCamera(camera.quaternion.Forward() * cameraSpeed * deltaTime);
+		MoveCamera(camera.transform.quaternion.Forward() * cameraSpeed * deltaTime);
 	if (input.GetKey(GLFW_KEY_S) == I_KEY_CONT_PRESS ||
 		input.GetKey(GLFW_KEY_S) == I_KEY_SINGLE_PRESS)
-		MoveCamera(- camera.quaternion.Forward() * cameraSpeed * deltaTime);
+		MoveCamera(- camera.transform.quaternion.Forward() * cameraSpeed * deltaTime);
 	if (input.GetKey(GLFW_KEY_A) == I_KEY_CONT_PRESS ||
 		input.GetKey(GLFW_KEY_A) == I_KEY_SINGLE_PRESS)
-		MoveCamera(- glm::normalize(glm::cross(camera.quaternion.Forward(), camera.upDirection)) * cameraSpeed * deltaTime);
+		MoveCamera(- glm::normalize(glm::cross(camera.transform.quaternion.Forward(), camera.upDirection)) * cameraSpeed * deltaTime);
 	if (input.GetKey(GLFW_KEY_D) == I_KEY_CONT_PRESS ||
 		input.GetKey(GLFW_KEY_D) == I_KEY_SINGLE_PRESS)
-		MoveCamera(glm::normalize(glm::cross(camera.quaternion.Forward(), camera.upDirection)) * cameraSpeed * deltaTime);
+		MoveCamera(glm::normalize(glm::cross(camera.transform.quaternion.Forward(), camera.upDirection)) * cameraSpeed * deltaTime);
 
 	if (input.GetKey(GLFW_KEY_SPACE) == I_KEY_CONT_PRESS ||
 		input.GetKey(GLFW_KEY_SPACE) == I_KEY_SINGLE_PRESS)

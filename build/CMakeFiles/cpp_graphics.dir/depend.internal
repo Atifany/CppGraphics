@@ -31,7 +31,6 @@ CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_vector_relational_simd.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/qualifier.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/setup.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_float.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_half.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_half.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat2x2.hpp
@@ -53,9 +52,6 @@ CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_quat.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_quat.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_quat_simd.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec1.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec1.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec2.hpp
@@ -107,23 +103,6 @@ CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_projection.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_projection.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_transform.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_double.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_double_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_exponential.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_exponential.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_float.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_float_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_geometric.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_geometric.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_relational.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_relational.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_transform.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_transform.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_trigonometric.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_trigonometric.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_constants.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_constants.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_int_sized.hpp
@@ -152,8 +131,6 @@ CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int3_sized.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int4.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int4_sized.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_relational.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_relational.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint2.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint2_sized.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint3.hpp
@@ -165,18 +142,8 @@ CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/glm.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/constants.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/constants.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/epsilon.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/epsilon.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_transform.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_transform.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/component_wise.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/component_wise.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/norm.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/norm.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/quaternion.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/integer.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/mat2x2.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/mat2x3.hpp
@@ -318,8 +285,6 @@ CMakeFiles/cpp_graphics.dir/sources/main.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common_simd.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_double.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_double_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_exponential.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_exponential.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_float.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_float_precision.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_geometric.hpp
@@ -391,11 +356,6 @@ CMakeFiles/cpp_graphics.dir/sources/main.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/type_ptr.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/type_ptr.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/vec1.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/component_wise.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/component_wise.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/norm.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/norm.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/quaternion.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/integer.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/mat2x2.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/mat2x3.hpp
@@ -455,7 +415,6 @@ CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_vector_relational_simd.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/qualifier.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/setup.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_float.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_half.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_half.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat2x2.hpp
@@ -477,9 +436,6 @@ CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_quat.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_quat.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_quat_simd.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec1.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec1.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec2.hpp
@@ -531,23 +487,6 @@ CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_projection.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_projection.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_transform.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_double.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_double_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_exponential.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_exponential.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_float.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_float_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_geometric.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_geometric.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_relational.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_relational.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_transform.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_transform.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_trigonometric.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_trigonometric.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_constants.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_constants.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_int_sized.hpp
@@ -576,8 +515,6 @@ CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int3_sized.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int4.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int4_sized.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_relational.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_relational.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint2.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint2_sized.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint3.hpp
@@ -589,18 +526,8 @@ CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/glm.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/constants.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/constants.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/epsilon.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/epsilon.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_transform.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_transform.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/component_wise.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/component_wise.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/norm.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/norm.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/quaternion.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/integer.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/mat2x2.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/mat2x3.hpp
@@ -1017,7 +944,6 @@ CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/func_vector_relational_simd.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/qualifier.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/setup.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_float.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_half.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_half.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat2x2.hpp
@@ -1039,9 +965,6 @@ CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_mat4x4_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_quat.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_quat.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_quat_simd.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec1.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec1.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/detail/type_vec2.hpp
@@ -1093,23 +1016,6 @@ CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_projection.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_projection.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/matrix_transform.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_common_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_double.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_double_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_exponential.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_exponential.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_float.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_float_precision.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_geometric.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_geometric.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_relational.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_relational.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_transform.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_transform.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_trigonometric.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/quaternion_trigonometric.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_constants.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_constants.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/scalar_int_sized.hpp
@@ -1138,8 +1044,6 @@ CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int3_sized.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int4.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_int4_sized.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_relational.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_relational.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint2.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint2_sized.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/ext/vector_uint3.hpp
@@ -1151,18 +1055,8 @@ CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/glm.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/constants.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/constants.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/epsilon.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/epsilon.inl
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_transform.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/gtc/matrix_transform.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtc/quaternion_simd.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/component_wise.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/component_wise.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/norm.hpp
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/norm.inl
- /home/atifany/Desktop/CppGraphics/sources/glm/gtx/quaternion.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/integer.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/mat2x2.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/mat2x3.hpp
@@ -1187,5 +1081,6 @@ CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o
  /home/atifany/Desktop/CppGraphics/sources/glm/vec3.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/vec4.hpp
  /home/atifany/Desktop/CppGraphics/sources/glm/vector_relational.hpp
+ /home/atifany/Desktop/CppGraphics/sources/quaternion/quaternion.h
  /home/atifany/Desktop/CppGraphics/sources/transform.cpp
  /home/atifany/Desktop/CppGraphics/sources/transform.h

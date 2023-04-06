@@ -222,7 +222,7 @@ int main()
 
 		glm::mat4 viewMatrix = glm::lookAt(
 			camera.transform.position,
-			camera.transform.position + camera.quaternion.Forward(),
+			camera.transform.position + camera.transform.quaternion.Forward(),
 			camera.upDirection);
 
 		glm::mat4 projectionMatrix = glm::mat4(1.0f);
