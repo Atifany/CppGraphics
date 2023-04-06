@@ -3,8 +3,9 @@
 Quaternion::Quaternion()
 {
 	this->x = 0.0f;
-	this->y = 1.0f;
+	this->y = 0.0f;
 	this->z = 0.0f;
+	this->w = 1.0f;
 }
 
 Quaternion::~Quaternion() {}
@@ -19,17 +20,14 @@ Quaternion::Quaternion(float r_x, float r_y, float r_z, float r_w)
 
 Quaternion::Quaternion(glm::vec3 eulerAngles)
 {
-	double cr = cos(eulerAngles.x * 0.5);
-	double sr = sin(eulerAngles.x * 0.5);
-	double cp = cos(eulerAngles.y * 0.5);
-	double sp = sin(eulerAngles.y * 0.5);
-	double cy = cos(eulerAngles.z * 0.5);
-	double sy = sin(eulerAngles.z * 0.5);
-
-	this->w = cr * cp * cy + sr * sp * sy;
-	this->x = sr * cp * cy - cr * sp * sy;
-	this->y = cr * sp * cy + sr * cp * sy;
-	this->z = cr * cp * sy - sr * sp * cy;
+	float yaw = eulerAngles.x;
+	float pitch = eulerAngles.y;
+	float roll = eulerAngles.z;
+	this->x = sin(roll/2) * cos(pitch/2) * cos(yaw/2) - cos(roll/2) * sin(pitch/2) * sin(yaw/2);
+	this->y = cos(roll/2) * sin(pitch/2) * cos(yaw/2) + sin(roll/2) * cos(pitch/2) * sin(yaw/2);
+	this->z = cos(roll/2) * cos(pitch/2) * sin(yaw/2) - sin(roll/2) * sin(pitch/2) * cos(yaw/2);
+	this->w = cos(roll/2) * cos(pitch/2) * cos(yaw/2) + sin(roll/2) * sin(pitch/2) * sin(yaw/2);
+	this->normalize();
 }
 
 Quaternion::Quaternion(const Quaternion& other)
@@ -37,6 +35,7 @@ Quaternion::Quaternion(const Quaternion& other)
 	this->x = other.x;
 	this->y = other.y;
 	this->z = other.z;
+	this->w = other.w;
 }
 
 Quaternion& Quaternion::operator=(const Quaternion& other)
@@ -44,22 +43,35 @@ Quaternion& Quaternion::operator=(const Quaternion& other)
 	this->x = other.x;
 	this->y = other.y;
 	this->z = other.z;
+	this->w = other.w;
 	return *this;
 }
 
 glm::vec3 Quaternion::Forward()
 {
-	return glm::vec3(0.0f, 0.0f, 0.0f);
+	glm::vec3 ae = this->EulerAngles();
+	glm::vec3 dirVector;
+
+	dirVector.x = cos(ae.x) * cos(ae.y);
+	dirVector.y = sin(ae.y);
+	dirVector.z = sin(ae.x) * cos(ae.y);
+	return glm::normalize(dirVector);
 }
 
 glm::vec3 Quaternion::Upward()
 {
-	return glm::vec3(0.0f, 0.0f, 0.0f);
+	glm::vec3 ae = this->EulerAngles();
+	glm::vec3 dirVector;
+
+	dirVector.x = cos(M_PI/2 - ae.x) * cos(M_PI/2 - ae.y);
+	dirVector.y = sin(M_PI/2 - ae.y);
+	dirVector.z = sin(M_PI/2 - ae.x) * cos(M_PI/2 - ae.y);
+	return glm::normalize(dirVector);
 }
 
 glm::vec3 Quaternion::Leftward()
 {
-	return glm::vec3(0.0f, 0.0f, 0.0f);
+	return glm::normalize(glm::cross(this->Upward(), this->Forward()));
 }
 
 void Quaternion::operator+=(const Quaternion& other)
@@ -189,26 +201,23 @@ Quaternion Quaternion::inverse()
 
 glm::vec3 Quaternion::EulerAngles()
 {
-	this->normalize();
 	glm::vec3 ret;
 
-	// roll (z-axis rotation)
-	double sinr_cosp = 2 * (this->w * this->x + this->y * this->z);
-	double cosr_cosp = 1 - 2 * (this->x * this->x + this->y * this->y);
-	ret.x = std::atan2(sinr_cosp, cosr_cosp);
+	float t0 = 2.0f * (w * x + y * z);
+	float t1 = 1.0f - 2.0f * (x * x + y * y);
+	ret.z = atan2(t0, t1);
 
-	// pitch (x-axis rotation)
-	double _y = 2 * (this->w * this->y - this->z * this->x);
-	if (_y > 1.0)
-		_y -= 1.0;
-	if (_y < -1.0)
-		_y += 1.0;
-	ret.y = asin(_y);
+	float t2 = 2.0f * (w * y - z * x);
+	if (t2 > 1.0f)
+		t2 = 1.0f;
+	if (t2 < -1.0f)
+		t2 = -1.0f;
+	ret.y = asin(t2);
 
-	// yaw (y-axis rotation)
-	double siny_cosp = 2 * (this->w * this->z + this->x * this->y);
-	double cosy_cosp = 1 - 2 * (this->y * this->y + this->z * this->z);
-	ret.z = std::atan2(siny_cosp, cosy_cosp);
+	float t3 = 2.0f * (w * z + x * y);
+	float t4 = 1.0f - 2.0f * (y * y + z * z);
+	ret.x = atan2(t3, t4);
 
 	return ret;
 }
+

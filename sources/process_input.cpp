@@ -6,9 +6,10 @@
 #include "core_data.h"
 #include "camera.h"
 #include "input.h"
+#include "quaternion/quaternion.h"
 
 #include "glm/glm.hpp"
-#include "glm/gtc/matrix_transform.hpp"
+//#include "glm/gtc/matrix_transform.hpp"
 
 extern CoreData cd;
 extern Input input;
@@ -68,18 +69,20 @@ void MouseCallback(GLFWwindow* window, double xpos, double ypos)
 	cameraYaw += xoffset;
 	cameraPitch += yoffset;
 
+	if (cameraYaw > 360.0f)
+		cameraYaw -= 360.0f;
+	if (cameraYaw < -360.0f)
+		cameraYaw += 360.0f;
 	if (cameraPitch > 89.0f)
 		cameraPitch = 89.0f;
 	if (cameraPitch < -89.0f)
 		cameraPitch = -89.0f;
 
-	glm::vec3 cameraDirection;
-	cameraDirection.x = cos(glm::radians(cameraYaw)) * cos(glm::radians(cameraPitch));
-	cameraDirection.y = sin(glm::radians(cameraPitch));
-	cameraDirection.z = sin(glm::radians(cameraYaw)) * cos(glm::radians(cameraPitch));
-	camera.quaternion = Quaternion(glm::normalize(cameraDirection));
-	// delete it
-	camera.viewDirection = glm::normalize(cameraDirection);
+	glm::vec3 viewRad = glm::vec3(
+		glm::radians(cameraYaw),
+		glm::radians(cameraPitch),
+		glm::radians(0.0f));
+	camera.quaternion = Quaternion(viewRad);
 }
 
 // Buffer function wich sends all input data from callBack to Input class.
@@ -87,15 +90,6 @@ void KeyCallbackSet(GLFWwindow* window, int key, int scancode, int action, int m
 {
 	input.KeyCallback(key, action);
 }
-
-/* TODO:
-Think of where to store direction vector: in transform or camera class?
-^^ 
-It would be stored in transform.
-
-After that add .Forward() .Left() .Right() and .Backwards() function to return
-a corresponding vector calculated from direction vector define before.
-*/
 
 void KeyReciever()
 {
@@ -106,16 +100,16 @@ void KeyReciever()
 
 	if (input.GetKey(GLFW_KEY_W) == I_KEY_CONT_PRESS ||
 		input.GetKey(GLFW_KEY_W) == I_KEY_SINGLE_PRESS) // not even noticeble
-		MoveCamera(camera.viewDirection * cameraSpeed * deltaTime);
+		MoveCamera(camera.quaternion.Forward() * cameraSpeed * deltaTime);
 	if (input.GetKey(GLFW_KEY_S) == I_KEY_CONT_PRESS ||
 		input.GetKey(GLFW_KEY_S) == I_KEY_SINGLE_PRESS)
-		MoveCamera(- camera.viewDirection * cameraSpeed * deltaTime);
+		MoveCamera(- camera.quaternion.Forward() * cameraSpeed * deltaTime);
 	if (input.GetKey(GLFW_KEY_A) == I_KEY_CONT_PRESS ||
 		input.GetKey(GLFW_KEY_A) == I_KEY_SINGLE_PRESS)
-		MoveCamera(- glm::normalize(glm::cross(camera.viewDirection, camera.upDirection)) * cameraSpeed * deltaTime);
+		MoveCamera(- glm::normalize(glm::cross(camera.quaternion.Forward(), camera.upDirection)) * cameraSpeed * deltaTime);
 	if (input.GetKey(GLFW_KEY_D) == I_KEY_CONT_PRESS ||
 		input.GetKey(GLFW_KEY_D) == I_KEY_SINGLE_PRESS)
-		MoveCamera(glm::normalize(glm::cross(camera.viewDirection, camera.upDirection)) * cameraSpeed * deltaTime);
+		MoveCamera(glm::normalize(glm::cross(camera.quaternion.Forward(), camera.upDirection)) * cameraSpeed * deltaTime);
 
 	if (input.GetKey(GLFW_KEY_SPACE) == I_KEY_CONT_PRESS ||
 		input.GetKey(GLFW_KEY_SPACE) == I_KEY_SINGLE_PRESS)
