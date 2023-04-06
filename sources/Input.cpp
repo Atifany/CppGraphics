@@ -1,6 +1,7 @@
-#include "input.h"
-
 #include <iostream>
+
+#include "../inc/Input.h"
+
 
 Input::Input() {}
 Input::~Input() {}

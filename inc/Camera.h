@@ -1,8 +1,7 @@
 #pragma once
 
-#include "transform.h"
-#include "quaternion/quaternion.h"
 #include "glm/glm.hpp"
+#include "Transform.h"
 
 class Camera
 {

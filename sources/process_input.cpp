@@ -3,15 +3,11 @@
 #include <time.h>
 #include <iostream>
 
-#include "core_data.h"
-#include "camera.h"
-#include "input.h"
-#include "quaternion/quaternion.h"
+#include "../inc/CoreData.h"
+#include "../inc/Camera.h"
+#include "../inc/Input.h"
 
-#include "glm/glm.hpp"
-//#include "glm/gtc/matrix_transform.hpp"
-
-extern CoreData cd;
+extern CoreData c_d;
 extern Input input;
 
 extern float cameraSpeed;
@@ -27,15 +23,15 @@ void ESCKeyPressed()
 	static bool isCursorFree = false;
 	isCursorFree = !isCursorFree;
 	if (isCursorFree == true)
-		glfwSetInputMode(cd.window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+		glfwSetInputMode(c_d.window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 	else
-		glfwSetInputMode(cd.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+		glfwSetInputMode(c_d.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 }
 
 void WireFrameKeyPressed()
 {
-	cd.isWireFrameModeOn = !cd.isWireFrameModeOn;
-	if (cd.isWireFrameModeOn == true)
+	c_d.isWireFrameModeOn = !c_d.isWireFrameModeOn;
+	if (c_d.isWireFrameModeOn == true)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	else
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);

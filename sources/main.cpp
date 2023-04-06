@@ -1,25 +1,20 @@
 #include <iostream>
-
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <cmath>
 #include <vector>
 
-#include "stb_image/stb_image.h"
-#include "glm/glm.hpp"
-#include "glm/gtc/matrix_transform.hpp"
-
-#include "core_data.h"
-#include "quaternion/quaternion.h"
-#include "process_input.h"
-#include "shader.h"
-#include "camera.h"
-#include "input.h"
+#include "../inc/stb_image/stb_image.h"
+#include "../inc/Shader.h"
+#include "../inc/Camera.h"
+#include "../inc/CoreData.h"
+#include "../inc/Input.h"
+#include "../inc/process_input.h"
 
 static const float fov = 90.0f;
 
-static const std::string vertexShaderPath = "../sources/shaders/vertex_shader.shader";
-static const std::string fragmentShaderPath = "../sources/shaders/fragment_shader.shader";
+static const std::string vertexShaderPath = "../shaders/vertex_shader.shader";
+static const std::string fragmentShaderPath = "../shaders/fragment_shader.shader";
 static const std::string texturePath = "../textures/GrassSide.png";
 
 float deltaTime = 0.0f;
@@ -29,7 +24,7 @@ static float lastFrame = 0.0f;
 float cameraSpeed = 4.0f; // player movespeed
 Camera camera = Camera();
 
-CoreData cd = CoreData();
+CoreData c_d = CoreData();
 Input input = Input();
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -44,16 +39,16 @@ static int InitGLFWWindow()
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	// Create window.
-	cd.window = glfwCreateWindow(cd.windowWidth, cd.windowHeight, "ft_minecraft", NULL, NULL);
-	if (cd.window == NULL)
+	c_d.window = glfwCreateWindow(c_d.windowWidth, c_d.windowHeight, "ft_minecraft", NULL, NULL);
+	if (c_d.window == NULL)
 	{
 		std::cout << "Error: failed to initialize window.\n";
 		glfwTerminate();
 		return -1;
 	}
-	glfwMakeContextCurrent(cd.window);
+	glfwMakeContextCurrent(c_d.window);
 	// Set Viewport and adjust it with window resize.
-	glfwSetFramebufferSizeCallback(cd.window, framebuffer_size_callback);
+	glfwSetFramebufferSizeCallback(c_d.window, framebuffer_size_callback);
 	std::cout << "Debug: window object created.\n";
 	return 0;
 }
@@ -72,8 +67,8 @@ static int InitGLAD()
 
 int main()
 {
-	cd.windowWidth = 1920;
-	cd.windowHeight = 1080;
+	c_d.windowWidth = 1920;
+	c_d.windowHeight = 1080;
 	int errorCode = 0;
 
 	errorCode = InitGLFWWindow();
@@ -91,9 +86,9 @@ int main()
 	camera.transform.position.z = -1.0f;
 
 	// User input callbacks
-	glfwSetKeyCallback(cd.window, KeyCallbackSet);
-	glfwSetInputMode(cd.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-	glfwSetCursorPosCallback(cd.window, MouseCallback);
+	glfwSetKeyCallback(c_d.window, KeyCallbackSet);
+	glfwSetInputMode(c_d.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	glfwSetCursorPosCallback(c_d.window, MouseCallback);
 
 	// Enable transparency component
 	glEnable(GL_BLEND);
@@ -205,7 +200,7 @@ int main()
 
 	std::cout << "Debug: starting main loop.\n";
 	// run the app
-	while (!glfwWindowShouldClose(cd.window))
+	while (!glfwWindowShouldClose(c_d.window))
 	{
 		CalculateDeltaTime();
 
@@ -229,7 +224,7 @@ int main()
 
 		glm::mat4 projectionMatrix = glm::mat4(1.0f);
 		projectionMatrix = glm::perspective(glm::radians(fov),
-			(float)cd.windowWidth / (float)cd.windowHeight, 0.1f, 100.0f);
+			(float)c_d.windowWidth / (float)c_d.windowHeight, 0.1f, 100.0f);
 
 		glm::mat4 MVPmatrix = projectionMatrix * viewMatrix * modelMatrix;
 		shader.UniformSetMat4("MVPmatrix", MVPmatrix);
@@ -239,7 +234,7 @@ int main()
 		//glDrawElements(GL_TRIANGLES, sizeof(vertices)/sizeof(*vertices), GL_UNSIGNED_INT, 0);
 		
 		// Swaps front and back screen buffers.
-		glfwSwapBuffers(cd.window);
+		glfwSwapBuffers(c_d.window);
 		// Process callbacks and events.
 		glfwPollEvents();
 

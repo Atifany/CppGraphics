@@ -1,4 +1,4 @@
-#include "quaternion.h"
+#include "../inc/Quaternion.h"
 
 Quaternion::Quaternion()
 {

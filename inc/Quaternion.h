@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "../glm/glm.hpp"
+#include "glm/glm.hpp"
 
 class Quaternion
 {

@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "core_data.h"
+#include "../inc/CoreData.h"
 
 CoreData::CoreData()
 {

@@ -1,4 +1,4 @@
-#include "camera.h"
+#include "../inc/Camera.h"
 
 Camera::Camera()
 {

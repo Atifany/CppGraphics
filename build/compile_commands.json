@@ -1,6 +1,16 @@
 [
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/Quaternion.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Quaternion.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/sources/Quaternion.cpp"
+},
+{
+  "directory": "/home/atifany/Desktop/CppGraphics/build",
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/Transform.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Transform.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/sources/Transform.cpp"
+},
+{
+  "directory": "/home/atifany/Desktop/CppGraphics/build",
   "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/main.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/main.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/sources/main.cpp"
 },
@@ -11,42 +21,32 @@
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/core_data.cpp",
-  "file": "/home/atifany/Desktop/CppGraphics/sources/core_data.cpp"
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/CoreData.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/CoreData.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/sources/CoreData.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/shader.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/shader.cpp",
-  "file": "/home/atifany/Desktop/CppGraphics/sources/shader.cpp"
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/Shader.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Shader.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/sources/Shader.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/transform.cpp",
-  "file": "/home/atifany/Desktop/CppGraphics/sources/transform.cpp"
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/Camera.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Camera.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/sources/Camera.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/camera.cpp",
-  "file": "/home/atifany/Desktop/CppGraphics/sources/camera.cpp"
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/Input.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Input.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/sources/Input.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/input.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/input.cpp",
-  "file": "/home/atifany/Desktop/CppGraphics/sources/input.cpp"
+  "command": "/usr/bin/gcc   -g   -o CMakeFiles/cpp_graphics.dir/inc/glad/glad.c.o   -c /home/atifany/Desktop/CppGraphics/inc/glad/glad.c",
+  "file": "/home/atifany/Desktop/CppGraphics/inc/glad/glad.c"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/quaternion/quaternion.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/quaternion/quaternion.cpp",
-  "file": "/home/atifany/Desktop/CppGraphics/sources/quaternion/quaternion.cpp"
-},
-{
-  "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/gcc   -g   -o CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.o   -c /home/atifany/Desktop/CppGraphics/sources/glad/glad.c",
-  "file": "/home/atifany/Desktop/CppGraphics/sources/glad/glad.c"
-},
-{
-  "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/stb_image/stb_image_implementation.cpp",
-  "file": "/home/atifany/Desktop/CppGraphics/sources/stb_image/stb_image_implementation.cpp"
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/inc/stb_image/stb_image_implementation.cpp.o -c /home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image_implementation.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image_implementation.cpp"
 }
 ]

@@ -123,113 +123,221 @@ cpp_graphics/fast:
 	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/build
 .PHONY : cpp_graphics/fast
 
-sources/camera.o: sources/camera.cpp.o
+inc/glad/glad.o: inc/glad/glad.c.o
 
-.PHONY : sources/camera.o
-
-# target to build an object file
-sources/camera.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/camera.cpp.o
-.PHONY : sources/camera.cpp.o
-
-sources/camera.i: sources/camera.cpp.i
-
-.PHONY : sources/camera.i
-
-# target to preprocess a source file
-sources/camera.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/camera.cpp.i
-.PHONY : sources/camera.cpp.i
-
-sources/camera.s: sources/camera.cpp.s
-
-.PHONY : sources/camera.s
-
-# target to generate assembly for a file
-sources/camera.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/camera.cpp.s
-.PHONY : sources/camera.cpp.s
-
-sources/core_data.o: sources/core_data.cpp.o
-
-.PHONY : sources/core_data.o
+.PHONY : inc/glad/glad.o
 
 # target to build an object file
-sources/core_data.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.o
-.PHONY : sources/core_data.cpp.o
+inc/glad/glad.c.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/inc/glad/glad.c.o
+.PHONY : inc/glad/glad.c.o
 
-sources/core_data.i: sources/core_data.cpp.i
+inc/glad/glad.i: inc/glad/glad.c.i
 
-.PHONY : sources/core_data.i
+.PHONY : inc/glad/glad.i
 
 # target to preprocess a source file
-sources/core_data.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.i
-.PHONY : sources/core_data.cpp.i
+inc/glad/glad.c.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/inc/glad/glad.c.i
+.PHONY : inc/glad/glad.c.i
 
-sources/core_data.s: sources/core_data.cpp.s
+inc/glad/glad.s: inc/glad/glad.c.s
 
-.PHONY : sources/core_data.s
+.PHONY : inc/glad/glad.s
 
 # target to generate assembly for a file
-sources/core_data.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/core_data.cpp.s
-.PHONY : sources/core_data.cpp.s
+inc/glad/glad.c.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/inc/glad/glad.c.s
+.PHONY : inc/glad/glad.c.s
 
-sources/glad/glad.o: sources/glad/glad.c.o
+inc/stb_image/stb_image_implementation.o: inc/stb_image/stb_image_implementation.cpp.o
 
-.PHONY : sources/glad/glad.o
+.PHONY : inc/stb_image/stb_image_implementation.o
 
 # target to build an object file
-sources/glad/glad.c.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.o
-.PHONY : sources/glad/glad.c.o
+inc/stb_image/stb_image_implementation.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/inc/stb_image/stb_image_implementation.cpp.o
+.PHONY : inc/stb_image/stb_image_implementation.cpp.o
 
-sources/glad/glad.i: sources/glad/glad.c.i
+inc/stb_image/stb_image_implementation.i: inc/stb_image/stb_image_implementation.cpp.i
 
-.PHONY : sources/glad/glad.i
+.PHONY : inc/stb_image/stb_image_implementation.i
 
 # target to preprocess a source file
-sources/glad/glad.c.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.i
-.PHONY : sources/glad/glad.c.i
+inc/stb_image/stb_image_implementation.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/inc/stb_image/stb_image_implementation.cpp.i
+.PHONY : inc/stb_image/stb_image_implementation.cpp.i
 
-sources/glad/glad.s: sources/glad/glad.c.s
+inc/stb_image/stb_image_implementation.s: inc/stb_image/stb_image_implementation.cpp.s
 
-.PHONY : sources/glad/glad.s
+.PHONY : inc/stb_image/stb_image_implementation.s
 
 # target to generate assembly for a file
-sources/glad/glad.c.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/glad/glad.c.s
-.PHONY : sources/glad/glad.c.s
+inc/stb_image/stb_image_implementation.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/inc/stb_image/stb_image_implementation.cpp.s
+.PHONY : inc/stb_image/stb_image_implementation.cpp.s
 
-sources/input.o: sources/input.cpp.o
+sources/Camera.o: sources/Camera.cpp.o
 
-.PHONY : sources/input.o
+.PHONY : sources/Camera.o
 
 # target to build an object file
-sources/input.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/input.cpp.o
-.PHONY : sources/input.cpp.o
+sources/Camera.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Camera.cpp.o
+.PHONY : sources/Camera.cpp.o
 
-sources/input.i: sources/input.cpp.i
+sources/Camera.i: sources/Camera.cpp.i
 
-.PHONY : sources/input.i
+.PHONY : sources/Camera.i
 
 # target to preprocess a source file
-sources/input.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/input.cpp.i
-.PHONY : sources/input.cpp.i
+sources/Camera.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Camera.cpp.i
+.PHONY : sources/Camera.cpp.i
 
-sources/input.s: sources/input.cpp.s
+sources/Camera.s: sources/Camera.cpp.s
 
-.PHONY : sources/input.s
+.PHONY : sources/Camera.s
 
 # target to generate assembly for a file
-sources/input.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/input.cpp.s
-.PHONY : sources/input.cpp.s
+sources/Camera.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Camera.cpp.s
+.PHONY : sources/Camera.cpp.s
+
+sources/CoreData.o: sources/CoreData.cpp.o
+
+.PHONY : sources/CoreData.o
+
+# target to build an object file
+sources/CoreData.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/CoreData.cpp.o
+.PHONY : sources/CoreData.cpp.o
+
+sources/CoreData.i: sources/CoreData.cpp.i
+
+.PHONY : sources/CoreData.i
+
+# target to preprocess a source file
+sources/CoreData.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/CoreData.cpp.i
+.PHONY : sources/CoreData.cpp.i
+
+sources/CoreData.s: sources/CoreData.cpp.s
+
+.PHONY : sources/CoreData.s
+
+# target to generate assembly for a file
+sources/CoreData.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/CoreData.cpp.s
+.PHONY : sources/CoreData.cpp.s
+
+sources/Input.o: sources/Input.cpp.o
+
+.PHONY : sources/Input.o
+
+# target to build an object file
+sources/Input.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Input.cpp.o
+.PHONY : sources/Input.cpp.o
+
+sources/Input.i: sources/Input.cpp.i
+
+.PHONY : sources/Input.i
+
+# target to preprocess a source file
+sources/Input.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Input.cpp.i
+.PHONY : sources/Input.cpp.i
+
+sources/Input.s: sources/Input.cpp.s
+
+.PHONY : sources/Input.s
+
+# target to generate assembly for a file
+sources/Input.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Input.cpp.s
+.PHONY : sources/Input.cpp.s
+
+sources/Quaternion.o: sources/Quaternion.cpp.o
+
+.PHONY : sources/Quaternion.o
+
+# target to build an object file
+sources/Quaternion.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Quaternion.cpp.o
+.PHONY : sources/Quaternion.cpp.o
+
+sources/Quaternion.i: sources/Quaternion.cpp.i
+
+.PHONY : sources/Quaternion.i
+
+# target to preprocess a source file
+sources/Quaternion.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Quaternion.cpp.i
+.PHONY : sources/Quaternion.cpp.i
+
+sources/Quaternion.s: sources/Quaternion.cpp.s
+
+.PHONY : sources/Quaternion.s
+
+# target to generate assembly for a file
+sources/Quaternion.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Quaternion.cpp.s
+.PHONY : sources/Quaternion.cpp.s
+
+sources/Shader.o: sources/Shader.cpp.o
+
+.PHONY : sources/Shader.o
+
+# target to build an object file
+sources/Shader.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Shader.cpp.o
+.PHONY : sources/Shader.cpp.o
+
+sources/Shader.i: sources/Shader.cpp.i
+
+.PHONY : sources/Shader.i
+
+# target to preprocess a source file
+sources/Shader.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Shader.cpp.i
+.PHONY : sources/Shader.cpp.i
+
+sources/Shader.s: sources/Shader.cpp.s
+
+.PHONY : sources/Shader.s
+
+# target to generate assembly for a file
+sources/Shader.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Shader.cpp.s
+.PHONY : sources/Shader.cpp.s
+
+sources/Transform.o: sources/Transform.cpp.o
+
+.PHONY : sources/Transform.o
+
+# target to build an object file
+sources/Transform.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Transform.cpp.o
+.PHONY : sources/Transform.cpp.o
+
+sources/Transform.i: sources/Transform.cpp.i
+
+.PHONY : sources/Transform.i
+
+# target to preprocess a source file
+sources/Transform.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Transform.cpp.i
+.PHONY : sources/Transform.cpp.i
+
+sources/Transform.s: sources/Transform.cpp.s
+
+.PHONY : sources/Transform.s
+
+# target to generate assembly for a file
+sources/Transform.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Transform.cpp.s
+.PHONY : sources/Transform.cpp.s
 
 sources/main.o: sources/main.cpp.o
 
@@ -285,114 +393,6 @@ sources/process_input.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.s
 .PHONY : sources/process_input.cpp.s
 
-sources/quaternion/quaternion.o: sources/quaternion/quaternion.cpp.o
-
-.PHONY : sources/quaternion/quaternion.o
-
-# target to build an object file
-sources/quaternion/quaternion.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/quaternion/quaternion.cpp.o
-.PHONY : sources/quaternion/quaternion.cpp.o
-
-sources/quaternion/quaternion.i: sources/quaternion/quaternion.cpp.i
-
-.PHONY : sources/quaternion/quaternion.i
-
-# target to preprocess a source file
-sources/quaternion/quaternion.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/quaternion/quaternion.cpp.i
-.PHONY : sources/quaternion/quaternion.cpp.i
-
-sources/quaternion/quaternion.s: sources/quaternion/quaternion.cpp.s
-
-.PHONY : sources/quaternion/quaternion.s
-
-# target to generate assembly for a file
-sources/quaternion/quaternion.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/quaternion/quaternion.cpp.s
-.PHONY : sources/quaternion/quaternion.cpp.s
-
-sources/shader.o: sources/shader.cpp.o
-
-.PHONY : sources/shader.o
-
-# target to build an object file
-sources/shader.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/shader.cpp.o
-.PHONY : sources/shader.cpp.o
-
-sources/shader.i: sources/shader.cpp.i
-
-.PHONY : sources/shader.i
-
-# target to preprocess a source file
-sources/shader.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/shader.cpp.i
-.PHONY : sources/shader.cpp.i
-
-sources/shader.s: sources/shader.cpp.s
-
-.PHONY : sources/shader.s
-
-# target to generate assembly for a file
-sources/shader.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/shader.cpp.s
-.PHONY : sources/shader.cpp.s
-
-sources/stb_image/stb_image_implementation.o: sources/stb_image/stb_image_implementation.cpp.o
-
-.PHONY : sources/stb_image/stb_image_implementation.o
-
-# target to build an object file
-sources/stb_image/stb_image_implementation.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.o
-.PHONY : sources/stb_image/stb_image_implementation.cpp.o
-
-sources/stb_image/stb_image_implementation.i: sources/stb_image/stb_image_implementation.cpp.i
-
-.PHONY : sources/stb_image/stb_image_implementation.i
-
-# target to preprocess a source file
-sources/stb_image/stb_image_implementation.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.i
-.PHONY : sources/stb_image/stb_image_implementation.cpp.i
-
-sources/stb_image/stb_image_implementation.s: sources/stb_image/stb_image_implementation.cpp.s
-
-.PHONY : sources/stb_image/stb_image_implementation.s
-
-# target to generate assembly for a file
-sources/stb_image/stb_image_implementation.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/stb_image/stb_image_implementation.cpp.s
-.PHONY : sources/stb_image/stb_image_implementation.cpp.s
-
-sources/transform.o: sources/transform.cpp.o
-
-.PHONY : sources/transform.o
-
-# target to build an object file
-sources/transform.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/transform.cpp.o
-.PHONY : sources/transform.cpp.o
-
-sources/transform.i: sources/transform.cpp.i
-
-.PHONY : sources/transform.i
-
-# target to preprocess a source file
-sources/transform.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/transform.cpp.i
-.PHONY : sources/transform.cpp.i
-
-sources/transform.s: sources/transform.cpp.s
-
-.PHONY : sources/transform.s
-
-# target to generate assembly for a file
-sources/transform.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/transform.cpp.s
-.PHONY : sources/transform.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -402,36 +402,36 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... cpp_graphics"
-	@echo "... sources/camera.o"
-	@echo "... sources/camera.i"
-	@echo "... sources/camera.s"
-	@echo "... sources/core_data.o"
-	@echo "... sources/core_data.i"
-	@echo "... sources/core_data.s"
-	@echo "... sources/glad/glad.o"
-	@echo "... sources/glad/glad.i"
-	@echo "... sources/glad/glad.s"
-	@echo "... sources/input.o"
-	@echo "... sources/input.i"
-	@echo "... sources/input.s"
+	@echo "... inc/glad/glad.o"
+	@echo "... inc/glad/glad.i"
+	@echo "... inc/glad/glad.s"
+	@echo "... inc/stb_image/stb_image_implementation.o"
+	@echo "... inc/stb_image/stb_image_implementation.i"
+	@echo "... inc/stb_image/stb_image_implementation.s"
+	@echo "... sources/Camera.o"
+	@echo "... sources/Camera.i"
+	@echo "... sources/Camera.s"
+	@echo "... sources/CoreData.o"
+	@echo "... sources/CoreData.i"
+	@echo "... sources/CoreData.s"
+	@echo "... sources/Input.o"
+	@echo "... sources/Input.i"
+	@echo "... sources/Input.s"
+	@echo "... sources/Quaternion.o"
+	@echo "... sources/Quaternion.i"
+	@echo "... sources/Quaternion.s"
+	@echo "... sources/Shader.o"
+	@echo "... sources/Shader.i"
+	@echo "... sources/Shader.s"
+	@echo "... sources/Transform.o"
+	@echo "... sources/Transform.i"
+	@echo "... sources/Transform.s"
 	@echo "... sources/main.o"
 	@echo "... sources/main.i"
 	@echo "... sources/main.s"
 	@echo "... sources/process_input.o"
 	@echo "... sources/process_input.i"
 	@echo "... sources/process_input.s"
-	@echo "... sources/quaternion/quaternion.o"
-	@echo "... sources/quaternion/quaternion.i"
-	@echo "... sources/quaternion/quaternion.s"
-	@echo "... sources/shader.o"
-	@echo "... sources/shader.i"
-	@echo "... sources/shader.s"
-	@echo "... sources/stb_image/stb_image_implementation.o"
-	@echo "... sources/stb_image/stb_image_implementation.i"
-	@echo "... sources/stb_image/stb_image_implementation.s"
-	@echo "... sources/transform.o"
-	@echo "... sources/transform.i"
-	@echo "... sources/transform.s"
 .PHONY : help
 
 
