@@ -13,9 +13,9 @@ class Camera
 
 		Transform	transform;
 
-		glm::vec3	viewDirection;
 		glm::vec3	upDirection;
 		float		sensivity;
+		float		fov;
 
 	private:
 };

@@ -231,6 +231,33 @@ sources/CoreData.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/CoreData.cpp.s
 .PHONY : sources/CoreData.cpp.s
 
+sources/Cube.o: sources/Cube.cpp.o
+
+.PHONY : sources/Cube.o
+
+# target to build an object file
+sources/Cube.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Cube.cpp.o
+.PHONY : sources/Cube.cpp.o
+
+sources/Cube.i: sources/Cube.cpp.i
+
+.PHONY : sources/Cube.i
+
+# target to preprocess a source file
+sources/Cube.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Cube.cpp.i
+.PHONY : sources/Cube.cpp.i
+
+sources/Cube.s: sources/Cube.cpp.s
+
+.PHONY : sources/Cube.s
+
+# target to generate assembly for a file
+sources/Cube.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Cube.cpp.s
+.PHONY : sources/Cube.cpp.s
+
 sources/Input.o: sources/Input.cpp.o
 
 .PHONY : sources/Input.o
@@ -284,6 +311,33 @@ sources/Quaternion.s: sources/Quaternion.cpp.s
 sources/Quaternion.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Quaternion.cpp.s
 .PHONY : sources/Quaternion.cpp.s
+
+sources/Renderer.o: sources/Renderer.cpp.o
+
+.PHONY : sources/Renderer.o
+
+# target to build an object file
+sources/Renderer.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Renderer.cpp.o
+.PHONY : sources/Renderer.cpp.o
+
+sources/Renderer.i: sources/Renderer.cpp.i
+
+.PHONY : sources/Renderer.i
+
+# target to preprocess a source file
+sources/Renderer.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Renderer.cpp.i
+.PHONY : sources/Renderer.cpp.i
+
+sources/Renderer.s: sources/Renderer.cpp.s
+
+.PHONY : sources/Renderer.s
+
+# target to generate assembly for a file
+sources/Renderer.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Renderer.cpp.s
+.PHONY : sources/Renderer.cpp.s
 
 sources/Shader.o: sources/Shader.cpp.o
 
@@ -414,12 +468,18 @@ help:
 	@echo "... sources/CoreData.o"
 	@echo "... sources/CoreData.i"
 	@echo "... sources/CoreData.s"
+	@echo "... sources/Cube.o"
+	@echo "... sources/Cube.i"
+	@echo "... sources/Cube.s"
 	@echo "... sources/Input.o"
 	@echo "... sources/Input.i"
 	@echo "... sources/Input.s"
 	@echo "... sources/Quaternion.o"
 	@echo "... sources/Quaternion.i"
 	@echo "... sources/Quaternion.s"
+	@echo "... sources/Renderer.o"
+	@echo "... sources/Renderer.i"
+	@echo "... sources/Renderer.s"
 	@echo "... sources/Shader.o"
 	@echo "... sources/Shader.i"
 	@echo "... sources/Shader.s"

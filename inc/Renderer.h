@@ -1,6 +1,13 @@
 #pragma once
 
 #include <vector>
+#include <string>
+#include <iostream>
+
+#include <glad/glad.h>
+
+#include "stb_image/stb_image.h"
+#include "Shader.h"
 
 class Renderer
 {
@@ -10,18 +17,22 @@ class Renderer
 		//Renderer(const Renderer& other);
 		//Renderer& operator=(const Renderer& other);
 
-		// build VBO & VAO ()
-		// build texture ()
-		// Draw(shaderProgram) ->
-		// bind/unbind VBO & VAO ()
-		// Draw(shaderProgram) ->
-		// bind/unbind texture ()
+		void	BuildVBO();
+		void	BuildVAO();
+		void	BuildBuffers();
+		int		BuildTexture();
+		void	Draw(Shader& shader, glm::vec3 position, Quaternion quaternion);
 
 		// Draw() will be called in update loop;
 		// it would bind VAO/VBO -> bind texture -> build MODEL matrix -> call shaders ->
 		// unbind texture -> unbind VAO/VBO
+		std::string			texturePath;
 
 	private:
-		std::vector<float> vertices;
+		std::vector<float>	vertices;
+
+		unsigned int VBO;
+		unsigned int VAO;
+		unsigned int texture;
 
 };

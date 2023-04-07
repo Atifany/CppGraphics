@@ -10,6 +10,7 @@
 #include "../inc/CoreData.h"
 #include "../inc/Input.h"
 #include "../inc/process_input.h"
+#include "../inc/Cube.h"
 
 static const float fov = 90.0f;
 
@@ -22,10 +23,10 @@ static float lastFrame = 0.0f;
 
 // Setup camera
 float cameraSpeed = 4.0f; // player movespeed
-Camera camera = Camera();
+Camera camera;
 
-CoreData c_d = CoreData();
-Input input = Input();
+CoreData c_d;
+Input input;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void CalculateDeltaTime();
@@ -82,6 +83,8 @@ int main()
 	Shader shader(vertexShaderPath, fragmentShaderPath);
 	if (shader.program == 0)
 		return -1;
+	shader.Use();
+	shader.UniformSetInt("textureToDraw", 0);
 	
 	camera.transform.position.z = -1.0f;
 
@@ -96,110 +99,13 @@ int main()
 	// Enable Depth-tetsing
 	glEnable(GL_DEPTH_TEST);
 
-
-	// Sample verticies
-	//float vertices[] = {
-	std::vector<float> verticesStorage = {
-		// position			  // texture coordinates
-		-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-		 0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
-		 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-		 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-		-0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-		-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-
-		-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-		 0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-		 0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-		 0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-		-0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
-		-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-
-		-0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-		-0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-		-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-		-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-		-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-		-0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-
-		 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-		 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-		 0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-		 0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-		 0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-		 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-
-		-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-		 0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
-		 0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-		 0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-		-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-		-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-
-		-0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-		 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-		 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-		 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-		-0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
-		-0.5f,  0.5f, -0.5f,  0.0f, 1.0f
-		};
-
-	// Setup vertex data ---------------------------------------
-	// Generate objects
-	unsigned int VBO, VAO/*, EBO*/;
-	// Defines vertex attributes only once in here and not every frame.
-	glGenVertexArrays(1, &VAO);
-	// Stores vertecies in GPU.
-	glGenBuffers(1, &VBO);
-	// Stores indices in GPU.
-	//glGenBuffers(1, &EBO);
-
-	glBindVertexArray(VAO);
-
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	float vertices[verticesStorage.size()];
-	std::copy(verticesStorage.begin(), verticesStorage.end(), vertices);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-	//glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-	//glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-	// defines what a vertex is. In here it is just vec3 of type float.
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
-	glEnableVertexAttribArray(0);
-	//glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void *)(3 * sizeof(float)));
-	//glEnableVertexAttribArray(1);
-	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)(3 * sizeof(float)));
-	glEnableVertexAttribArray(1);
-
-	// Setup textures ---------------------------------------
-	unsigned int texture;
-	glGenTextures(1, &texture);
-	glBindTexture(GL_TEXTURE_2D, texture);
-
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
-	int width, height, nrChannels;
-	stbi_set_flip_vertically_on_load(true);
-	unsigned char* imageData = stbi_load(texturePath.c_str(), &width, &height, &nrChannels, 0);
-	if (imageData != NULL)
-	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0,
-			GL_RGBA, GL_UNSIGNED_BYTE, imageData);
-		glGenerateMipmap(GL_TEXTURE_2D);
-	}
-	else
-	{
-		std::cout << "Warning: failed to load texture from " << texturePath << "\n";
-	}
-	stbi_image_free(imageData);
-
-	shader.Use();
-	shader.UniformSetInt("textureToDraw", 0);
+	Cube cube1;
+	cube1.renderer.texturePath = texturePath;
+	cube1.renderer.BuildTexture();
+	Cube cube2;
+	cube2.renderer.texturePath = texturePath;
+	cube2.renderer.BuildTexture();
+	cube2.transform.position.y = 1.0f;
 
 	std::cout << "Debug: starting main loop.\n";
 	// run the app
@@ -211,31 +117,14 @@ int main()
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, texture);
-		// Activating shaders.
-		shader.Use();
+		shader.UpdateViewMatrix(camera);
+		shader.UpdateProjectionMatrix(c_d, camera);
 
-		// Matrices calculation:
-		glm::mat4 modelMatrix = glm::mat4(1.0f);
-		// modelMatrix = glm::rotate(modelMatrix, 0.0f, glm::vec3(1.0f, 1.0f, 0.5f));
+		cube2.transform.position.x = sin(glfwGetTime()) * 1.5f;
 
-		glm::mat4 viewMatrix = glm::lookAt(
-			camera.transform.position,
-			camera.transform.position + camera.transform.quaternion.Forward(),
-			camera.upDirection);
+		cube1.DrawMe(shader);
+		cube2.DrawMe(shader);
 
-		glm::mat4 projectionMatrix = glm::mat4(1.0f);
-		projectionMatrix = glm::perspective(glm::radians(fov),
-			(float)c_d.windowWidth / (float)c_d.windowHeight, 0.1f, 100.0f);
-
-		glm::mat4 MVPmatrix = projectionMatrix * viewMatrix * modelMatrix;
-		shader.UniformSetMat4("MVPmatrix", MVPmatrix);
-
-		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, 36);
-		//glDrawElements(GL_TRIANGLES, sizeof(vertices)/sizeof(*vertices), GL_UNSIGNED_INT, 0);
-		
 		// Swaps front and back screen buffers.
 		glfwSwapBuffers(c_d.window);
 		// Process callbacks and events.
@@ -247,10 +136,6 @@ int main()
 		input.KeyCallBackProcess();
 	}
 	
-	glDeleteVertexArrays(1, &VAO);
-	glDeleteBuffers(1, &VBO);
-	//glDeleteBuffers(1, &EBO);
-	glDeleteProgram(shader.program);
 	glfwTerminate();
 	return 0;
 }

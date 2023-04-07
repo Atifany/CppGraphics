@@ -9,6 +9,9 @@ static unsigned int CreateShader(const std::string& vertexShader, const std::str
 
 Shader::Shader(const std::string& vertexShaderPath, const std::string& fragmentShaderPath)
 {
+	this->viewMatrix = glm::mat4(1.0f);
+	this->projectionMatrix = glm::mat4(1.0f);
+
 	std::string vertexCode;
 	std::string fragmentCode;
 	std::ifstream vertexFile;
@@ -40,6 +43,11 @@ Shader::Shader(const std::string& vertexShaderPath, const std::string& fragmentS
 	this->program = CreateShader(vertexCode, fragmentCode);
 	if (this->program != 0)
 		std::cout << "Debug: shader program created.\n";
+}
+
+Shader::~Shader()
+{
+	glDeleteProgram(this->program);
 }
 
 void Shader::Use()
@@ -87,6 +95,21 @@ void Shader::UniformSetMat4(const std::string& name, glm::mat4 value) const
 	glUniformMatrix4fv(glGetUniformLocation(this->program, name.c_str()),
 		1, GL_FALSE, glm::value_ptr(value));
 }
+
+void Shader::UpdateViewMatrix(Camera& camera)
+{
+	this->viewMatrix = glm::lookAt(
+		camera.transform.position,
+		camera.transform.position + camera.transform.quaternion.Forward(),
+		camera.upDirection);
+}
+
+void Shader::UpdateProjectionMatrix(CoreData& c_d, Camera& camera)
+{
+	this->projectionMatrix = glm::perspective(glm::radians(camera.fov),
+		(float)c_d.windowWidth / (float)c_d.windowHeight, 0.1f, 100.0f);
+}
+
 
 static unsigned int CompileShader(unsigned int type, const std::string& src)
 {
