@@ -98,7 +98,8 @@ int main()
 
 
 	// Sample verticies
-	float vertices[] = {
+	//float vertices[] = {
+	std::vector<float> verticesStorage = {
 		// position			  // texture coordinates
 		-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
 		 0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
@@ -156,6 +157,8 @@ int main()
 	glBindVertexArray(VAO);
 
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	float vertices[verticesStorage.size()];
+	std::copy(verticesStorage.begin(), verticesStorage.end(), vertices);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
 	//glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
