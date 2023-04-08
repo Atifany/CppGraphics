@@ -33,6 +33,7 @@ class Quaternion
 		float x, y, z, w;
 
 		glm::vec3 EulerAngles();
+		glm::vec4 AxisRotation();
 		
 		glm::vec3 Forward();
 		glm::vec3 Upward();

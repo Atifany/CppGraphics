@@ -45,10 +45,7 @@ Shader::Shader(const std::string& vertexShaderPath, const std::string& fragmentS
 		std::cout << "Debug: shader program created.\n";
 }
 
-Shader::~Shader()
-{
-	glDeleteProgram(this->program);
-}
+Shader::~Shader() {}
 
 void Shader::Use()
 {

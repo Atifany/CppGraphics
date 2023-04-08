@@ -106,6 +106,10 @@ int main()
 	cube2.renderer.texturePath = texturePath;
 	cube2.renderer.BuildTexture();
 	cube2.transform.position.y = 1.0f;
+	Cube cube3;
+	cube3.renderer.texturePath = texturePath;
+	cube3.renderer.BuildTexture();
+	cube3.transform.position.y = 2.0f;
 
 	std::cout << "Debug: starting main loop.\n";
 	// run the app
@@ -120,10 +124,16 @@ int main()
 		shader.UpdateViewMatrix(camera);
 		shader.UpdateProjectionMatrix(c_d, camera);
 
-		cube2.transform.position.x = sin(glfwGetTime()) * 1.5f;
+		cube1.transform.quaternion = Quaternion(glm::vec3(
+			(float)cos(glfwGetTime()) * 1.0f, (float)cos(glfwGetTime()) * 1.0f, 0.0f));
+		cube2.transform.quaternion = Quaternion(glm::vec3(
+			0.0f, (float)cos(glfwGetTime()) * 1.0f, (float)cos(glfwGetTime()) * 1.0f));
+		cube3.transform.quaternion = Quaternion(glm::vec3(
+			(float)cos(glfwGetTime()) * 1.0f, 0.0f, (float)cos(glfwGetTime()) * 1.0f));
 
 		cube1.DrawMe(shader);
 		cube2.DrawMe(shader);
+		cube3.DrawMe(shader);
 
 		// Swaps front and back screen buffers.
 		glfwSwapBuffers(c_d.window);
@@ -135,8 +145,10 @@ int main()
 		// set values to keys.
 		input.KeyCallBackProcess();
 	}
-	
+	glfwSetInputMode(c_d.window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+
 	glfwTerminate();
+	std::cout << "Debug: program finished.\n";
 	return 0;
 }
 

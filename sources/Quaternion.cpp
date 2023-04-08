@@ -221,3 +221,13 @@ glm::vec3 Quaternion::EulerAngles()
 	return ret;
 }
 
+glm::vec4 Quaternion::AxisRotation()
+{
+	float angle = 2 * acos(this->w);
+	glm::vec4 angleAxis;
+	angleAxis.x = this->x;
+	angleAxis.y = this->y;
+	angleAxis.z = this->z;
+	angleAxis.w = angle;
+	return angleAxis;
+}

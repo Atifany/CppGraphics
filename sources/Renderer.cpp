@@ -54,14 +54,11 @@ Renderer::Renderer()
 	this->BuildBuffers();
 }
 
-Renderer::~Renderer()
-{
-	glDeleteBuffers(1, &(this->VBO));
-	glDeleteBuffers(1, &(this->VAO));
-}
+Renderer::~Renderer() {}
 
 void Renderer::BuildBuffers()
 {
+	// breaking this order of thing causes gDrawArrays to segfault!
 	glGenVertexArrays(1, &(this->VAO));
 	glGenBuffers(1, &(this->VBO));
 
@@ -123,8 +120,9 @@ void Renderer::Draw(Shader& shader, glm::vec3 position, Quaternion quaternion)
 	shader.Use();
 	glm::mat4 modelMatrix = glm::mat4(1.0f);
 	modelMatrix = glm::translate(modelMatrix, position);
-	//dont know yet how to rotate using glm::rotate func.
-	//modelMatrix = glm::rotate(modelMatrix, 0.0f, quaternion.Forward());
+	glm::vec4 axisAngle = quaternion.AxisRotation();
+	modelMatrix = glm::rotate(modelMatrix, axisAngle.w,
+		glm::normalize(glm::vec3(axisAngle.x, axisAngle.y, axisAngle.z)));
 
 	glm::mat4 MVPmatrix = shader.projectionMatrix * shader.viewMatrix * modelMatrix;
 	shader.UniformSetMat4("MVPmatrix", MVPmatrix);
