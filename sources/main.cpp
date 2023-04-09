@@ -86,7 +86,7 @@ int main()
 	shader.Use();
 	shader.UniformSetInt("textureToDraw", 0);
 	
-	camera.transform.position.z = -1.0f;
+	camera.transform.position.x = -2.0f;
 
 	// User input callbacks
 	glfwSetKeyCallback(c_d.window, KeyCallbackSet);
@@ -124,12 +124,17 @@ int main()
 		shader.UpdateViewMatrix(camera);
 		shader.UpdateProjectionMatrix(c_d, camera);
 
-		cube1.transform.quaternion = Quaternion(glm::vec3(
-			(float)cos(glfwGetTime()) * 1.0f, (float)cos(glfwGetTime()) * 1.0f, 0.0f));
-		cube2.transform.quaternion = Quaternion(glm::vec3(
-			0.0f, (float)cos(glfwGetTime()) * 1.0f, (float)cos(glfwGetTime()) * 1.0f));
-		cube3.transform.quaternion = Quaternion(glm::vec3(
-			(float)cos(glfwGetTime()) * 1.0f, 0.0f, (float)cos(glfwGetTime()) * 1.0f));
+		// cube1.transform.quaternion = Quaternion(glm::vec3(
+		// 	(float)cos(glfwGetTime()) * 1.0f, (float)cos(glfwGetTime()) * 1.0f, 0.0f));
+		cube1.transform.position = glm::vec3((float)cos(glfwGetTime()) * 1.5f, 0.0f, 0.0f);
+
+		// cube2.transform.quaternion = Quaternion(glm::vec3(
+		// 	0.0f, (float)cos(glfwGetTime()) * 1.0f, (float)cos(glfwGetTime()) * 1.0f));
+		//cube2.transform.position = glm::vec3(0.0f, (float)cos(glfwGetTime()) * 1.5f, 0.0f);
+
+		// cube3.transform.quaternion = Quaternion(glm::vec3(
+		// 	(float)cos(glfwGetTime()) * 1.0f, 0.0f, (float)cos(glfwGetTime()) * 1.0f));
+		//cube3.transform.position = glm::vec3(0.0f, 0.0f, (float)cos(glfwGetTime()) * 1.5f);
 
 		cube1.DrawMe(shader);
 		cube2.DrawMe(shader);
