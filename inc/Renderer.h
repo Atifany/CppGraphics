@@ -8,11 +8,14 @@
 
 #include "stb_image/stb_image.h"
 #include "Shader.h"
+#include "Texture.h"
 
 class Renderer
 {
 	public:
 		Renderer();
+		Renderer(unsigned int textureTarget, const std::string& texturePath);
+		Renderer(Texture& _texture);
 		~Renderer();
 		//Renderer(const Renderer& other);
 		//Renderer& operator=(const Renderer& other);
@@ -20,19 +23,14 @@ class Renderer
 		void	BuildVBO();
 		void	BuildVAO();
 		void	BuildBuffers();
-		int		BuildTexture();
 		void	Draw(Shader& shader, glm::vec3 position, Quaternion quaternion);
 
-		// Draw() will be called in update loop;
-		// it would bind VAO/VBO -> bind texture -> build MODEL matrix -> call shaders ->
-		// unbind texture -> unbind VAO/VBO
-		std::string			texturePath;
+		Texture texture;
 
 	private:
 		std::vector<float>	vertices;
 
 		unsigned int VBO;
 		unsigned int VAO;
-		unsigned int texture;
 
 };

@@ -171,6 +171,7 @@ CMakeFiles/cpp_graphics.dir/sources/Cube.cpp.o: ../inc/Cube.h
 CMakeFiles/cpp_graphics.dir/sources/Cube.cpp.o: ../inc/Quaternion.h
 CMakeFiles/cpp_graphics.dir/sources/Cube.cpp.o: ../inc/Renderer.h
 CMakeFiles/cpp_graphics.dir/sources/Cube.cpp.o: ../inc/Shader.h
+CMakeFiles/cpp_graphics.dir/sources/Cube.cpp.o: ../inc/Texture.h
 CMakeFiles/cpp_graphics.dir/sources/Cube.cpp.o: ../inc/Transform.h
 CMakeFiles/cpp_graphics.dir/sources/Cube.cpp.o: ../inc/glm/common.hpp
 CMakeFiles/cpp_graphics.dir/sources/Cube.cpp.o: ../inc/glm/detail/_fixes.hpp
@@ -538,6 +539,7 @@ CMakeFiles/cpp_graphics.dir/sources/Renderer.cpp.o: ../inc/CoreData.h
 CMakeFiles/cpp_graphics.dir/sources/Renderer.cpp.o: ../inc/Quaternion.h
 CMakeFiles/cpp_graphics.dir/sources/Renderer.cpp.o: ../inc/Renderer.h
 CMakeFiles/cpp_graphics.dir/sources/Renderer.cpp.o: ../inc/Shader.h
+CMakeFiles/cpp_graphics.dir/sources/Renderer.cpp.o: ../inc/Texture.h
 CMakeFiles/cpp_graphics.dir/sources/Renderer.cpp.o: ../inc/Transform.h
 CMakeFiles/cpp_graphics.dir/sources/Renderer.cpp.o: ../inc/glm/common.hpp
 CMakeFiles/cpp_graphics.dir/sources/Renderer.cpp.o: ../inc/glm/detail/_fixes.hpp
@@ -951,6 +953,10 @@ CMakeFiles/cpp_graphics.dir/sources/Shader.cpp.o: ../inc/glm/vec4.hpp
 CMakeFiles/cpp_graphics.dir/sources/Shader.cpp.o: ../inc/glm/vector_relational.hpp
 CMakeFiles/cpp_graphics.dir/sources/Shader.cpp.o: ../sources/Shader.cpp
 
+CMakeFiles/cpp_graphics.dir/sources/Texture.cpp.o: ../inc/Texture.h
+CMakeFiles/cpp_graphics.dir/sources/Texture.cpp.o: ../inc/stb_image/stb_image.h
+CMakeFiles/cpp_graphics.dir/sources/Texture.cpp.o: ../sources/Texture.cpp
+
 CMakeFiles/cpp_graphics.dir/sources/Transform.cpp.o: ../inc/Quaternion.h
 CMakeFiles/cpp_graphics.dir/sources/Transform.cpp.o: ../inc/Transform.h
 CMakeFiles/cpp_graphics.dir/sources/Transform.cpp.o: ../inc/glm/common.hpp
@@ -1113,6 +1119,7 @@ CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../inc/Input.h
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../inc/Quaternion.h
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../inc/Renderer.h
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../inc/Shader.h
+CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../inc/Texture.h
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../inc/Transform.h
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../inc/glm/common.hpp
 CMakeFiles/cpp_graphics.dir/sources/main.cpp.o: ../inc/glm/detail/_fixes.hpp

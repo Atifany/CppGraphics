@@ -6,6 +6,12 @@ Cube::Cube()
 	this->renderer;
 }
 
+Cube::Cube(Texture texture)
+{
+	this->transform;
+	this->renderer = Renderer(texture);
+}
+
 Cube::~Cube() {}
 
 Cube::Cube(const Cube& other)

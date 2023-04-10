@@ -12,6 +12,7 @@ add_executable(cpp_graphics
 	sources/Input.cpp
 	sources/Cube.cpp
 	sources/Renderer.cpp
+	sources/Texture.cpp
 
 #	GLAD library
 	inc/glad/glad.c

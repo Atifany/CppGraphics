@@ -366,6 +366,33 @@ sources/Shader.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Shader.cpp.s
 .PHONY : sources/Shader.cpp.s
 
+sources/Texture.o: sources/Texture.cpp.o
+
+.PHONY : sources/Texture.o
+
+# target to build an object file
+sources/Texture.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Texture.cpp.o
+.PHONY : sources/Texture.cpp.o
+
+sources/Texture.i: sources/Texture.cpp.i
+
+.PHONY : sources/Texture.i
+
+# target to preprocess a source file
+sources/Texture.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Texture.cpp.i
+.PHONY : sources/Texture.cpp.i
+
+sources/Texture.s: sources/Texture.cpp.s
+
+.PHONY : sources/Texture.s
+
+# target to generate assembly for a file
+sources/Texture.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Texture.cpp.s
+.PHONY : sources/Texture.cpp.s
+
 sources/Transform.o: sources/Transform.cpp.o
 
 .PHONY : sources/Transform.o
@@ -483,6 +510,9 @@ help:
 	@echo "... sources/Shader.o"
 	@echo "... sources/Shader.i"
 	@echo "... sources/Shader.s"
+	@echo "... sources/Texture.o"
+	@echo "... sources/Texture.i"
+	@echo "... sources/Texture.s"
 	@echo "... sources/Transform.o"
 	@echo "... sources/Transform.i"
 	@echo "... sources/Transform.s"

@@ -51,6 +51,11 @@
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/cpp_graphics.dir/sources/Texture.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Texture.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/sources/Texture.cpp"
+},
+{
+  "directory": "/home/atifany/Desktop/CppGraphics/build",
   "command": "/usr/bin/gcc   -g   -o CMakeFiles/cpp_graphics.dir/inc/glad/glad.c.o   -c /home/atifany/Desktop/CppGraphics/inc/glad/glad.c",
   "file": "/home/atifany/Desktop/CppGraphics/inc/glad/glad.c"
 },

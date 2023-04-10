@@ -172,6 +172,7 @@ CMakeFiles/cpp_graphics.dir/sources/Cube.cpp.o
  /home/atifany/Desktop/CppGraphics/inc/Quaternion.h
  /home/atifany/Desktop/CppGraphics/inc/Renderer.h
  /home/atifany/Desktop/CppGraphics/inc/Shader.h
+ /home/atifany/Desktop/CppGraphics/inc/Texture.h
  /home/atifany/Desktop/CppGraphics/inc/Transform.h
  /home/atifany/Desktop/CppGraphics/inc/glm/common.hpp
  /home/atifany/Desktop/CppGraphics/inc/glm/detail/_fixes.hpp
@@ -539,6 +540,7 @@ CMakeFiles/cpp_graphics.dir/sources/Renderer.cpp.o
  /home/atifany/Desktop/CppGraphics/inc/Quaternion.h
  /home/atifany/Desktop/CppGraphics/inc/Renderer.h
  /home/atifany/Desktop/CppGraphics/inc/Shader.h
+ /home/atifany/Desktop/CppGraphics/inc/Texture.h
  /home/atifany/Desktop/CppGraphics/inc/Transform.h
  /home/atifany/Desktop/CppGraphics/inc/glm/common.hpp
  /home/atifany/Desktop/CppGraphics/inc/glm/detail/_fixes.hpp
@@ -951,6 +953,10 @@ CMakeFiles/cpp_graphics.dir/sources/Shader.cpp.o
  /home/atifany/Desktop/CppGraphics/inc/glm/vec4.hpp
  /home/atifany/Desktop/CppGraphics/inc/glm/vector_relational.hpp
  /home/atifany/Desktop/CppGraphics/sources/Shader.cpp
+CMakeFiles/cpp_graphics.dir/sources/Texture.cpp.o
+ /home/atifany/Desktop/CppGraphics/inc/Texture.h
+ /home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image.h
+ /home/atifany/Desktop/CppGraphics/sources/Texture.cpp
 CMakeFiles/cpp_graphics.dir/sources/Transform.cpp.o
  /home/atifany/Desktop/CppGraphics/inc/Quaternion.h
  /home/atifany/Desktop/CppGraphics/inc/Transform.h
@@ -1114,6 +1120,7 @@ CMakeFiles/cpp_graphics.dir/sources/main.cpp.o
  /home/atifany/Desktop/CppGraphics/inc/Quaternion.h
  /home/atifany/Desktop/CppGraphics/inc/Renderer.h
  /home/atifany/Desktop/CppGraphics/inc/Shader.h
+ /home/atifany/Desktop/CppGraphics/inc/Texture.h
  /home/atifany/Desktop/CppGraphics/inc/Transform.h
  /home/atifany/Desktop/CppGraphics/inc/glm/common.hpp
  /home/atifany/Desktop/CppGraphics/inc/glm/detail/_fixes.hpp

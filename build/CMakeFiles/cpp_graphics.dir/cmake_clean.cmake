@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/cpp_graphics.dir/sources/Quaternion.cpp.o"
   "CMakeFiles/cpp_graphics.dir/sources/Renderer.cpp.o"
   "CMakeFiles/cpp_graphics.dir/sources/Shader.cpp.o"
+  "CMakeFiles/cpp_graphics.dir/sources/Texture.cpp.o"
   "CMakeFiles/cpp_graphics.dir/sources/Transform.cpp.o"
   "CMakeFiles/cpp_graphics.dir/sources/main.cpp.o"
   "CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o"

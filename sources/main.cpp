@@ -11,12 +11,13 @@
 #include "../inc/Input.h"
 #include "../inc/process_input.h"
 #include "../inc/Cube.h"
+#include "../inc/Texture.h"
 
 static const float fov = 90.0f;
 
 static const std::string vertexShaderPath = "../shaders/vertex_shader.shader";
 static const std::string fragmentShaderPath = "../shaders/fragment_shader.shader";
-static const std::string texturePath = "../textures/GrassSide.png";
+static const std::string texturePath = "../textures/GrassBlock.png";
 
 float deltaTime = 0.0f;
 static float lastFrame = 0.0f;
@@ -99,16 +100,13 @@ int main()
 	// Enable Depth-tetsing
 	glEnable(GL_DEPTH_TEST);
 
-	Cube cube1;
-	cube1.renderer.texturePath = texturePath;
-	cube1.renderer.BuildTexture();
-	Cube cube2;
-	cube2.renderer.texturePath = texturePath;
-	cube2.renderer.BuildTexture();
+	Texture grassBlock = Texture(GL_TEXTURE_2D, texturePath);
+	grassBlock.Load();
+
+	Cube cube1(grassBlock);
+	Cube cube2(grassBlock);
 	cube2.transform.position.y = 1.0f;
-	Cube cube3;
-	cube3.renderer.texturePath = texturePath;
-	cube3.renderer.BuildTexture();
+	Cube cube3(grassBlock);
 	cube3.transform.position.y = 2.0f;
 
 	std::cout << "Debug: starting main loop.\n";
