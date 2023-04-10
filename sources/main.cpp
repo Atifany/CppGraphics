@@ -103,11 +103,16 @@ int main()
 	Texture grassBlock = Texture(GL_TEXTURE_2D, texturePath);
 	grassBlock.Load();
 
-	Cube cube1(grassBlock);
-	Cube cube2(grassBlock);
-	cube2.transform.position.y = 1.0f;
-	Cube cube3(grassBlock);
-	cube3.transform.position.y = 2.0f;
+	std::vector<Cube> cubes;
+	for (int x = 0; x < 50 ; x++)
+	{
+		for (int z = 0; z < 50 ; z++)
+		{
+			Cube cube(grassBlock);
+			cube.transform.position = glm::vec3(x, 0.0f, z);
+			cubes.push_back(cube);
+		}
+	}
 
 	std::cout << "Debug: starting main loop.\n";
 	// run the app
@@ -122,21 +127,12 @@ int main()
 		shader.UpdateViewMatrix(camera);
 		shader.UpdateProjectionMatrix(c_d, camera);
 
-		// cube1.transform.quaternion = Quaternion(glm::vec3(
-		// 	(float)cos(glfwGetTime()) * 1.0f, (float)cos(glfwGetTime()) * 1.0f, 0.0f));
-		cube1.transform.position = glm::vec3((float)cos(glfwGetTime()) * 1.5f, 0.0f, 0.0f);
-
-		// cube2.transform.quaternion = Quaternion(glm::vec3(
-		// 	0.0f, (float)cos(glfwGetTime()) * 1.0f, (float)cos(glfwGetTime()) * 1.0f));
-		//cube2.transform.position = glm::vec3(0.0f, (float)cos(glfwGetTime()) * 1.5f, 0.0f);
-
-		// cube3.transform.quaternion = Quaternion(glm::vec3(
-		// 	(float)cos(glfwGetTime()) * 1.0f, 0.0f, (float)cos(glfwGetTime()) * 1.0f));
-		//cube3.transform.position = glm::vec3(0.0f, 0.0f, (float)cos(glfwGetTime()) * 1.5f);
-
-		cube1.DrawMe(shader);
-		cube2.DrawMe(shader);
-		cube3.DrawMe(shader);
+		for (Cube& cube : cubes)
+		{
+			cube.transform.position.y =
+				sin((glfwGetTime() + cube.transform.position.x + cube.transform.position.z) / 10.0f) * 1.5f;
+			cube.DrawMe(shader);
+		}
 
 		// Swaps front and back screen buffers.
 		glfwSwapBuffers(c_d.window);
