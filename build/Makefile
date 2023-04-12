@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/atifany/Desktop/CppGraphics/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named cpp_graphics
+# Target rules for targets named ft_minecraft
 
 # Build rule for target.
-cpp_graphics: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cpp_graphics
-.PHONY : cpp_graphics
+ft_minecraft: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ft_minecraft
+.PHONY : ft_minecraft
 
 # fast build rule for target.
-cpp_graphics/fast:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/build
-.PHONY : cpp_graphics/fast
+ft_minecraft/fast:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/build
+.PHONY : ft_minecraft/fast
 
 inc/glad/glad.o: inc/glad/glad.c.o
 
@@ -129,7 +129,7 @@ inc/glad/glad.o: inc/glad/glad.c.o
 
 # target to build an object file
 inc/glad/glad.c.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/inc/glad/glad.c.o
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.o
 .PHONY : inc/glad/glad.c.o
 
 inc/glad/glad.i: inc/glad/glad.c.i
@@ -138,7 +138,7 @@ inc/glad/glad.i: inc/glad/glad.c.i
 
 # target to preprocess a source file
 inc/glad/glad.c.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/inc/glad/glad.c.i
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.i
 .PHONY : inc/glad/glad.c.i
 
 inc/glad/glad.s: inc/glad/glad.c.s
@@ -147,7 +147,7 @@ inc/glad/glad.s: inc/glad/glad.c.s
 
 # target to generate assembly for a file
 inc/glad/glad.c.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/inc/glad/glad.c.s
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.s
 .PHONY : inc/glad/glad.c.s
 
 inc/stb_image/stb_image_implementation.o: inc/stb_image/stb_image_implementation.cpp.o
@@ -156,7 +156,7 @@ inc/stb_image/stb_image_implementation.o: inc/stb_image/stb_image_implementation
 
 # target to build an object file
 inc/stb_image/stb_image_implementation.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/inc/stb_image/stb_image_implementation.cpp.o
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o
 .PHONY : inc/stb_image/stb_image_implementation.cpp.o
 
 inc/stb_image/stb_image_implementation.i: inc/stb_image/stb_image_implementation.cpp.i
@@ -165,7 +165,7 @@ inc/stb_image/stb_image_implementation.i: inc/stb_image/stb_image_implementation
 
 # target to preprocess a source file
 inc/stb_image/stb_image_implementation.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/inc/stb_image/stb_image_implementation.cpp.i
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.i
 .PHONY : inc/stb_image/stb_image_implementation.cpp.i
 
 inc/stb_image/stb_image_implementation.s: inc/stb_image/stb_image_implementation.cpp.s
@@ -174,7 +174,7 @@ inc/stb_image/stb_image_implementation.s: inc/stb_image/stb_image_implementation
 
 # target to generate assembly for a file
 inc/stb_image/stb_image_implementation.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/inc/stb_image/stb_image_implementation.cpp.s
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.s
 .PHONY : inc/stb_image/stb_image_implementation.cpp.s
 
 sources/Camera.o: sources/Camera.cpp.o
@@ -183,7 +183,7 @@ sources/Camera.o: sources/Camera.cpp.o
 
 # target to build an object file
 sources/Camera.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Camera.cpp.o
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.o
 .PHONY : sources/Camera.cpp.o
 
 sources/Camera.i: sources/Camera.cpp.i
@@ -192,7 +192,7 @@ sources/Camera.i: sources/Camera.cpp.i
 
 # target to preprocess a source file
 sources/Camera.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Camera.cpp.i
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.i
 .PHONY : sources/Camera.cpp.i
 
 sources/Camera.s: sources/Camera.cpp.s
@@ -201,7 +201,7 @@ sources/Camera.s: sources/Camera.cpp.s
 
 # target to generate assembly for a file
 sources/Camera.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Camera.cpp.s
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.s
 .PHONY : sources/Camera.cpp.s
 
 sources/CoreData.o: sources/CoreData.cpp.o
@@ -210,7 +210,7 @@ sources/CoreData.o: sources/CoreData.cpp.o
 
 # target to build an object file
 sources/CoreData.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/CoreData.cpp.o
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/CoreData.cpp.o
 .PHONY : sources/CoreData.cpp.o
 
 sources/CoreData.i: sources/CoreData.cpp.i
@@ -219,7 +219,7 @@ sources/CoreData.i: sources/CoreData.cpp.i
 
 # target to preprocess a source file
 sources/CoreData.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/CoreData.cpp.i
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/CoreData.cpp.i
 .PHONY : sources/CoreData.cpp.i
 
 sources/CoreData.s: sources/CoreData.cpp.s
@@ -228,7 +228,7 @@ sources/CoreData.s: sources/CoreData.cpp.s
 
 # target to generate assembly for a file
 sources/CoreData.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/CoreData.cpp.s
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/CoreData.cpp.s
 .PHONY : sources/CoreData.cpp.s
 
 sources/Cube.o: sources/Cube.cpp.o
@@ -237,7 +237,7 @@ sources/Cube.o: sources/Cube.cpp.o
 
 # target to build an object file
 sources/Cube.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Cube.cpp.o
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.o
 .PHONY : sources/Cube.cpp.o
 
 sources/Cube.i: sources/Cube.cpp.i
@@ -246,7 +246,7 @@ sources/Cube.i: sources/Cube.cpp.i
 
 # target to preprocess a source file
 sources/Cube.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Cube.cpp.i
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.i
 .PHONY : sources/Cube.cpp.i
 
 sources/Cube.s: sources/Cube.cpp.s
@@ -255,7 +255,7 @@ sources/Cube.s: sources/Cube.cpp.s
 
 # target to generate assembly for a file
 sources/Cube.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Cube.cpp.s
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.s
 .PHONY : sources/Cube.cpp.s
 
 sources/Input.o: sources/Input.cpp.o
@@ -264,7 +264,7 @@ sources/Input.o: sources/Input.cpp.o
 
 # target to build an object file
 sources/Input.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Input.cpp.o
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Input.cpp.o
 .PHONY : sources/Input.cpp.o
 
 sources/Input.i: sources/Input.cpp.i
@@ -273,7 +273,7 @@ sources/Input.i: sources/Input.cpp.i
 
 # target to preprocess a source file
 sources/Input.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Input.cpp.i
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Input.cpp.i
 .PHONY : sources/Input.cpp.i
 
 sources/Input.s: sources/Input.cpp.s
@@ -282,7 +282,7 @@ sources/Input.s: sources/Input.cpp.s
 
 # target to generate assembly for a file
 sources/Input.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Input.cpp.s
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Input.cpp.s
 .PHONY : sources/Input.cpp.s
 
 sources/Quaternion.o: sources/Quaternion.cpp.o
@@ -291,7 +291,7 @@ sources/Quaternion.o: sources/Quaternion.cpp.o
 
 # target to build an object file
 sources/Quaternion.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Quaternion.cpp.o
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Quaternion.cpp.o
 .PHONY : sources/Quaternion.cpp.o
 
 sources/Quaternion.i: sources/Quaternion.cpp.i
@@ -300,7 +300,7 @@ sources/Quaternion.i: sources/Quaternion.cpp.i
 
 # target to preprocess a source file
 sources/Quaternion.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Quaternion.cpp.i
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Quaternion.cpp.i
 .PHONY : sources/Quaternion.cpp.i
 
 sources/Quaternion.s: sources/Quaternion.cpp.s
@@ -309,7 +309,7 @@ sources/Quaternion.s: sources/Quaternion.cpp.s
 
 # target to generate assembly for a file
 sources/Quaternion.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Quaternion.cpp.s
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Quaternion.cpp.s
 .PHONY : sources/Quaternion.cpp.s
 
 sources/Renderer.o: sources/Renderer.cpp.o
@@ -318,7 +318,7 @@ sources/Renderer.o: sources/Renderer.cpp.o
 
 # target to build an object file
 sources/Renderer.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Renderer.cpp.o
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Renderer.cpp.o
 .PHONY : sources/Renderer.cpp.o
 
 sources/Renderer.i: sources/Renderer.cpp.i
@@ -327,7 +327,7 @@ sources/Renderer.i: sources/Renderer.cpp.i
 
 # target to preprocess a source file
 sources/Renderer.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Renderer.cpp.i
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Renderer.cpp.i
 .PHONY : sources/Renderer.cpp.i
 
 sources/Renderer.s: sources/Renderer.cpp.s
@@ -336,7 +336,7 @@ sources/Renderer.s: sources/Renderer.cpp.s
 
 # target to generate assembly for a file
 sources/Renderer.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Renderer.cpp.s
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Renderer.cpp.s
 .PHONY : sources/Renderer.cpp.s
 
 sources/Shader.o: sources/Shader.cpp.o
@@ -345,7 +345,7 @@ sources/Shader.o: sources/Shader.cpp.o
 
 # target to build an object file
 sources/Shader.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Shader.cpp.o
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o
 .PHONY : sources/Shader.cpp.o
 
 sources/Shader.i: sources/Shader.cpp.i
@@ -354,7 +354,7 @@ sources/Shader.i: sources/Shader.cpp.i
 
 # target to preprocess a source file
 sources/Shader.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Shader.cpp.i
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.i
 .PHONY : sources/Shader.cpp.i
 
 sources/Shader.s: sources/Shader.cpp.s
@@ -363,7 +363,7 @@ sources/Shader.s: sources/Shader.cpp.s
 
 # target to generate assembly for a file
 sources/Shader.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Shader.cpp.s
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.s
 .PHONY : sources/Shader.cpp.s
 
 sources/Texture.o: sources/Texture.cpp.o
@@ -372,7 +372,7 @@ sources/Texture.o: sources/Texture.cpp.o
 
 # target to build an object file
 sources/Texture.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Texture.cpp.o
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Texture.cpp.o
 .PHONY : sources/Texture.cpp.o
 
 sources/Texture.i: sources/Texture.cpp.i
@@ -381,7 +381,7 @@ sources/Texture.i: sources/Texture.cpp.i
 
 # target to preprocess a source file
 sources/Texture.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Texture.cpp.i
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Texture.cpp.i
 .PHONY : sources/Texture.cpp.i
 
 sources/Texture.s: sources/Texture.cpp.s
@@ -390,7 +390,7 @@ sources/Texture.s: sources/Texture.cpp.s
 
 # target to generate assembly for a file
 sources/Texture.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Texture.cpp.s
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Texture.cpp.s
 .PHONY : sources/Texture.cpp.s
 
 sources/Transform.o: sources/Transform.cpp.o
@@ -399,7 +399,7 @@ sources/Transform.o: sources/Transform.cpp.o
 
 # target to build an object file
 sources/Transform.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Transform.cpp.o
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Transform.cpp.o
 .PHONY : sources/Transform.cpp.o
 
 sources/Transform.i: sources/Transform.cpp.i
@@ -408,7 +408,7 @@ sources/Transform.i: sources/Transform.cpp.i
 
 # target to preprocess a source file
 sources/Transform.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Transform.cpp.i
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Transform.cpp.i
 .PHONY : sources/Transform.cpp.i
 
 sources/Transform.s: sources/Transform.cpp.s
@@ -417,7 +417,7 @@ sources/Transform.s: sources/Transform.cpp.s
 
 # target to generate assembly for a file
 sources/Transform.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/Transform.cpp.s
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Transform.cpp.s
 .PHONY : sources/Transform.cpp.s
 
 sources/main.o: sources/main.cpp.o
@@ -426,7 +426,7 @@ sources/main.o: sources/main.cpp.o
 
 # target to build an object file
 sources/main.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/main.cpp.o
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/main.cpp.o
 .PHONY : sources/main.cpp.o
 
 sources/main.i: sources/main.cpp.i
@@ -435,7 +435,7 @@ sources/main.i: sources/main.cpp.i
 
 # target to preprocess a source file
 sources/main.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/main.cpp.i
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/main.cpp.i
 .PHONY : sources/main.cpp.i
 
 sources/main.s: sources/main.cpp.s
@@ -444,7 +444,7 @@ sources/main.s: sources/main.cpp.s
 
 # target to generate assembly for a file
 sources/main.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/main.cpp.s
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/main.cpp.s
 .PHONY : sources/main.cpp.s
 
 sources/process_input.o: sources/process_input.cpp.o
@@ -453,7 +453,7 @@ sources/process_input.o: sources/process_input.cpp.o
 
 # target to build an object file
 sources/process_input.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.o
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/process_input.cpp.o
 .PHONY : sources/process_input.cpp.o
 
 sources/process_input.i: sources/process_input.cpp.i
@@ -462,7 +462,7 @@ sources/process_input.i: sources/process_input.cpp.i
 
 # target to preprocess a source file
 sources/process_input.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.i
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/process_input.cpp.i
 .PHONY : sources/process_input.cpp.i
 
 sources/process_input.s: sources/process_input.cpp.s
@@ -471,7 +471,7 @@ sources/process_input.s: sources/process_input.cpp.s
 
 # target to generate assembly for a file
 sources/process_input.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/sources/process_input.cpp.s
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/process_input.cpp.s
 .PHONY : sources/process_input.cpp.s
 
 # Help Target
@@ -480,9 +480,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... cpp_graphics"
+	@echo "... rebuild_cache"
+	@echo "... ft_minecraft"
 	@echo "... inc/glad/glad.o"
 	@echo "... inc/glad/glad.i"
 	@echo "... inc/glad/glad.s"

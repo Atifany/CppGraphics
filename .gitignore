@@ -30,7 +30,7 @@
 *.exe
 *.out
 *.app
+ft_minecraft
 
 # Custom
 .vscode*
-cppgraphics

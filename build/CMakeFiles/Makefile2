@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /home/atifany/Desktop/CppGraphics/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/cpp_graphics.dir/all
+all: CMakeFiles/ft_minecraft.dir/all
 
 .PHONY : all
 
@@ -63,36 +63,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/cpp_graphics.dir/clean
+clean: CMakeFiles/ft_minecraft.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/cpp_graphics.dir
+# Target rules for target CMakeFiles/ft_minecraft.dir
 
 # All Build rule for target.
-CMakeFiles/cpp_graphics.dir/all:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/depend
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target cpp_graphics"
-.PHONY : CMakeFiles/cpp_graphics.dir/all
+CMakeFiles/ft_minecraft.dir/all:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/depend
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target ft_minecraft"
+.PHONY : CMakeFiles/ft_minecraft.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/cpp_graphics.dir/rule: cmake_check_build_system
+CMakeFiles/ft_minecraft.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/atifany/Desktop/CppGraphics/build/CMakeFiles 14
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cpp_graphics.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ft_minecraft.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/atifany/Desktop/CppGraphics/build/CMakeFiles 0
-.PHONY : CMakeFiles/cpp_graphics.dir/rule
+.PHONY : CMakeFiles/ft_minecraft.dir/rule
 
 # Convenience name for target.
-cpp_graphics: CMakeFiles/cpp_graphics.dir/rule
+ft_minecraft: CMakeFiles/ft_minecraft.dir/rule
 
-.PHONY : cpp_graphics
+.PHONY : ft_minecraft
 
 # clean rule for target.
-CMakeFiles/cpp_graphics.dir/clean:
-	$(MAKE) -f CMakeFiles/cpp_graphics.dir/build.make CMakeFiles/cpp_graphics.dir/clean
-.PHONY : CMakeFiles/cpp_graphics.dir/clean
+CMakeFiles/ft_minecraft.dir/clean:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/clean
+.PHONY : CMakeFiles/ft_minecraft.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

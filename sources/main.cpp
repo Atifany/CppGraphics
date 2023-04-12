@@ -4,6 +4,8 @@
 #include <cmath>
 #include <vector>
 
+#include "../inc/colors.h"
+
 #include "../inc/stb_image/stb_image.h"
 #include "../inc/Shader.h"
 #include "../inc/Camera.h"
@@ -23,7 +25,7 @@ float deltaTime = 0.0f;
 static float lastFrame = 0.0f;
 
 // Setup camera
-float cameraSpeed = 4.0f; // player movespeed
+float cameraSpeed = 8.0f; // player movespeed
 Camera camera;
 
 CoreData c_d;
@@ -31,6 +33,7 @@ Input input;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void CalculateDeltaTime();
+static void PutFPStoTerminal();
 
 static int InitGLFWWindow()
 {
@@ -104,9 +107,9 @@ int main()
 	grassBlock.Load();
 
 	std::vector<Cube> cubes;
-	for (int x = 0; x < 50 ; x++)
+	for (int x = 0; x < 20 ; x++)
 	{
-		for (int z = 0; z < 50 ; z++)
+		for (int z = 0; z < 20 ; z++)
 		{
 			Cube cube(grassBlock);
 			cube.transform.position = glm::vec3(x, 0.0f, z);
@@ -115,6 +118,7 @@ int main()
 	}
 
 	std::cout << "Debug: starting main loop.\n";
+	std::cout << "\n";
 	// run the app
 	while (!glfwWindowShouldClose(c_d.window))
 	{
@@ -143,12 +147,44 @@ int main()
 		KeyReciever();
 		// set values to keys.
 		input.KeyCallBackProcess();
+
+		PutFPStoTerminal();
 	}
 	glfwSetInputMode(c_d.window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 
 	glfwTerminate();
 	std::cout << "Debug: program finished.\n";
 	return 0;
+}
+
+static void PutFPStoTerminal()
+{
+	static char flasher = '|';
+	static int framesElapsed = 0;
+	static float lastChecked = 0.0f;
+
+	framesElapsed++;
+	float curTime = glfwGetTime();
+	std::string color = GRN;
+
+	if (curTime - lastChecked >= 1.0f)
+	{
+		if (flasher == '|')
+			flasher = ' ';
+		else 
+			flasher = '|';
+		if (framesElapsed >= 60)
+			color = GRN;
+		else if (framesElapsed >= 30)
+			color = YEL;
+		else
+			color = RED;
+
+		lastChecked = curTime;
+		std::cout << "\033[1A\033[:KDebug: FPS = " <<
+			color << framesElapsed << NC << " " << flasher << "\n";
+		framesElapsed = 0;
+	}
 }
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)

@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "cpp_graphics"
+			"path" : "ft_minecraft"
 		}
 	],
 	"backtrace" : 1,
@@ -69,7 +69,7 @@
 			]
 		}
 	],
-	"id" : "cpp_graphics::@6890427a1f51a3e7e1df",
+	"id" : "ft_minecraft::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -93,8 +93,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "cpp_graphics",
-	"nameOnDisk" : "cpp_graphics",
+	"name" : "ft_minecraft",
+	"nameOnDisk" : "ft_minecraft",
 	"paths" : 
 	{
 		"build" : ".",
