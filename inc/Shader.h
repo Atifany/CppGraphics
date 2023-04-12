@@ -23,6 +23,9 @@ class Shader
 		void UniformSetInt(const std::string& name, int value) const;
 		void UniformSetFloat(const std::string& name, float value) const;
 		void UniformSetFloatV(const std::string& name, std::vector<float> value) const;
+		void UniformSetVec2(const std::string& name, glm::vec2 value) const;
+		void UniformSetVec3(const std::string& name, glm::vec3 value) const;
+		void UniformSetVec4(const std::string& name, glm::vec4 value) const;
 		void UniformSetMat4(const std::string& name, glm::mat4 value) const;
 		// Build matrices
 		void UpdateViewMatrix(Camera& camera);

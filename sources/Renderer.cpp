@@ -1,5 +1,7 @@
 #include "../inc/Renderer.h"
 
+static glm::vec4 ambientLight = glm::vec4(1.0f, 1.0f, 1.0f, 0.1f);
+
 std::vector<float> defaultCube = {
 	// position	in world  // texture coordinates
 	-0.5f, -0.5f, -0.5f,  2.0f/4, 0.0f/3,
@@ -109,6 +111,7 @@ void Renderer::Draw(Shader& shader, glm::vec3 position, Quaternion quaternion)
 
 	glm::mat4 MVPmatrix = shader.projectionMatrix * shader.viewMatrix * modelMatrix;
 	shader.UniformSetMat4("MVPmatrix", MVPmatrix);
+	shader.UniformSetVec4("ambientLight", ambientLight);
 
 	glBindVertexArray(this->VAO);
 	glDrawArrays(GL_TRIANGLES, 0, this->vertices.size() / 5);
