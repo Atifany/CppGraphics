@@ -1,50 +1,51 @@
 #include "../inc/Renderer.h"
 
+extern Camera camera;
 static glm::vec4 ambientLight = glm::vec4(1.0f, 1.0f, 1.0f, 0.1f);
 
 std::vector<float> defaultCube = {
-	// position	in world  // texture coordinates
-	-0.5f, -0.5f, -0.5f,  2.0f/4, 0.0f/3,
-	 0.5f, -0.5f, -0.5f,  1.0f/4, 0.0f/3,
-	 0.5f,  0.5f, -0.5f,  1.0f/4, 1.0f/3,
-	 0.5f,  0.5f, -0.5f,  1.0f/4, 1.0f/3,
-	-0.5f,  0.5f, -0.5f,  2.0f/4, 1.0f/3,
-	-0.5f, -0.5f, -0.5f,  2.0f/4, 0.0f/3,
+	// position	in world   // normal vector     // texture coordinates
+	-0.5f, -0.5f, -0.5f,   0.0f,  0.0f, -1.0f,   2.0f/4, 0.0f/3,
+	 0.5f, -0.5f, -0.5f,   0.0f,  0.0f, -1.0f,   1.0f/4, 0.0f/3,
+	 0.5f,  0.5f, -0.5f,   0.0f,  0.0f, -1.0f,   1.0f/4, 1.0f/3,
+	 0.5f,  0.5f, -0.5f,   0.0f,  0.0f, -1.0f,   1.0f/4, 1.0f/3,
+	-0.5f,  0.5f, -0.5f,   0.0f,  0.0f, -1.0f,   2.0f/4, 1.0f/3,
+	-0.5f, -0.5f, -0.5f,   0.0f,  0.0f, -1.0f,   2.0f/4, 0.0f/3,
 
-	-0.5f, -0.5f,  0.5f,  2.0f/4, 3.0f/3,
-	 0.5f, -0.5f,  0.5f,  1.0f/4, 3.0f/3,
-	 0.5f,  0.5f,  0.5f,  1.0f/4, 2.0f/3,
-	 0.5f,  0.5f,  0.5f,  1.0f/4, 2.0f/3,
-	-0.5f,  0.5f,  0.5f,  2.0f/4, 2.0f/3,
-	-0.5f, -0.5f,  0.5f,  2.0f/4, 3.0f/3,
+	-0.5f, -0.5f,  0.5f,   0.0f,  0.0f,  1.0f,   2.0f/4, 3.0f/3,
+	 0.5f, -0.5f,  0.5f,   0.0f,  0.0f,  1.0f,   1.0f/4, 3.0f/3,
+	 0.5f,  0.5f,  0.5f,   0.0f,  0.0f,  1.0f,   1.0f/4, 2.0f/3,
+	 0.5f,  0.5f,  0.5f,   0.0f,  0.0f,  1.0f,   1.0f/4, 2.0f/3,
+	-0.5f,  0.5f,  0.5f,   0.0f,  0.0f,  1.0f,   2.0f/4, 2.0f/3,
+	-0.5f, -0.5f,  0.5f,   0.0f,  0.0f,  1.0f,   2.0f/4, 3.0f/3,
 
-	-0.5f,  0.5f,  0.5f,  2.0f/4, 2.0f/3,
-	-0.5f,  0.5f, -0.5f,  2.0f/4, 1.0f/3,
-	-0.5f, -0.5f, -0.5f,  3.0f/4, 1.0f/3,
-	-0.5f, -0.5f, -0.5f,  3.0f/4, 1.0f/3,
-	-0.5f, -0.5f,  0.5f,  3.0f/4, 2.0f/3,
-	-0.5f,  0.5f,  0.5f,  2.0f/4, 2.0f/3,
+	-0.5f,  0.5f,  0.5f,  -1.0f,  0.0f,  0.0f,   2.0f/4, 2.0f/3,
+	-0.5f,  0.5f, -0.5f,  -1.0f,  0.0f,  0.0f,   2.0f/4, 1.0f/3,
+	-0.5f, -0.5f, -0.5f,  -1.0f,  0.0f,  0.0f,   3.0f/4, 1.0f/3,
+	-0.5f, -0.5f, -0.5f,  -1.0f,  0.0f,  0.0f,   3.0f/4, 1.0f/3,
+	-0.5f, -0.5f,  0.5f,  -1.0f,  0.0f,  0.0f,   3.0f/4, 2.0f/3,
+	-0.5f,  0.5f,  0.5f,  -1.0f,  0.0f,  0.0f,   2.0f/4, 2.0f/3,
 
-	 0.5f,  0.5f,  0.5f,  1.0f/4, 2.0f/3,
-	 0.5f,  0.5f, -0.5f,  1.0f/4, 1.0f/3,
-	 0.5f, -0.5f, -0.5f,  0.0f/4, 1.0f/3,
-	 0.5f, -0.5f, -0.5f,  0.0f/4, 1.0f/3,
-	 0.5f, -0.5f,  0.5f,  0.0f/4, 2.0f/3,
-	 0.5f,  0.5f,  0.5f,  1.0f/4, 2.0f/3,
+	 0.5f,  0.5f,  0.5f,   1.0f,  0.0f,  0.0f,   1.0f/4, 2.0f/3,
+	 0.5f,  0.5f, -0.5f,   1.0f,  0.0f,  0.0f,   1.0f/4, 1.0f/3,
+	 0.5f, -0.5f, -0.5f,   1.0f,  0.0f,  0.0f,   0.0f/4, 1.0f/3,
+	 0.5f, -0.5f, -0.5f,   1.0f,  0.0f,  0.0f,   0.0f/4, 1.0f/3,
+	 0.5f, -0.5f,  0.5f,   1.0f,  0.0f,  0.0f,   0.0f/4, 2.0f/3,
+	 0.5f,  0.5f,  0.5f,   1.0f,  0.0f,  0.0f,   1.0f/4, 2.0f/3,
 
-	-0.5f, -0.5f, -0.5f,  3.0f/4, 1.0f/3,
-	 0.5f, -0.5f, -0.5f,  4.0f/4, 1.0f/3,
-	 0.5f, -0.5f,  0.5f,  4.0f/4, 2.0f/3,
-	 0.5f, -0.5f,  0.5f,  4.0f/4, 2.0f/3,
-	-0.5f, -0.5f,  0.5f,  3.0f/4, 2.0f/3,
-	-0.5f, -0.5f, -0.5f,  3.0f/4, 1.0f/3,
+	-0.5f, -0.5f, -0.5f,   0.0f, -1.0f,  0.0f,   3.0f/4, 1.0f/3,
+	 0.5f, -0.5f, -0.5f,   0.0f, -1.0f,  0.0f,   4.0f/4, 1.0f/3,
+	 0.5f, -0.5f,  0.5f,   0.0f, -1.0f,  0.0f,   4.0f/4, 2.0f/3,
+	 0.5f, -0.5f,  0.5f,   0.0f, -1.0f,  0.0f,   4.0f/4, 2.0f/3,
+	-0.5f, -0.5f,  0.5f,   0.0f, -1.0f,  0.0f,   3.0f/4, 2.0f/3,
+	-0.5f, -0.5f, -0.5f,   0.0f, -1.0f,  0.0f,   3.0f/4, 1.0f/3,
 
-	-0.5f,  0.5f, -0.5f,  2.0f/4, 1.0f/3,
-	 0.5f,  0.5f, -0.5f,  1.0f/4, 1.0f/3,
-	 0.5f,  0.5f,  0.5f,  1.0f/4, 2.0f/3,
-	 0.5f,  0.5f,  0.5f,  1.0f/4, 2.0f/3,
-	-0.5f,  0.5f,  0.5f,  2.0f/4, 2.0f/3,
-	-0.5f,  0.5f, -0.5f,  2.0f/4, 1.0f/3};
+	-0.5f,  0.5f, -0.5f,   0.0f,  1.0f,  0.0f,   2.0f/4, 1.0f/3,
+	 0.5f,  0.5f, -0.5f,   0.0f,  1.0f,  0.0f,   1.0f/4, 1.0f/3,
+	 0.5f,  0.5f,  0.5f,   0.0f,  1.0f,  0.0f,   1.0f/4, 2.0f/3,
+	 0.5f,  0.5f,  0.5f,   0.0f,  1.0f,  0.0f,   1.0f/4, 2.0f/3,
+	-0.5f,  0.5f,  0.5f,   0.0f,  1.0f,  0.0f,   2.0f/4, 2.0f/3,
+	-0.5f,  0.5f, -0.5f,   0.0f,  1.0f,  0.0f,   2.0f/4, 1.0f/3};
 
 Renderer::Renderer()
 {
@@ -92,10 +93,12 @@ void Renderer::BuildBuffers()
 	glBufferData(GL_ARRAY_BUFFER, sizeof(verticesBuf), verticesBuf, GL_STATIC_DRAW);
 
 	// defines what a vertex is. In here it is just vec3 of type float.
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)(3 * sizeof(float)));
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+	glEnableVertexAttribArray(2);
 }
 
 void Renderer::Draw(Shader& shader, glm::vec3 position, Quaternion quaternion)
@@ -111,7 +114,12 @@ void Renderer::Draw(Shader& shader, glm::vec3 position, Quaternion quaternion)
 
 	glm::mat4 MVPmatrix = shader.projectionMatrix * shader.viewMatrix * modelMatrix;
 	shader.UniformSetMat4("MVPmatrix", MVPmatrix);
+	shader.UniformSetMat4("Mmatrix", modelMatrix);
 	shader.UniformSetVec4("ambientLight", ambientLight);
+	shader.UniformSetVec3("lightPos", glm::vec3(10.0f, 5.0f, 10.0f));
+	shader.UniformSetVec3("viewPos", camera.transform.position);
+	shader.UniformSetFloat("specularStrength", 0.8f);
+	shader.UniformSetFloat("shininess", 256);
 
 	glBindVertexArray(this->VAO);
 	glDrawArrays(GL_TRIANGLES, 0, this->vertices.size() / 5);
