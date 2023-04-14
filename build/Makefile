@@ -285,6 +285,33 @@ sources/Input.cpp.s:
 	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Input.cpp.s
 .PHONY : sources/Input.cpp.s
 
+sources/Material.o: sources/Material.cpp.o
+
+.PHONY : sources/Material.o
+
+# target to build an object file
+sources/Material.cpp.o:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Material.cpp.o
+.PHONY : sources/Material.cpp.o
+
+sources/Material.i: sources/Material.cpp.i
+
+.PHONY : sources/Material.i
+
+# target to preprocess a source file
+sources/Material.cpp.i:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Material.cpp.i
+.PHONY : sources/Material.cpp.i
+
+sources/Material.s: sources/Material.cpp.s
+
+.PHONY : sources/Material.s
+
+# target to generate assembly for a file
+sources/Material.cpp.s:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Material.cpp.s
+.PHONY : sources/Material.cpp.s
+
 sources/Quaternion.o: sources/Quaternion.cpp.o
 
 .PHONY : sources/Quaternion.o
@@ -501,6 +528,9 @@ help:
 	@echo "... sources/Input.o"
 	@echo "... sources/Input.i"
 	@echo "... sources/Input.s"
+	@echo "... sources/Material.o"
+	@echo "... sources/Material.i"
+	@echo "... sources/Material.s"
 	@echo "... sources/Quaternion.o"
 	@echo "... sources/Quaternion.i"
 	@echo "... sources/Quaternion.s"

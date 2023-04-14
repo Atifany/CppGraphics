@@ -6,10 +6,10 @@ Cube::Cube()
 	this->renderer;
 }
 
-Cube::Cube(Texture texture)
+Cube::Cube(Texture& texture, Material& material)
 {
 	this->transform;
-	this->renderer = Renderer(texture);
+	this->renderer = Renderer(texture, material);
 }
 
 Cube::~Cube() {}

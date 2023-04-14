@@ -74,12 +74,12 @@ clean: CMakeFiles/ft_minecraft.dir/clean
 CMakeFiles/ft_minecraft.dir/all:
 	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/depend
 	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target ft_minecraft"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 "Built target ft_minecraft"
 .PHONY : CMakeFiles/ft_minecraft.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ft_minecraft.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/atifany/Desktop/CppGraphics/build/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/atifany/Desktop/CppGraphics/build/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ft_minecraft.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/atifany/Desktop/CppGraphics/build/CMakeFiles 0
 .PHONY : CMakeFiles/ft_minecraft.dir/rule

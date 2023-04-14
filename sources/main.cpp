@@ -14,6 +14,7 @@
 #include "../inc/process_input.h"
 #include "../inc/Cube.h"
 #include "../inc/Texture.h"
+#include "../inc/Material.h"
 
 static const float fov = 90.0f;
 
@@ -103,15 +104,19 @@ int main()
 	// Enable Depth-tetsing
 	glEnable(GL_DEPTH_TEST);
 
-	Texture grassBlock = Texture(GL_TEXTURE_2D, texturePath);
-	grassBlock.Load();
+	Texture grassBlockTexture = Texture(GL_TEXTURE_2D, texturePath);
+	grassBlockTexture.Load();
+	Material grassBlockMaterial = Material(
+		glm::vec3(0.8f, 0.8f, 0.8f),
+		glm::vec3(0.6f, 0.6f, 0.6f),
+		glm::vec3(0.0f, 0.0f, 0.0f), 32.0f);
 
 	std::vector<Cube> cubes;
 	for (int x = 0; x < 20 ; x++)
 	{
 		for (int z = 0; z < 20 ; z++)
 		{
-			Cube cube(grassBlock);
+			Cube cube(grassBlockTexture, grassBlockMaterial);
 			cube.transform.position = glm::vec3(x, 0.0f, z);
 			cubes.push_back(cube);
 		}

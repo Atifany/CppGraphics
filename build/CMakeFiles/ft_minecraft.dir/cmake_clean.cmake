@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ft_minecraft.dir/sources/CoreData.cpp.o"
   "CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.o"
   "CMakeFiles/ft_minecraft.dir/sources/Input.cpp.o"
+  "CMakeFiles/ft_minecraft.dir/sources/Material.cpp.o"
   "CMakeFiles/ft_minecraft.dir/sources/Quaternion.cpp.o"
   "CMakeFiles/ft_minecraft.dir/sources/Renderer.cpp.o"
   "CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o"

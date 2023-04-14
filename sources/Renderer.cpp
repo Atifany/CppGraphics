@@ -53,26 +53,29 @@ Renderer::Renderer()
 	this->VAO = 0;
 	this->VBO = 0;
 	this->texture = Texture();
+	this->material = Material();
 
 	this->BuildBuffers();
 }
 
-Renderer::Renderer(unsigned int textureTarget, const std::string& texturePath)
+Renderer::Renderer(unsigned int textureTarget, const std::string& texturePath, Material& _material)
 {
 	this->vertices = defaultCube;
 	this->VAO = 0;
 	this->VBO = 0;
 	this->texture = Texture(textureTarget, texturePath);
+	this->material = Material(_material);
 
 	this->BuildBuffers();
 }
 
-Renderer::Renderer(Texture& _texture)
+Renderer::Renderer(Texture& _texture, Material& _material)
 {
 	this->vertices = defaultCube;
 	this->VAO = 0;
 	this->VBO = 0;
 	this->texture = Texture(_texture);
+	this->material = Material(_material);
 
 	this->BuildBuffers();
 }
@@ -115,11 +118,16 @@ void Renderer::Draw(Shader& shader, glm::vec3 position, Quaternion quaternion)
 	glm::mat4 MVPmatrix = shader.projectionMatrix * shader.viewMatrix * modelMatrix;
 	shader.UniformSetMat4("MVPmatrix", MVPmatrix);
 	shader.UniformSetMat4("Mmatrix", modelMatrix);
-	shader.UniformSetVec4("ambientLight", ambientLight);
-	shader.UniformSetVec3("lightPos", glm::vec3(10.0f, 5.0f, 10.0f));
 	shader.UniformSetVec3("viewPos", camera.transform.position);
-	shader.UniformSetFloat("specularStrength", 0.8f);
-	shader.UniformSetFloat("shininess", 256);
+
+	shader.UniformSetVec3("light.position", glm::vec3(10.0f, 5.0f, 10.0f));
+	shader.UniformSetVec3("light.ambient", glm::vec3(0.5f, 0.5f, 0.5f));
+	shader.UniformSetVec3("light.diffuse", glm::vec3(0.5f, 0.5f, 0.5f));
+	shader.UniformSetVec3("light.specular", glm::vec3(0.9f, 0.9f, 0.9f));
+	shader.UniformSetVec3("material.ambient", this->material.ambient);
+	shader.UniformSetVec3("material.diffuse", this->material.diffuse);
+	shader.UniformSetVec3("material.specular", this->material.specular);
+	shader.UniformSetFloat("material.shininess", this->material.shininess);
 
 	glBindVertexArray(this->VAO);
 	glDrawArrays(GL_TRIANGLES, 0, this->vertices.size() / 5);

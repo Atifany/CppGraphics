@@ -8,7 +8,7 @@ class Cube
 {
 	public:
 		Cube();
-		Cube(Texture texture);
+		Cube(Texture& texture, Material& material);
 		~Cube();
 		Cube(const Cube& other);
 		Cube& operator=(const Cube& other);
