@@ -15,6 +15,8 @@
 #include "../inc/Cube.h"
 #include "../inc/Texture.h"
 #include "../inc/Material.h"
+#include "../inc/Component.h"
+#include "../inc/GameObject.h"
 
 static const float fov = 90.0f;
 
@@ -71,8 +73,67 @@ static int InitGLAD()
 	return 0;
 }
 
+//  ///                \\\
+// vvv Templates tests vvv
+
+// class Base
+// {
+// 	public:
+// 		virtual ~Base() {}
+// };
+//
+// class Derived : public Base
+// {
+// 	public:
+// 		Derived(float _cont) { this->cont = _cont; }
+// 		float cont;
+// };
+//
+// GameObject TestTemplates()
+// {
+// 	// Base	b;
+// 	// Derived	d;
+//
+// 	// d.cont = 50.5f;
+// 	// std::cout << "d.cont = " << d.cont << "\n";
+//
+// 	// Derived d(50.5f);
+//
+//
+// 	// Base* bPTR = new Derived(50.5f);
+// 	// // d.~Derived();
+//
+// 	// Derived* d1 = dynamic_cast<Derived*>(bPTR);
+// 	// std::cout << "d.cont = " << d1->cont << "\n";
+// 	// d1->~Derived();
+// 	// Derived* d2 = dynamic_cast<Derived*>(bPTR);
+// 	// std::cout << "d.cont = " << d2->cont << "\n";
+//
+// 	Renderer* r = new Renderer();
+// 	Transform* t = new Transform();
+// 	GameObject gm;
+//
+// 	gm.AddComponent(r);
+// 	gm.AddComponent(t);
+//
+// 	//r->~Renderer();
+// 	//t->~Transform();
+//
+// 	Renderer* r1 = gm.GetComponent<Renderer>();
+// 	Transform* t1 = gm.GetComponent<Transform>();
+//
+// 	return gm;
+// }
+//
+// void TestTemplates2(GameObject gm)
+// {
+// 	Renderer* r1 = gm.GetComponent<Renderer>();
+// 	Transform* t1 = gm.GetComponent<Transform>();
+// }
+
 int main()
 {
+
 	c_d.windowWidth = 1920;
 	c_d.windowHeight = 1080;
 	int errorCode = 0;
@@ -84,6 +145,9 @@ int main()
 	errorCode = InitGLAD();
 	if (errorCode != 0)
 		return errorCode;
+
+	// TestTemplates2(TestTemplates());
+	// return 0;
 
 	Shader shader(vertexShaderPath, fragmentShaderPath);
 	if (shader.program == 0)
@@ -110,17 +174,40 @@ int main()
 		glm::vec3(0.8f, 0.8f, 0.8f),
 		glm::vec3(0.6f, 0.6f, 0.6f),
 		glm::vec3(0.0f, 0.0f, 0.0f), 32.0f);
-
-	std::vector<Cube> cubes;
+	
+	std::vector<GameObject*> cubes;
 	for (int x = 0; x < 20 ; x++)
 	{
 		for (int z = 0; z < 20 ; z++)
 		{
-			Cube cube(grassBlockTexture, grassBlockMaterial);
-			cube.transform.position = glm::vec3(x, 0.0f, z);
+			Renderer* renderer = new Renderer(grassBlockTexture, grassBlockMaterial);
+			Transform* transform = new Transform();
+			GameObject* cube = new GameObject();
+			cube->AddComponent(renderer);
+			cube->AddComponent(transform);
+			
+			cube->GetComponent<Transform>()->position = glm::vec3(x, 0.0f, z);
 			cubes.push_back(cube);
 		}
 	}
+
+	// Texture grassBlockTexture = Texture(GL_TEXTURE_2D, texturePath);
+	// grassBlockTexture.Load();
+	// Material grassBlockMaterial = Material(
+	// 	glm::vec3(0.8f, 0.8f, 0.8f),
+	// 	glm::vec3(0.6f, 0.6f, 0.6f),
+	// 	glm::vec3(0.0f, 0.0f, 0.0f), 32.0f);
+	//
+	// std::vector<Cube> cubes;
+	// for (int x = 0; x < 20 ; x++)
+	// {
+	// 	for (int z = 0; z < 20 ; z++)
+	// 	{
+	// 		Cube cube(grassBlockTexture, grassBlockMaterial);
+	// 		cube.transform.position = glm::vec3(x, 0.0f, z);
+	// 		cubes.push_back(cube);
+	// 	}
+	// }
 
 	std::cout << "Debug: starting main loop.\n";
 	std::cout << "\n";
@@ -136,11 +223,12 @@ int main()
 		shader.UpdateViewMatrix(camera);
 		shader.UpdateProjectionMatrix(c_d, camera);
 
-		for (Cube& cube : cubes)
+		for (GameObject* cube : cubes)
 		{
-			cube.transform.position.y =
-				sin((glfwGetTime() + cube.transform.position.x + cube.transform.position.z) / 10.0f) * 1.5f;
-			cube.DrawMe(shader);
+			Transform transform = *(cube->GetComponent<Transform>());
+			transform.position.y =
+				sin((glfwGetTime() + transform.position.x + transform.position.z) / 10.0f) * 1.5f;
+			cube->GetComponent<Renderer>()->Draw(shader, transform.position, transform.quaternion);
 		}
 
 		// Swaps front and back screen buffers.

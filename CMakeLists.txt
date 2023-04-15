@@ -14,6 +14,8 @@ add_executable(ft_minecraft
 	sources/Renderer.cpp
 	sources/Texture.cpp
 	sources/Material.cpp
+	sources/GameObject.cpp
+	sources/Component.cpp
 
 #	GLAD library
 	inc/glad/glad.c

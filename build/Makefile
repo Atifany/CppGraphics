@@ -204,6 +204,33 @@ sources/Camera.cpp.s:
 	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.s
 .PHONY : sources/Camera.cpp.s
 
+sources/Component.o: sources/Component.cpp.o
+
+.PHONY : sources/Component.o
+
+# target to build an object file
+sources/Component.cpp.o:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Component.cpp.o
+.PHONY : sources/Component.cpp.o
+
+sources/Component.i: sources/Component.cpp.i
+
+.PHONY : sources/Component.i
+
+# target to preprocess a source file
+sources/Component.cpp.i:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Component.cpp.i
+.PHONY : sources/Component.cpp.i
+
+sources/Component.s: sources/Component.cpp.s
+
+.PHONY : sources/Component.s
+
+# target to generate assembly for a file
+sources/Component.cpp.s:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Component.cpp.s
+.PHONY : sources/Component.cpp.s
+
 sources/CoreData.o: sources/CoreData.cpp.o
 
 .PHONY : sources/CoreData.o
@@ -257,6 +284,33 @@ sources/Cube.s: sources/Cube.cpp.s
 sources/Cube.cpp.s:
 	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.s
 .PHONY : sources/Cube.cpp.s
+
+sources/GameObject.o: sources/GameObject.cpp.o
+
+.PHONY : sources/GameObject.o
+
+# target to build an object file
+sources/GameObject.cpp.o:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.o
+.PHONY : sources/GameObject.cpp.o
+
+sources/GameObject.i: sources/GameObject.cpp.i
+
+.PHONY : sources/GameObject.i
+
+# target to preprocess a source file
+sources/GameObject.cpp.i:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.i
+.PHONY : sources/GameObject.cpp.i
+
+sources/GameObject.s: sources/GameObject.cpp.s
+
+.PHONY : sources/GameObject.s
+
+# target to generate assembly for a file
+sources/GameObject.cpp.s:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.s
+.PHONY : sources/GameObject.cpp.s
 
 sources/Input.o: sources/Input.cpp.o
 
@@ -519,12 +573,18 @@ help:
 	@echo "... sources/Camera.o"
 	@echo "... sources/Camera.i"
 	@echo "... sources/Camera.s"
+	@echo "... sources/Component.o"
+	@echo "... sources/Component.i"
+	@echo "... sources/Component.s"
 	@echo "... sources/CoreData.o"
 	@echo "... sources/CoreData.i"
 	@echo "... sources/CoreData.s"
 	@echo "... sources/Cube.o"
 	@echo "... sources/Cube.i"
 	@echo "... sources/Cube.s"
+	@echo "... sources/GameObject.o"
+	@echo "... sources/GameObject.i"
+	@echo "... sources/GameObject.s"
 	@echo "... sources/Input.o"
 	@echo "... sources/Input.i"
 	@echo "... sources/Input.s"

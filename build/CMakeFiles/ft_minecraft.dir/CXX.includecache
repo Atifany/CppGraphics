@@ -12,6 +12,8 @@ glm/glm.hpp
 Transform.h
 /home/atifany/Desktop/CppGraphics/inc/Transform.h
 
+/home/atifany/Desktop/CppGraphics/inc/Component.h
+
 /home/atifany/Desktop/CppGraphics/inc/CoreData.h
 glad/glad.h
 -
@@ -25,6 +27,14 @@ Renderer.h
 /home/atifany/Desktop/CppGraphics/inc/Renderer.h
 Texture.h
 /home/atifany/Desktop/CppGraphics/inc/Texture.h
+
+/home/atifany/Desktop/CppGraphics/inc/GameObject.h
+vector
+-
+iostream
+-
+Component.h
+/home/atifany/Desktop/CppGraphics/inc/Component.h
 
 /home/atifany/Desktop/CppGraphics/inc/Input.h
 map
@@ -61,6 +71,8 @@ Texture.h
 /home/atifany/Desktop/CppGraphics/inc/Texture.h
 Material.h
 /home/atifany/Desktop/CppGraphics/inc/Material.h
+Component.h
+/home/atifany/Desktop/CppGraphics/inc/Component.h
 
 /home/atifany/Desktop/CppGraphics/inc/Shader.h
 string
@@ -93,6 +105,8 @@ stb_image/stb_image.h
 /home/atifany/Desktop/CppGraphics/inc/Transform.h
 Quaternion.h
 /home/atifany/Desktop/CppGraphics/inc/Quaternion.h
+Component.h
+/home/atifany/Desktop/CppGraphics/inc/Component.h
 
 /home/atifany/Desktop/CppGraphics/inc/colors.h
 
@@ -1536,6 +1550,10 @@ intrin.h
 arm_neon.h
 -
 
+/home/atifany/Desktop/CppGraphics/sources/GameObject.cpp
+../inc/GameObject.h
+/home/atifany/Desktop/CppGraphics/inc/GameObject.h
+
 /home/atifany/Desktop/CppGraphics/sources/main.cpp
 iostream
 -
@@ -1567,4 +1585,8 @@ vector
 /home/atifany/Desktop/CppGraphics/inc/Texture.h
 ../inc/Material.h
 /home/atifany/Desktop/CppGraphics/inc/Material.h
+../inc/Component.h
+/home/atifany/Desktop/CppGraphics/inc/Component.h
+../inc/GameObject.h
+/home/atifany/Desktop/CppGraphics/inc/GameObject.h
 

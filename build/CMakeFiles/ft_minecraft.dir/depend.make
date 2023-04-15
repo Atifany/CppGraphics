@@ -7,6 +7,7 @@ CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o: ../inc
 CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o: ../inc/stb_image/stb_image_implementation.cpp
 
 CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.o: ../inc/Camera.h
+CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.o: ../inc/Component.h
 CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.o: ../inc/Quaternion.h
 CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.o: ../inc/Transform.h
 CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.o: ../inc/glm/common.hpp
@@ -162,10 +163,14 @@ CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.o: ../inc/glm/vec4.hpp
 CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.o: ../inc/glm/vector_relational.hpp
 CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.o: ../sources/Camera.cpp
 
+CMakeFiles/ft_minecraft.dir/sources/Component.cpp.o: ../inc/Component.h
+CMakeFiles/ft_minecraft.dir/sources/Component.cpp.o: ../sources/Component.cpp
+
 CMakeFiles/ft_minecraft.dir/sources/CoreData.cpp.o: ../inc/CoreData.h
 CMakeFiles/ft_minecraft.dir/sources/CoreData.cpp.o: ../sources/CoreData.cpp
 
 CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.o: ../inc/Camera.h
+CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.o: ../inc/Component.h
 CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.o: ../inc/CoreData.h
 CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.o: ../inc/Cube.h
 CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.o: ../inc/Material.h
@@ -377,6 +382,10 @@ CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.o: ../inc/glm/vec4.hpp
 CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.o: ../inc/glm/vector_relational.hpp
 CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.o: ../inc/stb_image/stb_image.h
 CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.o: ../sources/Cube.cpp
+
+CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.o: ../inc/Component.h
+CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.o: ../inc/GameObject.h
+CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.o: ../sources/GameObject.cpp
 
 CMakeFiles/ft_minecraft.dir/sources/Input.cpp.o: ../inc/Input.h
 CMakeFiles/ft_minecraft.dir/sources/Input.cpp.o: ../sources/Input.cpp
@@ -690,6 +699,7 @@ CMakeFiles/ft_minecraft.dir/sources/Quaternion.cpp.o: ../inc/glm/vector_relation
 CMakeFiles/ft_minecraft.dir/sources/Quaternion.cpp.o: ../sources/Quaternion.cpp
 
 CMakeFiles/ft_minecraft.dir/sources/Renderer.cpp.o: ../inc/Camera.h
+CMakeFiles/ft_minecraft.dir/sources/Renderer.cpp.o: ../inc/Component.h
 CMakeFiles/ft_minecraft.dir/sources/Renderer.cpp.o: ../inc/CoreData.h
 CMakeFiles/ft_minecraft.dir/sources/Renderer.cpp.o: ../inc/Material.h
 CMakeFiles/ft_minecraft.dir/sources/Renderer.cpp.o: ../inc/Quaternion.h
@@ -902,6 +912,7 @@ CMakeFiles/ft_minecraft.dir/sources/Renderer.cpp.o: ../inc/stb_image/stb_image.h
 CMakeFiles/ft_minecraft.dir/sources/Renderer.cpp.o: ../sources/Renderer.cpp
 
 CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o: ../inc/Camera.h
+CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o: ../inc/Component.h
 CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o: ../inc/CoreData.h
 CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o: ../inc/Quaternion.h
 CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o: ../inc/Shader.h
@@ -1113,6 +1124,7 @@ CMakeFiles/ft_minecraft.dir/sources/Texture.cpp.o: ../inc/Texture.h
 CMakeFiles/ft_minecraft.dir/sources/Texture.cpp.o: ../inc/stb_image/stb_image.h
 CMakeFiles/ft_minecraft.dir/sources/Texture.cpp.o: ../sources/Texture.cpp
 
+CMakeFiles/ft_minecraft.dir/sources/Transform.cpp.o: ../inc/Component.h
 CMakeFiles/ft_minecraft.dir/sources/Transform.cpp.o: ../inc/Quaternion.h
 CMakeFiles/ft_minecraft.dir/sources/Transform.cpp.o: ../inc/Transform.h
 CMakeFiles/ft_minecraft.dir/sources/Transform.cpp.o: ../inc/glm/common.hpp
@@ -1269,8 +1281,10 @@ CMakeFiles/ft_minecraft.dir/sources/Transform.cpp.o: ../inc/glm/vector_relationa
 CMakeFiles/ft_minecraft.dir/sources/Transform.cpp.o: ../sources/Transform.cpp
 
 CMakeFiles/ft_minecraft.dir/sources/main.cpp.o: ../inc/Camera.h
+CMakeFiles/ft_minecraft.dir/sources/main.cpp.o: ../inc/Component.h
 CMakeFiles/ft_minecraft.dir/sources/main.cpp.o: ../inc/CoreData.h
 CMakeFiles/ft_minecraft.dir/sources/main.cpp.o: ../inc/Cube.h
+CMakeFiles/ft_minecraft.dir/sources/main.cpp.o: ../inc/GameObject.h
 CMakeFiles/ft_minecraft.dir/sources/main.cpp.o: ../inc/Input.h
 CMakeFiles/ft_minecraft.dir/sources/main.cpp.o: ../inc/Material.h
 CMakeFiles/ft_minecraft.dir/sources/main.cpp.o: ../inc/Quaternion.h
@@ -1485,6 +1499,7 @@ CMakeFiles/ft_minecraft.dir/sources/main.cpp.o: ../inc/stb_image/stb_image.h
 CMakeFiles/ft_minecraft.dir/sources/main.cpp.o: ../sources/main.cpp
 
 CMakeFiles/ft_minecraft.dir/sources/process_input.cpp.o: ../inc/Camera.h
+CMakeFiles/ft_minecraft.dir/sources/process_input.cpp.o: ../inc/Component.h
 CMakeFiles/ft_minecraft.dir/sources/process_input.cpp.o: ../inc/CoreData.h
 CMakeFiles/ft_minecraft.dir/sources/process_input.cpp.o: ../inc/Input.h
 CMakeFiles/ft_minecraft.dir/sources/process_input.cpp.o: ../inc/Quaternion.h

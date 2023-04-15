@@ -213,9 +213,35 @@ CMakeFiles/ft_minecraft.dir/sources/Material.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ft_minecraft.dir/sources/Material.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/atifany/Desktop/CppGraphics/sources/Material.cpp -o CMakeFiles/ft_minecraft.dir/sources/Material.cpp.s
 
+CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.o: CMakeFiles/ft_minecraft.dir/flags.make
+CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.o: ../sources/GameObject.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/GameObject.cpp
+
+CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/atifany/Desktop/CppGraphics/sources/GameObject.cpp > CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.i
+
+CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/atifany/Desktop/CppGraphics/sources/GameObject.cpp -o CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.s
+
+CMakeFiles/ft_minecraft.dir/sources/Component.cpp.o: CMakeFiles/ft_minecraft.dir/flags.make
+CMakeFiles/ft_minecraft.dir/sources/Component.cpp.o: ../sources/Component.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/ft_minecraft.dir/sources/Component.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ft_minecraft.dir/sources/Component.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Component.cpp
+
+CMakeFiles/ft_minecraft.dir/sources/Component.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ft_minecraft.dir/sources/Component.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/atifany/Desktop/CppGraphics/sources/Component.cpp > CMakeFiles/ft_minecraft.dir/sources/Component.cpp.i
+
+CMakeFiles/ft_minecraft.dir/sources/Component.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ft_minecraft.dir/sources/Component.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/atifany/Desktop/CppGraphics/sources/Component.cpp -o CMakeFiles/ft_minecraft.dir/sources/Component.cpp.s
+
 CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.o: CMakeFiles/ft_minecraft.dir/flags.make
 CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.o: ../inc/glad/glad.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.o"
 	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.o   -c /home/atifany/Desktop/CppGraphics/inc/glad/glad.c
 
 CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.i: cmake_force
@@ -228,7 +254,7 @@ CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.s: cmake_force
 
 CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o: CMakeFiles/ft_minecraft.dir/flags.make
 CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o: ../inc/stb_image/stb_image_implementation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o -c /home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image_implementation.cpp
 
 CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.i: cmake_force
@@ -253,6 +279,8 @@ ft_minecraft_OBJECTS = \
 "CMakeFiles/ft_minecraft.dir/sources/Renderer.cpp.o" \
 "CMakeFiles/ft_minecraft.dir/sources/Texture.cpp.o" \
 "CMakeFiles/ft_minecraft.dir/sources/Material.cpp.o" \
+"CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.o" \
+"CMakeFiles/ft_minecraft.dir/sources/Component.cpp.o" \
 "CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.o" \
 "CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o"
 
@@ -271,11 +299,13 @@ ft_minecraft: CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.o
 ft_minecraft: CMakeFiles/ft_minecraft.dir/sources/Renderer.cpp.o
 ft_minecraft: CMakeFiles/ft_minecraft.dir/sources/Texture.cpp.o
 ft_minecraft: CMakeFiles/ft_minecraft.dir/sources/Material.cpp.o
+ft_minecraft: CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.o
+ft_minecraft: CMakeFiles/ft_minecraft.dir/sources/Component.cpp.o
 ft_minecraft: CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.o
 ft_minecraft: CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o
 ft_minecraft: CMakeFiles/ft_minecraft.dir/build.make
 ft_minecraft: CMakeFiles/ft_minecraft.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable ft_minecraft"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable ft_minecraft"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ft_minecraft.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

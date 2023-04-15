@@ -15,8 +15,10 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image_implementation.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/Camera.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.o"
+  "/home/atifany/Desktop/CppGraphics/sources/Component.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/Component.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/CoreData.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/CoreData.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/Cube.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.o"
+  "/home/atifany/Desktop/CppGraphics/sources/GameObject.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/Input.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/Input.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/Material.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/Material.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/Quaternion.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/Quaternion.cpp.o"

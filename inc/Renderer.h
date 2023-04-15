@@ -10,8 +10,9 @@
 #include "Shader.h"
 #include "Texture.h"
 #include "Material.h"
+#include "Component.h"
 
-class Renderer
+class Renderer : public Component
 {
 	public:
 		Renderer();
