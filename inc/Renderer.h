@@ -11,6 +11,7 @@
 #include "Texture.h"
 #include "Material.h"
 #include "Component.h"
+#include "GameObject.h"
 
 class Renderer : public Component
 {

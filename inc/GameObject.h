@@ -2,8 +2,11 @@
 
 #include <vector>
 #include <iostream>
+#include <typeinfo>
 
 #include "Component.h"
+#include "Transform.h"
+#include "LightSource.h"
 
 class GameObject
 {
@@ -22,6 +25,8 @@ class GameObject
 	private:
 		std::vector<Component*> components;
 };
+
+extern std::vector<GameObject*> lightSources;
 
 template <typename T>
 T* GameObject::GetComponent()
@@ -42,4 +47,6 @@ void GameObject::AddComponent(T* component)
 	// std::cout << "Add called\n";
 	Component* buf = component;
 	this->components.push_back(buf);
+	if (dynamic_cast<LightSource*>(component) != NULL)
+		lightSources.push_back(this);
 }

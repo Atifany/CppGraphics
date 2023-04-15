@@ -339,6 +339,33 @@ sources/Input.cpp.s:
 	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Input.cpp.s
 .PHONY : sources/Input.cpp.s
 
+sources/LightSource.o: sources/LightSource.cpp.o
+
+.PHONY : sources/LightSource.o
+
+# target to build an object file
+sources/LightSource.cpp.o:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/LightSource.cpp.o
+.PHONY : sources/LightSource.cpp.o
+
+sources/LightSource.i: sources/LightSource.cpp.i
+
+.PHONY : sources/LightSource.i
+
+# target to preprocess a source file
+sources/LightSource.cpp.i:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/LightSource.cpp.i
+.PHONY : sources/LightSource.cpp.i
+
+sources/LightSource.s: sources/LightSource.cpp.s
+
+.PHONY : sources/LightSource.s
+
+# target to generate assembly for a file
+sources/LightSource.cpp.s:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/LightSource.cpp.s
+.PHONY : sources/LightSource.cpp.s
+
 sources/Material.o: sources/Material.cpp.o
 
 .PHONY : sources/Material.o
@@ -588,6 +615,9 @@ help:
 	@echo "... sources/Input.o"
 	@echo "... sources/Input.i"
 	@echo "... sources/Input.s"
+	@echo "... sources/LightSource.o"
+	@echo "... sources/LightSource.i"
+	@echo "... sources/LightSource.s"
 	@echo "... sources/Material.o"
 	@echo "... sources/Material.i"
 	@echo "... sources/Material.s"

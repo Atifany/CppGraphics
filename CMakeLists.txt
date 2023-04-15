@@ -16,6 +16,7 @@ add_executable(ft_minecraft
 	sources/Material.cpp
 	sources/GameObject.cpp
 	sources/Component.cpp
+	sources/LightSource.cpp
 
 #	GLAD library
 	inc/glad/glad.c

@@ -175,16 +175,40 @@ int main()
 		glm::vec3(0.6f, 0.6f, 0.6f),
 		glm::vec3(0.0f, 0.0f, 0.0f), 32.0f);
 	
+	GameObject* lightTestObject = new GameObject();
+	DirectionalLight* dirLight = new DirectionalLight(
+		glm::vec3(1.0f, 1.0f, 1.0f),
+		glm::vec3(1.0f, 1.0f, 1.0f),
+		glm::vec3(1.0f, 1.0f, 1.0f),
+		0.1f, 0.0f, glm::vec3(0.0f, -1.0f, 0.0f));
+	lightTestObject->AddComponent(dirLight);
+
+	GameObject* pointLight1 = new GameObject();
+	PointLight* p1 = new PointLight(
+		glm::vec3(1.0f, 1.0f, 1.0f),
+		glm::vec3(1.0f, 1.0f, 1.0f),
+		glm::vec3(1.0f, 1.0f, 1.0f),
+		5.0f, 0.0f, glm::vec3(0.0f, 0.09f, 0.032f));
+	pointLight1->AddComponent(p1);
+	pointLight1->GetComponent<Transform>()->position = glm::vec3(15.0f, 2.5f, 15.0f);
+
+	GameObject* pointLight2 = new GameObject();
+	PointLight* p2 = new PointLight(
+		glm::vec3(1.0f, 1.0f, 1.0f),
+		glm::vec3(1.0f, 1.0f, 1.0f),
+		glm::vec3(1.0f, 1.0f, 1.0f),
+		5.0f, 0.0f, glm::vec3(0.0f, 0.09f, 0.032f));
+	pointLight2->AddComponent(p2);
+	pointLight2->GetComponent<Transform>()->position = glm::vec3(5.0f, 2.5f, 5.0f);
+
 	std::vector<GameObject*> cubes;
 	for (int x = 0; x < 20 ; x++)
 	{
 		for (int z = 0; z < 20 ; z++)
 		{
 			Renderer* renderer = new Renderer(grassBlockTexture, grassBlockMaterial);
-			Transform* transform = new Transform();
 			GameObject* cube = new GameObject();
 			cube->AddComponent(renderer);
-			cube->AddComponent(transform);
 			
 			cube->GetComponent<Transform>()->position = glm::vec3(x, 0.0f, z);
 			cubes.push_back(cube);
@@ -228,6 +252,7 @@ int main()
 			Transform transform = *(cube->GetComponent<Transform>());
 			transform.position.y =
 				sin((glfwGetTime() + transform.position.x + transform.position.z) / 10.0f) * 1.5f;
+			
 			cube->GetComponent<Renderer>()->Draw(shader, transform.position, transform.quaternion);
 		}
 

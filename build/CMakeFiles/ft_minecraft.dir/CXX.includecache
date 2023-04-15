@@ -20,29 +20,25 @@ glad/glad.h
 GLFW/glfw3.h
 -
 
-/home/atifany/Desktop/CppGraphics/inc/Cube.h
-Transform.h
-/home/atifany/Desktop/CppGraphics/inc/Transform.h
-Renderer.h
-/home/atifany/Desktop/CppGraphics/inc/Renderer.h
-Texture.h
-/home/atifany/Desktop/CppGraphics/inc/Texture.h
-
 /home/atifany/Desktop/CppGraphics/inc/GameObject.h
 vector
 -
 iostream
 -
+typeinfo
+-
 Component.h
 /home/atifany/Desktop/CppGraphics/inc/Component.h
+Transform.h
+/home/atifany/Desktop/CppGraphics/inc/Transform.h
+LightSource.h
+/home/atifany/Desktop/CppGraphics/inc/LightSource.h
 
-/home/atifany/Desktop/CppGraphics/inc/Input.h
-map
--
-glad/glad.h
--
-GLFW/glfw3.h
--
+/home/atifany/Desktop/CppGraphics/inc/LightSource.h
+glm/glm.hpp
+/home/atifany/Desktop/CppGraphics/inc/glm/glm.hpp
+Component.h
+/home/atifany/Desktop/CppGraphics/inc/Component.h
 
 /home/atifany/Desktop/CppGraphics/inc/Material.h
 glm/glm.hpp
@@ -73,6 +69,8 @@ Material.h
 /home/atifany/Desktop/CppGraphics/inc/Material.h
 Component.h
 /home/atifany/Desktop/CppGraphics/inc/Component.h
+GameObject.h
+/home/atifany/Desktop/CppGraphics/inc/GameObject.h
 
 /home/atifany/Desktop/CppGraphics/inc/Shader.h
 string
@@ -107,8 +105,6 @@ Quaternion.h
 /home/atifany/Desktop/CppGraphics/inc/Quaternion.h
 Component.h
 /home/atifany/Desktop/CppGraphics/inc/Component.h
-
-/home/atifany/Desktop/CppGraphics/inc/colors.h
 
 /home/atifany/Desktop/CppGraphics/inc/glm/common.hpp
 detail/qualifier.hpp
@@ -1514,10 +1510,6 @@ detail/setup.hpp
 detail/func_vector_relational.inl
 /home/atifany/Desktop/CppGraphics/inc/glm/detail/func_vector_relational.inl
 
-/home/atifany/Desktop/CppGraphics/inc/process_input.h
-GLFW/glfw3.h
--
-
 /home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image.h
 stb_image.h
 /home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image.h
@@ -1550,43 +1542,7 @@ intrin.h
 arm_neon.h
 -
 
-/home/atifany/Desktop/CppGraphics/sources/GameObject.cpp
-../inc/GameObject.h
-/home/atifany/Desktop/CppGraphics/inc/GameObject.h
-
-/home/atifany/Desktop/CppGraphics/sources/main.cpp
-iostream
--
-glad/glad.h
--
-GLFW/glfw3.h
--
-cmath
--
-vector
--
-../inc/colors.h
-/home/atifany/Desktop/CppGraphics/inc/colors.h
-../inc/stb_image/stb_image.h
-/home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image.h
-../inc/Shader.h
-/home/atifany/Desktop/CppGraphics/inc/Shader.h
-../inc/Camera.h
-/home/atifany/Desktop/CppGraphics/inc/Camera.h
-../inc/CoreData.h
-/home/atifany/Desktop/CppGraphics/inc/CoreData.h
-../inc/Input.h
-/home/atifany/Desktop/CppGraphics/inc/Input.h
-../inc/process_input.h
-/home/atifany/Desktop/CppGraphics/inc/process_input.h
-../inc/Cube.h
-/home/atifany/Desktop/CppGraphics/inc/Cube.h
-../inc/Texture.h
-/home/atifany/Desktop/CppGraphics/inc/Texture.h
-../inc/Material.h
-/home/atifany/Desktop/CppGraphics/inc/Material.h
-../inc/Component.h
-/home/atifany/Desktop/CppGraphics/inc/Component.h
-../inc/GameObject.h
-/home/atifany/Desktop/CppGraphics/inc/GameObject.h
+/home/atifany/Desktop/CppGraphics/sources/Renderer.cpp
+../inc/Renderer.h
+/home/atifany/Desktop/CppGraphics/inc/Renderer.h
 

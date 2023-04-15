@@ -1,7 +1,7 @@
 #include "../inc/Renderer.h"
 
 extern Camera camera;
-static glm::vec4 ambientLight = glm::vec4(1.0f, 1.0f, 1.0f, 0.1f);
+extern std::vector<GameObject*> lightSources;
 
 std::vector<float> defaultCube = {
 	// position	in world   // normal vector     // texture coordinates
@@ -120,10 +120,42 @@ void Renderer::Draw(Shader& shader, glm::vec3 position, Quaternion quaternion)
 	shader.UniformSetMat4("Mmatrix", modelMatrix);
 	shader.UniformSetVec3("viewPos", camera.transform.position);
 
-	shader.UniformSetVec3("light.position", glm::vec3(10.0f, 5.0f, 10.0f));
-	shader.UniformSetVec3("light.ambient", glm::vec3(0.5f, 0.5f, 0.5f));
-	shader.UniformSetVec3("light.diffuse", glm::vec3(0.5f, 0.5f, 0.5f));
-	shader.UniformSetVec3("light.specular", glm::vec3(0.9f, 0.9f, 0.9f));
+	// dirLights
+	DirectionalLight* dirLight = dynamic_cast<DirectionalLight*>(
+		lightSources[0]->GetComponent<LightSource>());
+	shader.UniformSetVec3("dirLights[0].direction", dirLight->direction);
+	shader.UniformSetVec3("dirLights[0].ambient", dirLight->ambient);
+	shader.UniformSetVec3("dirLights[0].diffuse", dirLight->diffuse * dirLight->diffuseStrength);
+	shader.UniformSetVec3("dirLights[0].specular", dirLight->specular * dirLight->specularStrength);
+
+	shader.UniformSetVec3("dirLights[1].direction", glm::vec3(-1.0f, -1.0f, -1.0f));
+	shader.UniformSetVec3("dirLights[1].ambient", glm::vec3(-1.0f, -1.0f, -1.0f));
+	shader.UniformSetVec3("dirLights[1].diffuse", glm::vec3(-1.0f, -1.0f, -1.0f));
+	shader.UniformSetVec3("dirLights[1].specular", glm::vec3(-1.0f, -1.0f, -1.0f));
+
+	// pointLights
+	PointLight* pointLight1 = dynamic_cast<PointLight*>(
+		lightSources[1]->GetComponent<LightSource>());
+	shader.UniformSetVec3("pointLights[0].position", lightSources[1]->GetComponent<Transform>()->position);
+	shader.UniformSetVec3("pointLights[0].spreadConstants", pointLight1->spreadConstants);
+	shader.UniformSetVec3("pointLights[0].ambient", pointLight1->ambient);
+	shader.UniformSetVec3("pointLights[0].diffuse", pointLight1->diffuse * pointLight1->diffuseStrength);
+	shader.UniformSetVec3("pointLights[0].specular", pointLight1->specular * pointLight1->specularStrength);
+
+	PointLight* pointLight2 = dynamic_cast<PointLight*>(
+		lightSources[2]->GetComponent<LightSource>());
+	shader.UniformSetVec3("pointLights[1].position", lightSources[2]->GetComponent<Transform>()->position);
+	shader.UniformSetVec3("pointLights[1].spreadConstants", pointLight2->spreadConstants);
+	shader.UniformSetVec3("pointLights[1].ambient", pointLight2->ambient);
+	shader.UniformSetVec3("pointLights[1].diffuse", pointLight2->diffuse * pointLight2->diffuseStrength);
+	shader.UniformSetVec3("pointLights[1].specular", pointLight2->specular * pointLight2->specularStrength);
+
+	shader.UniformSetVec3("pointLights[2].position", glm::vec3(-1.0f, -1.0f, -1.0f));
+	shader.UniformSetVec3("pointLights[2].spreadConstants", glm::vec3(-1.0f, -1.0f, -1.0f));
+	shader.UniformSetVec3("pointLights[2].ambient", glm::vec3(-1.0f, -1.0f, -1.0f));
+	shader.UniformSetVec3("pointLights[2].diffuse", glm::vec3(-1.0f, -1.0f, -1.0f));
+	shader.UniformSetVec3("pointLights[2].specular", glm::vec3(-1.0f, -1.0f, -1.0f));
+
 	shader.UniformSetVec3("material.ambient", this->material.ambient);
 	shader.UniformSetVec3("material.diffuse", this->material.diffuse);
 	shader.UniformSetVec3("material.specular", this->material.specular);
