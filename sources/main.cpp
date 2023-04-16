@@ -133,7 +133,6 @@ static int InitGLAD()
 
 int main()
 {
-
 	c_d.windowWidth = 1920;
 	c_d.windowHeight = 1080;
 	int errorCode = 0;
@@ -180,7 +179,7 @@ int main()
 		glm::vec3(1.0f, 1.0f, 1.0f),
 		glm::vec3(1.0f, 1.0f, 1.0f),
 		glm::vec3(1.0f, 1.0f, 1.0f),
-		0.1f, 0.0f, glm::vec3(0.0f, -1.0f, 0.0f));
+		0.001f, 0.0f, glm::vec3(0.0f, -1.0f, 0.0f));
 	lightTestObject->AddComponent(dirLight);
 
 	GameObject* pointLight1 = new GameObject();
@@ -188,18 +187,18 @@ int main()
 		glm::vec3(1.0f, 1.0f, 1.0f),
 		glm::vec3(1.0f, 1.0f, 1.0f),
 		glm::vec3(1.0f, 1.0f, 1.0f),
-		5.0f, 0.0f, glm::vec3(0.0f, 0.09f, 0.032f));
+		1.0f, 0.0f, glm::vec3(1.0f, 0.09f, 0.032f));
 	pointLight1->AddComponent(p1);
 	pointLight1->GetComponent<Transform>()->position = glm::vec3(15.0f, 2.5f, 15.0f);
 
-	GameObject* pointLight2 = new GameObject();
-	PointLight* p2 = new PointLight(
-		glm::vec3(1.0f, 1.0f, 1.0f),
-		glm::vec3(1.0f, 1.0f, 1.0f),
-		glm::vec3(1.0f, 1.0f, 1.0f),
-		5.0f, 0.0f, glm::vec3(0.0f, 0.09f, 0.032f));
-	pointLight2->AddComponent(p2);
-	pointLight2->GetComponent<Transform>()->position = glm::vec3(5.0f, 2.5f, 5.0f);
+	// GameObject* pointLight2 = new GameObject();
+	// PointLight* p2 = new PointLight(
+	// 	glm::vec3(1.0f, 1.0f, 1.0f),
+	// 	glm::vec3(1.0f, 1.0f, 1.0f),
+	// 	glm::vec3(1.0f, 1.0f, 1.0f),
+	// 	1.0f, 0.0f, glm::vec3(1.0f, 0.09f, 0.032f));
+	// pointLight2->AddComponent(p2);
+	// pointLight2->GetComponent<Transform>()->position = glm::vec3(5.0f, 2.5f, 5.0f);
 
 	std::vector<GameObject*> cubes;
 	for (int x = 0; x < 20 ; x++)

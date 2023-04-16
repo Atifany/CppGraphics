@@ -120,41 +120,51 @@ void Renderer::Draw(Shader& shader, glm::vec3 position, Quaternion quaternion)
 	shader.UniformSetMat4("Mmatrix", modelMatrix);
 	shader.UniformSetVec3("viewPos", camera.transform.position);
 
-	// dirLights
-	DirectionalLight* dirLight = dynamic_cast<DirectionalLight*>(
-		lightSources[0]->GetComponent<LightSource>());
-	shader.UniformSetVec3("dirLights[0].direction", dirLight->direction);
-	shader.UniformSetVec3("dirLights[0].ambient", dirLight->ambient);
-	shader.UniformSetVec3("dirLights[0].diffuse", dirLight->diffuse * dirLight->diffuseStrength);
-	shader.UniformSetVec3("dirLights[0].specular", dirLight->specular * dirLight->specularStrength);
+	LightSource*		lightSource;
+	DirectionalLight*	dirLight;
+	PointLight*			pointLight;
+	int nbrOfDirLights = 0;
+	int nbrOfPointLights = 0;
+	char buf[64];
+	for (GameObject* gm : lightSources)
+	{
+		lightSource = gm->GetComponent<LightSource>();
+		
+		dirLight = dynamic_cast<DirectionalLight*>(lightSource);
+		if (dirLight != NULL)
+		{
+			sprintf(buf, "dirLights[%i].direction", nbrOfDirLights);
+			shader.UniformSetVec3(buf, dirLight->direction);
+			sprintf(buf, "dirLights[%i].ambient", nbrOfDirLights);
+			shader.UniformSetVec3(buf, dirLight->ambient);
+			sprintf(buf, "dirLights[%i].diffuse", nbrOfDirLights);
+			shader.UniformSetVec3(buf, dirLight->diffuse * dirLight->diffuseStrength);
+			sprintf(buf, "dirLights[%i].specular", nbrOfDirLights);
+			shader.UniformSetVec3(buf, dirLight->specular * dirLight->specularStrength);
+			nbrOfDirLights++;
+		}
+		pointLight = dynamic_cast<PointLight*>(lightSource);
+		if (pointLight != NULL)
+		{
+			sprintf(buf, "pointLights[%i].position", nbrOfPointLights);
+			shader.UniformSetVec3(buf, gm->GetComponent<Transform>()->position);
+			sprintf(buf, "pointLights[%i].spreadConstants", nbrOfPointLights);
+			shader.UniformSetVec3(buf, pointLight->spreadConstants);
+			sprintf(buf, "pointLights[%i].ambient", nbrOfPointLights);
+			shader.UniformSetVec3(buf, pointLight->ambient);
+			sprintf(buf, "pointLights[%i].diffuse", nbrOfPointLights);
+			shader.UniformSetVec3(buf, pointLight->diffuse * pointLight->diffuseStrength);
+			sprintf(buf, "pointLights[%i].specular", nbrOfPointLights);
+			shader.UniformSetVec3(buf, pointLight->specular * pointLight->specularStrength);
+			nbrOfPointLights++;
+		}
+	}
 
-	shader.UniformSetVec3("dirLights[1].direction", glm::vec3(-1.0f, -1.0f, -1.0f));
-	shader.UniformSetVec3("dirLights[1].ambient", glm::vec3(-1.0f, -1.0f, -1.0f));
-	shader.UniformSetVec3("dirLights[1].diffuse", glm::vec3(-1.0f, -1.0f, -1.0f));
-	shader.UniformSetVec3("dirLights[1].specular", glm::vec3(-1.0f, -1.0f, -1.0f));
-
-	// pointLights
-	PointLight* pointLight1 = dynamic_cast<PointLight*>(
-		lightSources[1]->GetComponent<LightSource>());
-	shader.UniformSetVec3("pointLights[0].position", lightSources[1]->GetComponent<Transform>()->position);
-	shader.UniformSetVec3("pointLights[0].spreadConstants", pointLight1->spreadConstants);
-	shader.UniformSetVec3("pointLights[0].ambient", pointLight1->ambient);
-	shader.UniformSetVec3("pointLights[0].diffuse", pointLight1->diffuse * pointLight1->diffuseStrength);
-	shader.UniformSetVec3("pointLights[0].specular", pointLight1->specular * pointLight1->specularStrength);
-
-	PointLight* pointLight2 = dynamic_cast<PointLight*>(
-		lightSources[2]->GetComponent<LightSource>());
-	shader.UniformSetVec3("pointLights[1].position", lightSources[2]->GetComponent<Transform>()->position);
-	shader.UniformSetVec3("pointLights[1].spreadConstants", pointLight2->spreadConstants);
-	shader.UniformSetVec3("pointLights[1].ambient", pointLight2->ambient);
-	shader.UniformSetVec3("pointLights[1].diffuse", pointLight2->diffuse * pointLight2->diffuseStrength);
-	shader.UniformSetVec3("pointLights[1].specular", pointLight2->specular * pointLight2->specularStrength);
-
-	shader.UniformSetVec3("pointLights[2].position", glm::vec3(-1.0f, -1.0f, -1.0f));
-	shader.UniformSetVec3("pointLights[2].spreadConstants", glm::vec3(-1.0f, -1.0f, -1.0f));
-	shader.UniformSetVec3("pointLights[2].ambient", glm::vec3(-1.0f, -1.0f, -1.0f));
-	shader.UniformSetVec3("pointLights[2].diffuse", glm::vec3(-1.0f, -1.0f, -1.0f));
-	shader.UniformSetVec3("pointLights[2].specular", glm::vec3(-1.0f, -1.0f, -1.0f));
+	// set last light in array to indicate array end.
+	sprintf(buf, "dirLights[%i].ambient", nbrOfDirLights);
+	shader.UniformSetVec3(buf, glm::vec3(-1.0f, -1.0f, -1.0f));
+	sprintf(buf, "pointLights[%i].ambient", nbrOfPointLights);
+	shader.UniformSetVec3(buf, glm::vec3(-1.0f, -1.0f, -1.0f));
 
 	shader.UniformSetVec3("material.ambient", this->material.ambient);
 	shader.UniformSetVec3("material.diffuse", this->material.diffuse);
