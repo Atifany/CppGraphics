@@ -47,3 +47,21 @@ class PointLight : public LightSource
 
 	private:
 };
+
+class SpotLight : public LightSource
+{
+	public:
+		SpotLight();
+		~SpotLight();
+		SpotLight(
+			glm::vec3 _ambient, glm::vec3 _diffuse, glm::vec3 _specular,
+			float _diffuseStrength, float _specularStrength, glm::vec3 _spreadConstants,
+			glm::vec3 _direction, float _cutOff, float _outerCutOff);
+		
+		glm::vec3 spreadConstants;
+		glm::vec3 direction;
+		float cutOff;
+		float outerCutOff;
+
+	private:
+};

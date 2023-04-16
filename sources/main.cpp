@@ -174,12 +174,21 @@ int main()
 		glm::vec3(0.6f, 0.6f, 0.6f),
 		glm::vec3(0.0f, 0.0f, 0.0f), 32.0f);
 	
+	GameObject* spotLightTest = new GameObject();
+	SpotLight* spotLight = new SpotLight(
+		glm::vec3(1.0f, 1.0f, 1.0f),
+		glm::vec3(1.0f, 1.0f, 1.0f),
+		glm::vec3(1.0f, 1.0f, 1.0f),
+		1.0f, 0.0f, glm::vec3(1.0f, 0.09f, 0.032f),
+		glm::vec3(0.0f, 1.0f, 0.0f), 0.91f, 0.82f);
+	spotLightTest->AddComponent(spotLight);
+
 	GameObject* lightTestObject = new GameObject();
 	DirectionalLight* dirLight = new DirectionalLight(
 		glm::vec3(1.0f, 1.0f, 1.0f),
 		glm::vec3(1.0f, 1.0f, 1.0f),
 		glm::vec3(1.0f, 1.0f, 1.0f),
-		0.001f, 0.0f, glm::vec3(0.0f, -1.0f, 0.0f));
+		0.1f, 0.0f, glm::vec3(0.0f, -1.0f, 0.0f));
 	lightTestObject->AddComponent(dirLight);
 
 	GameObject* pointLight1 = new GameObject();
@@ -246,6 +255,10 @@ int main()
 		shader.UpdateViewMatrix(camera);
 		shader.UpdateProjectionMatrix(c_d, camera);
 
+		spotLightTest->GetComponent<Transform>()->position = camera.transform.position;
+		LightSource* lightSource = spotLightTest->GetComponent<LightSource>();
+		SpotLight* sl = dynamic_cast<SpotLight*>(lightSource);
+		sl->direction = camera.transform.quaternion.Forward();
 		for (GameObject* cube : cubes)
 		{
 			Transform transform = *(cube->GetComponent<Transform>());
