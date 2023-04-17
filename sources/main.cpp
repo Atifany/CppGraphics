@@ -36,7 +36,7 @@ Input input;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void CalculateDeltaTime();
-static void PutFPStoTerminal();
+static void PutBenchMarktoTerminal(float rendererTime);
 
 static int InitGLFWWindow()
 {
@@ -241,6 +241,8 @@ int main()
 	// 	}
 	// }
 
+	float rendererTime= 0.0f;
+	float rendererTimeBuf = 0.0f;
 	std::cout << "Debug: starting main loop.\n";
 	std::cout << "\n";
 	// run the app
@@ -255,6 +257,8 @@ int main()
 		shader.UpdateViewMatrix(camera);
 		shader.UpdateProjectionMatrix(c_d, camera);
 
+		rendererTime = 0.0f;
+
 		spotLightTest->GetComponent<Transform>()->position = camera.transform.position;
 		LightSource* lightSource = spotLightTest->GetComponent<LightSource>();
 		SpotLight* sl = dynamic_cast<SpotLight*>(lightSource);
@@ -265,7 +269,9 @@ int main()
 			transform.position.y =
 				sin((glfwGetTime() + transform.position.x + transform.position.z) / 10.0f) * 1.5f;
 			
+			rendererTimeBuf = glfwGetTime();
 			cube->GetComponent<Renderer>()->Draw(shader, transform.position, transform.quaternion);
+			rendererTime += glfwGetTime() - rendererTimeBuf;
 		}
 
 		// Swaps front and back screen buffers.
@@ -278,7 +284,7 @@ int main()
 		// set values to keys.
 		input.KeyCallBackProcess();
 
-		PutFPStoTerminal();
+		PutBenchMarktoTerminal(rendererTime);
 	}
 	glfwSetInputMode(c_d.window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 
@@ -287,7 +293,7 @@ int main()
 	return 0;
 }
 
-static void PutFPStoTerminal()
+static void PutBenchMarktoTerminal(float rendererTime)
 {
 	static char flasher = '|';
 	static int framesElapsed = 0;
@@ -312,7 +318,9 @@ static void PutFPStoTerminal()
 
 		lastChecked = curTime;
 		std::cout << "\033[1A\033[:KDebug: FPS = " <<
-			color << framesElapsed << NC << " " << flasher << "\n";
+			color << framesElapsed << NC << " " <<
+			"RenderTime = " << color << rendererTime*1000 << NC <<
+			" " << flasher << "\n";
 		framesElapsed = 0;
 	}
 }
