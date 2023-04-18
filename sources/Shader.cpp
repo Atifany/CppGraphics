@@ -4,8 +4,14 @@
 #include <sstream>
 #include <iostream>
 
+extern std::vector<GameObject*> lightSources;
+
 static unsigned int CompileShader(unsigned int type, const std::string& src);
 static unsigned int CreateShader(const std::string& vertexShader, const std::string& fragmentShader);
+static void SetDirLightUniform(Shader& shader, DirectionalLight* dirLight, int nbrOfDirLights);
+static void SetPointLightUniform(Shader& shader, GameObject* gm, PointLight* pointLight, int nbrOfPointLights);
+static void SetSpotLightUniform(Shader& shader, GameObject* gm, SpotLight* spotLight, int nbrOfSpotLights);
+static void SetEndLightUniform(Shader& shader, int nbrOfDirLights, int nbrOfPointLights, int nbrOfSpotLights);
 
 Shader::Shader(const std::string& vertexShaderPath, const std::string& fragmentShaderPath)
 {
@@ -125,6 +131,41 @@ void Shader::UpdateProjectionMatrix(CoreData& c_d, Camera& camera)
 		(float)c_d.windowWidth / (float)c_d.windowHeight, 0.1f, 100.0f);
 }
 
+void Shader::UpdateLightUniforms()
+{
+	LightSource*		lightSource;
+	DirectionalLight*	dirLight;
+	PointLight*			pointLight;
+	SpotLight*			spotLight;
+	int nbrOfDirLights = 0;
+	int nbrOfPointLights = 0;
+	int nbrOfSpotLights = 0;
+	for (GameObject* gm : lightSources)
+	{
+		lightSource = gm->GetComponent<LightSource>();
+		
+		dirLight = dynamic_cast<DirectionalLight*>(lightSource);
+		if (dirLight != NULL)
+		{
+			SetDirLightUniform(*this, dirLight, nbrOfDirLights);
+			nbrOfDirLights++;
+		}
+		pointLight = dynamic_cast<PointLight*>(lightSource);
+		if (pointLight != NULL)
+		{
+			SetPointLightUniform(*this, gm, pointLight, nbrOfPointLights);
+			nbrOfPointLights++;
+		}
+		spotLight = dynamic_cast<SpotLight*>(lightSource);
+		if (spotLight != NULL)
+		{
+			SetSpotLightUniform(*this, gm, spotLight, nbrOfSpotLights);
+			nbrOfSpotLights++;
+		}
+	}
+	SetEndLightUniform(*this, nbrOfDirLights, nbrOfPointLights, nbrOfSpotLights);
+}
+
 
 static unsigned int CompileShader(unsigned int type, const std::string& src)
 {
@@ -211,4 +252,65 @@ static unsigned int CreateShader(const std::string& vertexShader, const std::str
 	glDeleteShader(fs);
 
 	return program;
+}
+
+static void SetDirLightUniform(Shader& shader, DirectionalLight* dirLight, int nbrOfDirLights)
+{
+	char buf[64];
+	sprintf(buf, "dirLights[%i].direction", nbrOfDirLights);
+	shader.UniformSetVec3(buf, dirLight->direction);
+	sprintf(buf, "dirLights[%i].ambient", nbrOfDirLights);
+	shader.UniformSetVec3(buf, dirLight->ambient * dirLight->diffuseStrength);
+	sprintf(buf, "dirLights[%i].diffuse", nbrOfDirLights);
+	shader.UniformSetVec3(buf, dirLight->diffuse * dirLight->diffuseStrength);
+	sprintf(buf, "dirLights[%i].specular", nbrOfDirLights);
+	shader.UniformSetVec3(buf, dirLight->specular * dirLight->specularStrength);
+}
+
+static void SetPointLightUniform(Shader& shader, GameObject* gm, PointLight* pointLight, int nbrOfPointLights)
+{
+	char buf[64];
+	sprintf(buf, "pointLights[%i].position", nbrOfPointLights);
+	shader.UniformSetVec3(buf, gm->GetComponent<Transform>()->position);
+	sprintf(buf, "pointLights[%i].spreadConstants", nbrOfPointLights);
+	shader.UniformSetVec3(buf, pointLight->spreadConstants);
+	sprintf(buf, "pointLights[%i].ambient", nbrOfPointLights);
+	shader.UniformSetVec3(buf, pointLight->ambient * pointLight->diffuseStrength);
+	sprintf(buf, "pointLights[%i].diffuse", nbrOfPointLights);
+	shader.UniformSetVec3(buf, pointLight->diffuse * pointLight->diffuseStrength);
+	sprintf(buf, "pointLights[%i].specular", nbrOfPointLights);
+	shader.UniformSetVec3(buf, pointLight->specular * pointLight->specularStrength);
+}
+
+static void SetSpotLightUniform(Shader& shader, GameObject* gm, SpotLight* spotLight, int nbrOfSpotLights)
+{
+	char buf[64];
+	sprintf(buf, "spotLights[%i].position", nbrOfSpotLights);
+	shader.UniformSetVec3(buf, gm->GetComponent<Transform>()->position);
+	sprintf(buf, "spotLights[%i].direction", nbrOfSpotLights);
+	shader.UniformSetVec3(buf, spotLight->direction);
+	sprintf(buf, "spotLights[%i].cutOff", nbrOfSpotLights);
+	shader.UniformSetFloat(buf, spotLight->cutOff);
+	sprintf(buf, "spotLights[%i].outerCutOff", nbrOfSpotLights);
+	shader.UniformSetFloat(buf, spotLight->outerCutOff);
+	sprintf(buf, "spotLights[%i].spreadConstants", nbrOfSpotLights);
+	shader.UniformSetVec3(buf, spotLight->spreadConstants);
+	sprintf(buf, "spotLights[%i].ambient", nbrOfSpotLights);
+	shader.UniformSetVec3(buf, spotLight->ambient * spotLight->diffuseStrength);
+	sprintf(buf, "spotLights[%i].diffuse", nbrOfSpotLights);
+	shader.UniformSetVec3(buf, spotLight->diffuse * spotLight->diffuseStrength);
+	sprintf(buf, "spotLights[%i].specular", nbrOfSpotLights);
+	shader.UniformSetVec3(buf, spotLight->specular * spotLight->specularStrength);
+}
+
+// set last light in array to indicate array end.
+static void SetEndLightUniform(Shader& shader, int nbrOfDirLights, int nbrOfPointLights, int nbrOfSpotLights)
+{
+	char buf[64];
+	sprintf(buf, "dirLights[%i].ambient", nbrOfDirLights);
+	shader.UniformSetVec3(buf, glm::vec3(-1.0f, -1.0f, -1.0f));
+	sprintf(buf, "pointLights[%i].ambient", nbrOfPointLights);
+	shader.UniformSetVec3(buf, glm::vec3(-1.0f, -1.0f, -1.0f));
+	sprintf(buf, "spotLights[%i].ambient", nbrOfSpotLights);
+	shader.UniformSetVec3(buf, glm::vec3(-1.0f, -1.0f, -1.0f));
 }

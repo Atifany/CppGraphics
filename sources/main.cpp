@@ -263,6 +263,8 @@ int main()
 		LightSource* lightSource = spotLightTest->GetComponent<LightSource>();
 		SpotLight* sl = dynamic_cast<SpotLight*>(lightSource);
 		sl->direction = camera.transform.quaternion.Forward();
+
+		shader.UpdateLightUniforms();
 		for (GameObject* cube : cubes)
 		{
 			Transform transform = *(cube->GetComponent<Transform>());

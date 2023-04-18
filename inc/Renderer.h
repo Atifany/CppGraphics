@@ -23,8 +23,6 @@ class Renderer : public Component
 		//Renderer(const Renderer& other);
 		//Renderer& operator=(const Renderer& other);
 
-		void	BuildVBO();
-		void	BuildVAO();
 		void	BuildBuffers();
 		void	Draw(Shader& shader, glm::vec3 position, Quaternion quaternion);
 

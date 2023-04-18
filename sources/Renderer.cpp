@@ -120,77 +120,6 @@ void Renderer::Draw(Shader& shader, glm::vec3 position, Quaternion quaternion)
 	shader.UniformSetMat4("Mmatrix", modelMatrix);
 	shader.UniformSetVec3("viewPos", camera.transform.position);
 
-	LightSource*		lightSource;
-	DirectionalLight*	dirLight;
-	PointLight*			pointLight;
-	SpotLight*			spotLight;
-	int nbrOfDirLights = 0;
-	int nbrOfPointLights = 0;
-	int nbrOfSpotLights = 0;
-	char buf[64];
-	for (GameObject* gm : lightSources)
-	{
-		lightSource = gm->GetComponent<LightSource>();
-		
-		dirLight = dynamic_cast<DirectionalLight*>(lightSource);
-		if (dirLight != NULL)
-		{
-			sprintf(buf, "dirLights[%i].direction", nbrOfDirLights);
-			shader.UniformSetVec3(buf, dirLight->direction);
-			sprintf(buf, "dirLights[%i].ambient", nbrOfDirLights);
-			shader.UniformSetVec3(buf, dirLight->ambient * dirLight->diffuseStrength);
-			sprintf(buf, "dirLights[%i].diffuse", nbrOfDirLights);
-			shader.UniformSetVec3(buf, dirLight->diffuse * dirLight->diffuseStrength);
-			sprintf(buf, "dirLights[%i].specular", nbrOfDirLights);
-			shader.UniformSetVec3(buf, dirLight->specular * dirLight->specularStrength);
-			nbrOfDirLights++;
-		}
-		pointLight = dynamic_cast<PointLight*>(lightSource);
-		if (pointLight != NULL)
-		{
-			sprintf(buf, "pointLights[%i].position", nbrOfPointLights);
-			shader.UniformSetVec3(buf, gm->GetComponent<Transform>()->position);
-			sprintf(buf, "pointLights[%i].spreadConstants", nbrOfPointLights);
-			shader.UniformSetVec3(buf, pointLight->spreadConstants);
-			sprintf(buf, "pointLights[%i].ambient", nbrOfPointLights);
-			shader.UniformSetVec3(buf, pointLight->ambient * pointLight->diffuseStrength);
-			sprintf(buf, "pointLights[%i].diffuse", nbrOfPointLights);
-			shader.UniformSetVec3(buf, pointLight->diffuse * pointLight->diffuseStrength);
-			sprintf(buf, "pointLights[%i].specular", nbrOfPointLights);
-			shader.UniformSetVec3(buf, pointLight->specular * pointLight->specularStrength);
-			nbrOfPointLights++;
-		}
-		spotLight = dynamic_cast<SpotLight*>(lightSource);
-		if (spotLight != NULL)
-		{
-			sprintf(buf, "spotLights[%i].position", nbrOfSpotLights);
-			shader.UniformSetVec3(buf, gm->GetComponent<Transform>()->position);
-			sprintf(buf, "spotLights[%i].direction", nbrOfSpotLights);
-			shader.UniformSetVec3(buf, spotLight->direction);
-			sprintf(buf, "spotLights[%i].cutOff", nbrOfSpotLights);
-			shader.UniformSetFloat(buf, spotLight->cutOff);
-			sprintf(buf, "spotLights[%i].outerCutOff", nbrOfSpotLights);
-			shader.UniformSetFloat(buf, spotLight->outerCutOff);
-			sprintf(buf, "spotLights[%i].spreadConstants", nbrOfSpotLights);
-			shader.UniformSetVec3(buf, spotLight->spreadConstants);
-			sprintf(buf, "spotLights[%i].ambient", nbrOfSpotLights);
-			shader.UniformSetVec3(buf, spotLight->ambient * spotLight->diffuseStrength);
-			sprintf(buf, "spotLights[%i].diffuse", nbrOfSpotLights);
-			shader.UniformSetVec3(buf, spotLight->diffuse * spotLight->diffuseStrength);
-			sprintf(buf, "spotLights[%i].specular", nbrOfSpotLights);
-			shader.UniformSetVec3(buf, spotLight->specular * spotLight->specularStrength);
-			nbrOfSpotLights++;
-		}
-	}
-
-	// set last light in array to indicate array end.
-	sprintf(buf, "dirLights[%i].ambient", nbrOfDirLights);
-	shader.UniformSetVec3(buf, glm::vec3(-1.0f, -1.0f, -1.0f));
-	sprintf(buf, "pointLights[%i].ambient", nbrOfPointLights);
-	shader.UniformSetVec3(buf, glm::vec3(-1.0f, -1.0f, -1.0f));
-	sprintf(buf, "spotLights[%i].ambient", nbrOfSpotLights);
-	shader.UniformSetVec3(buf, glm::vec3(-1.0f, -1.0f, -1.0f));
-
 	shader.UniformSetVec3("material.ambient", this->material.ambient);
 	shader.UniformSetVec3("material.diffuse", this->material.diffuse);
 	shader.UniformSetVec3("material.specular", this->material.specular);
@@ -199,3 +128,4 @@ void Renderer::Draw(Shader& shader, glm::vec3 position, Quaternion quaternion)
 	glBindVertexArray(this->VAO);
 	glDrawArrays(GL_TRIANGLES, 0, this->vertices.size() / 5);
 }
+

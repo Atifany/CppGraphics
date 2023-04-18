@@ -1228,6 +1228,8 @@ CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o
  /home/atifany/Desktop/CppGraphics/inc/Camera.h
  /home/atifany/Desktop/CppGraphics/inc/Component.h
  /home/atifany/Desktop/CppGraphics/inc/CoreData.h
+ /home/atifany/Desktop/CppGraphics/inc/GameObject.h
+ /home/atifany/Desktop/CppGraphics/inc/LightSource.h
  /home/atifany/Desktop/CppGraphics/inc/Quaternion.h
  /home/atifany/Desktop/CppGraphics/inc/Shader.h
  /home/atifany/Desktop/CppGraphics/inc/Transform.h

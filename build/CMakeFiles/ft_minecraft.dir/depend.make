@@ -1227,6 +1227,8 @@ CMakeFiles/ft_minecraft.dir/sources/Renderer.cpp.o: ../sources/Renderer.cpp
 CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o: ../inc/Camera.h
 CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o: ../inc/Component.h
 CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o: ../inc/CoreData.h
+CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o: ../inc/GameObject.h
+CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o: ../inc/LightSource.h
 CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o: ../inc/Quaternion.h
 CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o: ../inc/Shader.h
 CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o: ../inc/Transform.h

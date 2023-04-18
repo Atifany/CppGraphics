@@ -9,6 +9,8 @@
 #include "glm/gtc/type_ptr.hpp"
 #include "Camera.h"
 #include "CoreData.h"
+#include "LightSource.h"
+#include "GameObject.h"
 
 class Shader
 {
@@ -30,6 +32,7 @@ class Shader
 		// Build matrices
 		void UpdateViewMatrix(Camera& camera);
 		void UpdateProjectionMatrix(CoreData& c_d, Camera& camera);
+		void UpdateLightUniforms();
 
 		// Shader program.
 		unsigned int program;
