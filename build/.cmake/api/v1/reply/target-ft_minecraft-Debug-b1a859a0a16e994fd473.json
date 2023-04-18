@@ -55,8 +55,7 @@
 				11,
 				12,
 				13,
-				14,
-				16
+				15
 			]
 		},
 		{
@@ -69,7 +68,7 @@
 			"language" : "C",
 			"sourceIndexes" : 
 			[
-				15
+				14
 			]
 		}
 	],
@@ -125,8 +124,7 @@
 				12,
 				13,
 				14,
-				15,
-				16
+				15
 			]
 		}
 	],
@@ -178,12 +176,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "sources/Input.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "sources/Cube.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

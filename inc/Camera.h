@@ -3,15 +3,13 @@
 #include "glm/glm.hpp"
 #include "Transform.h"
 
-class Camera
+class Camera : public Component
 {
 	public:
 		Camera();
 		~Camera();
 		Camera(const Camera& other);
 		Camera& operator=(const Camera& other);
-
-		Transform	transform;
 
 		glm::vec3	upDirection;
 		float		sensivity;

@@ -30,8 +30,8 @@ class Shader
 		void UniformSetVec4(const std::string& name, glm::vec4 value) const;
 		void UniformSetMat4(const std::string& name, glm::mat4 value) const;
 		// Build matrices
-		void UpdateViewMatrix(Camera& camera);
-		void UpdateProjectionMatrix(CoreData& c_d, Camera& camera);
+		void UpdateViewMatrix(GameObject* camera);
+		void UpdateProjectionMatrix(CoreData& c_d, GameObject* camera);
 		void UpdateLightUniforms();
 
 		// Shader program.

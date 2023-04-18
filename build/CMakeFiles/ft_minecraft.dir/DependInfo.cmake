@@ -17,7 +17,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/atifany/Desktop/CppGraphics/sources/Camera.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/Component.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/Component.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/CoreData.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/CoreData.cpp.o"
-  "/home/atifany/Desktop/CppGraphics/sources/Cube.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/GameObject.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/Input.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/Input.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/LightSource.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/LightSource.cpp.o"

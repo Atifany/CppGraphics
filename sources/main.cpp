@@ -3,6 +3,7 @@
 #include <GLFW/glfw3.h>
 #include <cmath>
 #include <vector>
+#include <iomanip>
 
 #include "../inc/colors.h"
 
@@ -12,11 +13,11 @@
 #include "../inc/CoreData.h"
 #include "../inc/Input.h"
 #include "../inc/process_input.h"
-#include "../inc/Cube.h"
 #include "../inc/Texture.h"
 #include "../inc/Material.h"
 #include "../inc/Component.h"
 #include "../inc/GameObject.h"
+#include "../inc/Renderer.h"
 
 static const float fov = 90.0f;
 
@@ -29,7 +30,7 @@ static float lastFrame = 0.0f;
 
 // Setup camera
 float cameraSpeed = 8.0f; // player movespeed
-Camera camera;
+GameObject* camera = new GameObject();
 
 CoreData c_d;
 Input input;
@@ -73,64 +74,6 @@ static int InitGLAD()
 	return 0;
 }
 
-//  ///                \\\
-// vvv Templates tests vvv
-
-// class Base
-// {
-// 	public:
-// 		virtual ~Base() {}
-// };
-//
-// class Derived : public Base
-// {
-// 	public:
-// 		Derived(float _cont) { this->cont = _cont; }
-// 		float cont;
-// };
-//
-// GameObject TestTemplates()
-// {
-// 	// Base	b;
-// 	// Derived	d;
-//
-// 	// d.cont = 50.5f;
-// 	// std::cout << "d.cont = " << d.cont << "\n";
-//
-// 	// Derived d(50.5f);
-//
-//
-// 	// Base* bPTR = new Derived(50.5f);
-// 	// // d.~Derived();
-//
-// 	// Derived* d1 = dynamic_cast<Derived*>(bPTR);
-// 	// std::cout << "d.cont = " << d1->cont << "\n";
-// 	// d1->~Derived();
-// 	// Derived* d2 = dynamic_cast<Derived*>(bPTR);
-// 	// std::cout << "d.cont = " << d2->cont << "\n";
-//
-// 	Renderer* r = new Renderer();
-// 	Transform* t = new Transform();
-// 	GameObject gm;
-//
-// 	gm.AddComponent(r);
-// 	gm.AddComponent(t);
-//
-// 	//r->~Renderer();
-// 	//t->~Transform();
-//
-// 	Renderer* r1 = gm.GetComponent<Renderer>();
-// 	Transform* t1 = gm.GetComponent<Transform>();
-//
-// 	return gm;
-// }
-//
-// void TestTemplates2(GameObject gm)
-// {
-// 	Renderer* r1 = gm.GetComponent<Renderer>();
-// 	Transform* t1 = gm.GetComponent<Transform>();
-// }
-
 int main()
 {
 	c_d.windowWidth = 1920;
@@ -145,16 +88,11 @@ int main()
 	if (errorCode != 0)
 		return errorCode;
 
-	// TestTemplates2(TestTemplates());
-	// return 0;
-
 	Shader shader(vertexShaderPath, fragmentShaderPath);
 	if (shader.program == 0)
 		return -1;
 	shader.Use();
 	shader.UniformSetInt("textureToDraw", 0);
-	
-	camera.transform.position.x = -2.0f;
 
 	// User input callbacks
 	glfwSetKeyCallback(c_d.window, KeyCallbackSet);
@@ -167,6 +105,11 @@ int main()
 	// Enable Depth-tetsing
 	glEnable(GL_DEPTH_TEST);
 
+	//GameObject* camera = new GameObject();
+	Camera* cameraComp = new Camera();
+	camera->AddComponent(cameraComp);
+	camera->GetComponent<Transform>()->position.x = -2.0f;
+
 	Texture grassBlockTexture = Texture(GL_TEXTURE_2D, texturePath);
 	grassBlockTexture.Load();
 	Material grassBlockMaterial = Material(
@@ -174,14 +117,13 @@ int main()
 		glm::vec3(0.6f, 0.6f, 0.6f),
 		glm::vec3(0.0f, 0.0f, 0.0f), 32.0f);
 	
-	GameObject* spotLightTest = new GameObject();
 	SpotLight* spotLight = new SpotLight(
 		glm::vec3(1.0f, 1.0f, 1.0f),
 		glm::vec3(1.0f, 1.0f, 1.0f),
 		glm::vec3(1.0f, 1.0f, 1.0f),
 		1.0f, 0.0f, glm::vec3(1.0f, 0.09f, 0.032f),
 		glm::vec3(0.0f, 1.0f, 0.0f), 0.91f, 0.82f);
-	spotLightTest->AddComponent(spotLight);
+	camera->AddComponent(spotLight);
 
 	GameObject* lightTestObject = new GameObject();
 	DirectionalLight* dirLight = new DirectionalLight(
@@ -223,24 +165,6 @@ int main()
 		}
 	}
 
-	// Texture grassBlockTexture = Texture(GL_TEXTURE_2D, texturePath);
-	// grassBlockTexture.Load();
-	// Material grassBlockMaterial = Material(
-	// 	glm::vec3(0.8f, 0.8f, 0.8f),
-	// 	glm::vec3(0.6f, 0.6f, 0.6f),
-	// 	glm::vec3(0.0f, 0.0f, 0.0f), 32.0f);
-	//
-	// std::vector<Cube> cubes;
-	// for (int x = 0; x < 20 ; x++)
-	// {
-	// 	for (int z = 0; z < 20 ; z++)
-	// 	{
-	// 		Cube cube(grassBlockTexture, grassBlockMaterial);
-	// 		cube.transform.position = glm::vec3(x, 0.0f, z);
-	// 		cubes.push_back(cube);
-	// 	}
-	// }
-
 	float rendererTime= 0.0f;
 	float rendererTimeBuf = 0.0f;
 	std::cout << "Debug: starting main loop.\n";
@@ -259,10 +183,9 @@ int main()
 
 		rendererTime = 0.0f;
 
-		spotLightTest->GetComponent<Transform>()->position = camera.transform.position;
-		LightSource* lightSource = spotLightTest->GetComponent<LightSource>();
+		LightSource* lightSource = camera->GetComponent<LightSource>();
 		SpotLight* sl = dynamic_cast<SpotLight*>(lightSource);
-		sl->direction = camera.transform.quaternion.Forward();
+		sl->direction = camera->GetComponent<Transform>()->quaternion.Forward();
 
 		shader.UpdateLightUniforms();
 		for (GameObject* cube : cubes)
@@ -272,7 +195,7 @@ int main()
 				sin((glfwGetTime() + transform.position.x + transform.position.z) / 10.0f) * 1.5f;
 			
 			rendererTimeBuf = glfwGetTime();
-			cube->GetComponent<Renderer>()->Draw(shader, transform.position, transform.quaternion);
+			cube->GetComponent<Renderer>()->Draw(shader, camera, transform.position, transform.quaternion);
 			rendererTime += glfwGetTime() - rendererTimeBuf;
 		}
 

@@ -1,6 +1,5 @@
 #include "../inc/Renderer.h"
 
-extern Camera camera;
 extern std::vector<GameObject*> lightSources;
 
 std::vector<float> defaultCube = {
@@ -104,7 +103,7 @@ void Renderer::BuildBuffers()
 	glEnableVertexAttribArray(2);
 }
 
-void Renderer::Draw(Shader& shader, glm::vec3 position, Quaternion quaternion)
+void Renderer::Draw(Shader& shader, GameObject* camera, glm::vec3 position, Quaternion quaternion)
 {
 	this->texture.Bind(GL_TEXTURE0);
 
@@ -118,7 +117,7 @@ void Renderer::Draw(Shader& shader, glm::vec3 position, Quaternion quaternion)
 	glm::mat4 MVPmatrix = shader.projectionMatrix * shader.viewMatrix * modelMatrix;
 	shader.UniformSetMat4("MVPmatrix", MVPmatrix);
 	shader.UniformSetMat4("Mmatrix", modelMatrix);
-	shader.UniformSetVec3("viewPos", camera.transform.position);
+	shader.UniformSetVec3("viewPos", camera->GetComponent<Transform>()->position);
 
 	shader.UniformSetVec3("material.ambient", this->material.ambient);
 	shader.UniformSetVec3("material.diffuse", this->material.diffuse);

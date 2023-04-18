@@ -24,7 +24,7 @@ class Renderer : public Component
 		//Renderer& operator=(const Renderer& other);
 
 		void	BuildBuffers();
-		void	Draw(Shader& shader, glm::vec3 position, Quaternion quaternion);
+		void	Draw(Shader& shader, GameObject* camera, glm::vec3 position, Quaternion quaternion);
 
 		Texture texture;
 		Material material;

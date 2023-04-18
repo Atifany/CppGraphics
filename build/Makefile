@@ -258,33 +258,6 @@ sources/CoreData.cpp.s:
 	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/CoreData.cpp.s
 .PHONY : sources/CoreData.cpp.s
 
-sources/Cube.o: sources/Cube.cpp.o
-
-.PHONY : sources/Cube.o
-
-# target to build an object file
-sources/Cube.cpp.o:
-	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.o
-.PHONY : sources/Cube.cpp.o
-
-sources/Cube.i: sources/Cube.cpp.i
-
-.PHONY : sources/Cube.i
-
-# target to preprocess a source file
-sources/Cube.cpp.i:
-	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.i
-.PHONY : sources/Cube.cpp.i
-
-sources/Cube.s: sources/Cube.cpp.s
-
-.PHONY : sources/Cube.s
-
-# target to generate assembly for a file
-sources/Cube.cpp.s:
-	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.s
-.PHONY : sources/Cube.cpp.s
-
 sources/GameObject.o: sources/GameObject.cpp.o
 
 .PHONY : sources/GameObject.o
@@ -606,9 +579,6 @@ help:
 	@echo "... sources/CoreData.o"
 	@echo "... sources/CoreData.i"
 	@echo "... sources/CoreData.s"
-	@echo "... sources/Cube.o"
-	@echo "... sources/Cube.i"
-	@echo "... sources/Cube.s"
 	@echo "... sources/GameObject.o"
 	@echo "... sources/GameObject.i"
 	@echo "... sources/GameObject.s"

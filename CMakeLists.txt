@@ -10,7 +10,6 @@ add_executable(ft_minecraft
 	sources/Shader.cpp
 	sources/Camera.cpp
 	sources/Input.cpp
-	sources/Cube.cpp
 	sources/Renderer.cpp
 	sources/Texture.cpp
 	sources/Material.cpp

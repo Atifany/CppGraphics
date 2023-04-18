@@ -4,7 +4,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.o"
   "CMakeFiles/ft_minecraft.dir/sources/Component.cpp.o"
   "CMakeFiles/ft_minecraft.dir/sources/CoreData.cpp.o"
-  "CMakeFiles/ft_minecraft.dir/sources/Cube.cpp.o"
   "CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.o"
   "CMakeFiles/ft_minecraft.dir/sources/Input.cpp.o"
   "CMakeFiles/ft_minecraft.dir/sources/LightSource.cpp.o"

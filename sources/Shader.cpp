@@ -117,17 +117,20 @@ void Shader::UniformSetMat4(const std::string& name, glm::mat4 value) const
 		1, GL_FALSE, glm::value_ptr(value));
 }
 
-void Shader::UpdateViewMatrix(Camera& camera)
+void Shader::UpdateViewMatrix(GameObject* camera)
 {
+	Camera* cameraComp = camera->GetComponent<Camera>();
+	Transform* transform = camera->GetComponent<Transform>();
 	this->viewMatrix = glm::lookAt(
-		camera.transform.position,
-		camera.transform.position + camera.transform.quaternion.Forward(),
-		camera.upDirection);
+		transform->position,
+		transform->position + transform->quaternion.Forward(),
+		cameraComp->upDirection);
 }
 
-void Shader::UpdateProjectionMatrix(CoreData& c_d, Camera& camera)
+void Shader::UpdateProjectionMatrix(CoreData& c_d, GameObject* camera)
 {
-	this->projectionMatrix = glm::perspective(glm::radians(camera.fov),
+	Camera* cameraComp = camera->GetComponent<Camera>();
+	this->projectionMatrix = glm::perspective(glm::radians(cameraComp->fov),
 		(float)c_d.windowWidth / (float)c_d.windowHeight, 0.1f, 100.0f);
 }
 
