@@ -29,10 +29,10 @@ typeinfo
 -
 Component.h
 /home/atifany/Desktop/CppGraphics/inc/Component.h
-Transform.h
-/home/atifany/Desktop/CppGraphics/inc/Transform.h
 LightSource.h
 /home/atifany/Desktop/CppGraphics/inc/LightSource.h
+Transform.h
+/home/atifany/Desktop/CppGraphics/inc/Transform.h
 
 /home/atifany/Desktop/CppGraphics/inc/Input.h
 map
@@ -113,6 +113,8 @@ stb_image/stb_image.h
 /home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image.h
 
 /home/atifany/Desktop/CppGraphics/inc/Transform.h
+vector
+-
 Quaternion.h
 /home/atifany/Desktop/CppGraphics/inc/Quaternion.h
 Component.h

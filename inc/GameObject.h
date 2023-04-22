@@ -5,8 +5,8 @@
 #include <typeinfo>
 
 #include "Component.h"
-#include "Transform.h"
 #include "LightSource.h"
+#include "Transform.h"
 
 class GameObject
 {

@@ -5,7 +5,7 @@ std::vector<GameObject*> lightSources;
 GameObject::GameObject()
 {
 	this->components = std::vector<Component*>();
-	Transform* transform = new Transform();
+	Transform* transform = new Transform(this);
 	this->AddComponent(transform);
 }
 

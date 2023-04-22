@@ -17,8 +17,8 @@ class Renderer : public Component
 {
 	public:
 		Renderer();
-		Renderer(unsigned int textureTarget, const std::string& texturePath, Material& _material);
-		Renderer(Texture& _texture, Material& _material);
+		Renderer(unsigned int textureTarget, const std::string& texturePath, Material* _material);
+		Renderer(Texture* _texture, Material* _material);
 		~Renderer();
 		//Renderer(const Renderer& other);
 		//Renderer& operator=(const Renderer& other);
@@ -26,8 +26,8 @@ class Renderer : public Component
 		void	BuildBuffers();
 		void	Draw(Shader& shader, GameObject* camera, glm::vec3 position, Quaternion quaternion);
 
-		Texture texture;
-		Material material;
+		Texture*	texture;
+		Material*	material;
 
 	private:
 		std::vector<float>	vertices;

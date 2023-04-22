@@ -51,30 +51,30 @@ Renderer::Renderer()
 	this->vertices = defaultCube;
 	this->VAO = 0;
 	this->VBO = 0;
-	this->texture = Texture();
-	this->material = Material();
+	this->texture = new Texture();
+	this->material = new Material();
 
 	this->BuildBuffers();
 }
 
-Renderer::Renderer(unsigned int textureTarget, const std::string& texturePath, Material& _material)
+Renderer::Renderer(unsigned int textureTarget, const std::string& texturePath, Material* _material)
 {
 	this->vertices = defaultCube;
 	this->VAO = 0;
 	this->VBO = 0;
-	this->texture = Texture(textureTarget, texturePath);
-	this->material = Material(_material);
+	this->texture = new Texture(textureTarget, texturePath);
+	this->material = _material;
 
 	this->BuildBuffers();
 }
 
-Renderer::Renderer(Texture& _texture, Material& _material)
+Renderer::Renderer(Texture* _texture, Material* _material)
 {
 	this->vertices = defaultCube;
 	this->VAO = 0;
 	this->VBO = 0;
-	this->texture = Texture(_texture);
-	this->material = Material(_material);
+	this->texture = _texture;
+	this->material = _material;
 
 	this->BuildBuffers();
 }
@@ -105,7 +105,7 @@ void Renderer::BuildBuffers()
 
 void Renderer::Draw(Shader& shader, GameObject* camera, glm::vec3 position, Quaternion quaternion)
 {
-	this->texture.Bind(GL_TEXTURE0);
+	this->texture->Bind(GL_TEXTURE0);
 
 	shader.Use();
 	glm::mat4 modelMatrix = glm::mat4(1.0f);
@@ -119,10 +119,10 @@ void Renderer::Draw(Shader& shader, GameObject* camera, glm::vec3 position, Quat
 	shader.UniformSetMat4("Mmatrix", modelMatrix);
 	shader.UniformSetVec3("viewPos", camera->GetComponent<Transform>()->position);
 
-	shader.UniformSetVec3("material.ambient", this->material.ambient);
-	shader.UniformSetVec3("material.diffuse", this->material.diffuse);
-	shader.UniformSetVec3("material.specular", this->material.specular);
-	shader.UniformSetFloat("material.shininess", this->material.shininess);
+	shader.UniformSetVec3("material.ambient", this->material->ambient);
+	shader.UniformSetVec3("material.diffuse", this->material->diffuse);
+	shader.UniformSetVec3("material.specular", this->material->specular);
+	shader.UniformSetFloat("material.shininess", this->material->shininess);
 
 	glBindVertexArray(this->VAO);
 	glDrawArrays(GL_TRIANGLES, 0, this->vertices.size() / 5);

@@ -30,12 +30,13 @@ static float lastFrame = 0.0f;
 
 // Setup camera
 float cameraSpeed = 8.0f; // player movespeed
-GameObject* camera = new GameObject();
+Transform *origin = new Transform();
+GameObject *camera = new GameObject();
 
 CoreData c_d;
 Input input;
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void CalculateDeltaTime();
 static void PutBenchMarktoTerminal(float rendererTime);
 
@@ -83,7 +84,7 @@ int main()
 	errorCode = InitGLFWWindow();
 	if (errorCode != 0)
 		return errorCode;
-	
+
 	errorCode = InitGLAD();
 	if (errorCode != 0)
 		return errorCode;
@@ -105,19 +106,19 @@ int main()
 	// Enable Depth-tetsing
 	glEnable(GL_DEPTH_TEST);
 
-	//GameObject* camera = new GameObject();
-	Camera* cameraComp = new Camera();
+	origin->SetParent(NULL);
+	Camera *cameraComp = new Camera();
 	camera->AddComponent(cameraComp);
-	camera->GetComponent<Transform>()->position.x = -2.0f;
+	camera->GetComponent<Transform>()->position.x = -15.0f;
 
-	Texture grassBlockTexture = Texture(GL_TEXTURE_2D, texturePath);
-	grassBlockTexture.Load();
-	Material grassBlockMaterial = Material(
+	Texture* grassBlockTexture = new Texture(GL_TEXTURE_2D, texturePath);
+	grassBlockTexture->Load();
+	Material* grassBlockMaterial = new Material(
 		glm::vec3(0.8f, 0.8f, 0.8f),
 		glm::vec3(0.6f, 0.6f, 0.6f),
 		glm::vec3(0.0f, 0.0f, 0.0f), 32.0f);
-	
-	SpotLight* spotLight = new SpotLight(
+
+	SpotLight *spotLight = new SpotLight(
 		glm::vec3(1.0f, 1.0f, 1.0f),
 		glm::vec3(1.0f, 1.0f, 1.0f),
 		glm::vec3(1.0f, 1.0f, 1.0f),
@@ -125,16 +126,16 @@ int main()
 		glm::vec3(0.0f, 1.0f, 0.0f), 0.91f, 0.82f);
 	camera->AddComponent(spotLight);
 
-	GameObject* lightTestObject = new GameObject();
-	DirectionalLight* dirLight = new DirectionalLight(
+	GameObject *lightTestObject = new GameObject();
+	DirectionalLight *dirLight = new DirectionalLight(
 		glm::vec3(1.0f, 1.0f, 1.0f),
 		glm::vec3(1.0f, 1.0f, 1.0f),
 		glm::vec3(1.0f, 1.0f, 1.0f),
 		0.1f, 0.0f, glm::vec3(0.0f, -1.0f, 0.0f));
 	lightTestObject->AddComponent(dirLight);
 
-	GameObject* pointLight1 = new GameObject();
-	PointLight* p1 = new PointLight(
+	GameObject *pointLight1 = new GameObject();
+	PointLight *p1 = new PointLight(
 		glm::vec3(1.0f, 1.0f, 1.0f),
 		glm::vec3(1.0f, 1.0f, 1.0f),
 		glm::vec3(1.0f, 1.0f, 1.0f),
@@ -151,21 +152,20 @@ int main()
 	// pointLight2->AddComponent(p2);
 	// pointLight2->GetComponent<Transform>()->position = glm::vec3(5.0f, 2.5f, 5.0f);
 
-	std::vector<GameObject*> cubes;
-	for (int x = 0; x < 20 ; x++)
+	GameObject *cube;
+	for (int x = 0; x < 20; x++)
 	{
-		for (int z = 0; z < 20 ; z++)
+		for (int z = 0; z < 20; z++)
 		{
-			Renderer* renderer = new Renderer(grassBlockTexture, grassBlockMaterial);
-			GameObject* cube = new GameObject();
+			Renderer *renderer = new Renderer(grassBlockTexture, grassBlockMaterial);
+			cube = new GameObject();
 			cube->AddComponent(renderer);
-			
+
 			cube->GetComponent<Transform>()->position = glm::vec3(x, 0.0f, z);
-			cubes.push_back(cube);
 		}
 	}
 
-	float rendererTime= 0.0f;
+	float rendererTime = 0.0f;
 	float rendererTimeBuf = 0.0f;
 	std::cout << "Debug: starting main loop.\n";
 	std::cout << "\n";
@@ -183,19 +183,26 @@ int main()
 
 		rendererTime = 0.0f;
 
-		LightSource* lightSource = camera->GetComponent<LightSource>();
-		SpotLight* sl = dynamic_cast<SpotLight*>(lightSource);
+		LightSource *lightSource = camera->GetComponent<LightSource>();
+		SpotLight *sl = dynamic_cast<SpotLight *>(lightSource);
 		sl->direction = camera->GetComponent<Transform>()->quaternion.Forward();
 
 		shader.UpdateLightUniforms();
-		for (GameObject* cube : cubes)
+		for (Transform *object : origin->children)
 		{
-			Transform transform = *(cube->GetComponent<Transform>());
-			transform.position.y =
-				sin((glfwGetTime() + transform.position.x + transform.position.z) / 10.0f) * 1.5f;
-			
+			// constil. Fix it with script components!!!
+			if (object->gameObject->GetComponent<Camera>() == NULL)
+			{
+				object->position.y =
+					sin((glfwGetTime() + object->position.x + object->position.z) / 10.0f) * 1.5f;
+			}
+
 			rendererTimeBuf = glfwGetTime();
-			cube->GetComponent<Renderer>()->Draw(shader, camera, transform.position, transform.quaternion);
+			Renderer* renderer = object->gameObject->GetComponent<Renderer>();
+			if (renderer != NULL)
+			{
+				renderer->Draw(shader, camera, object->GetWorldCoords(), object->quaternion);
+			}
 			rendererTime += glfwGetTime() - rendererTimeBuf;
 		}
 
@@ -232,7 +239,7 @@ static void PutBenchMarktoTerminal(float rendererTime)
 	{
 		if (flasher == '|')
 			flasher = ' ';
-		else 
+		else
 			flasher = '|';
 		if (framesElapsed >= 60)
 			color = GRN;
@@ -242,15 +249,13 @@ static void PutBenchMarktoTerminal(float rendererTime)
 			color = RED;
 
 		lastChecked = curTime;
-		std::cout << "\033[1A\033[:KDebug: FPS = " <<
-			color << framesElapsed << NC << " " <<
-			"RenderTime = " << color << rendererTime*1000 << NC <<
-			" " << flasher << "\n";
+		std::cout << "\033[1A\033[:KDebug: FPS = " << color << framesElapsed << NC << " "
+				  << "RenderTime = " << color << rendererTime * 1000 << NC << " " << flasher << "\n";
 		framesElapsed = 0;
 	}
 }
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+void framebuffer_size_callback(GLFWwindow *window, int width, int height)
 {
 	glViewport(0, 0, width, height);
 }
