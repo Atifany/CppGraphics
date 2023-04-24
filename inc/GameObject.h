@@ -22,6 +22,8 @@ class GameObject
 		template <typename T>
 		void	AddComponent(T* component);
 
+		void	CallUpdates();
+
 	private:
 		std::vector<Component*> components;
 };
@@ -34,7 +36,6 @@ T* GameObject::GetComponent()
 	for (Component* component : this->components)
 	{
 		T* c = dynamic_cast<T*>(component);
-		// std::cout << this->components.size() << " " << c << " " << component << "\n";
 		if (c != NULL)
 			return c;
 	}
@@ -44,8 +45,8 @@ T* GameObject::GetComponent()
 template <typename T>
 void GameObject::AddComponent(T* component)
 {
-	// std::cout << "Add called\n";
 	Component* buf = component;
+	buf->gameObject = this;
 	this->components.push_back(buf);
 	if (dynamic_cast<LightSource*>(component) != NULL)
 		lightSources.push_back(this);

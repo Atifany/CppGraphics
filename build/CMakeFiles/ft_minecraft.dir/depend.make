@@ -1382,6 +1382,7 @@ CMakeFiles/ft_minecraft.dir/sources/Transform.cpp.o: ../sources/Transform.cpp
 CMakeFiles/ft_minecraft.dir/sources/main.cpp.o: ../inc/Camera.h
 CMakeFiles/ft_minecraft.dir/sources/main.cpp.o: ../inc/Component.h
 CMakeFiles/ft_minecraft.dir/sources/main.cpp.o: ../inc/CoreData.h
+CMakeFiles/ft_minecraft.dir/sources/main.cpp.o: ../inc/CubeScript.h
 CMakeFiles/ft_minecraft.dir/sources/main.cpp.o: ../inc/GameObject.h
 CMakeFiles/ft_minecraft.dir/sources/main.cpp.o: ../inc/Input.h
 CMakeFiles/ft_minecraft.dir/sources/main.cpp.o: ../inc/LightSource.h

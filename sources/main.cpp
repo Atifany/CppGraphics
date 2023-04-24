@@ -18,6 +18,7 @@
 #include "../inc/Component.h"
 #include "../inc/GameObject.h"
 #include "../inc/Renderer.h"
+#include "../inc/CubeScript.h"
 
 static const float fov = 90.0f;
 
@@ -157,9 +158,11 @@ int main()
 	{
 		for (int z = 0; z < 20; z++)
 		{
-			Renderer *renderer = new Renderer(grassBlockTexture, grassBlockMaterial);
+			Renderer* renderer = new Renderer(grassBlockTexture, grassBlockMaterial);
+			CubeScript* script = new CubeScript();
 			cube = new GameObject();
 			cube->AddComponent(renderer);
+			cube->AddComponent(script);
 
 			cube->GetComponent<Transform>()->position = glm::vec3(x, 0.0f, z);
 		}
@@ -190,12 +193,13 @@ int main()
 		shader.UpdateLightUniforms();
 		for (Transform *object : origin->children)
 		{
-			// constil. Fix it with script components!!!
-			if (object->gameObject->GetComponent<Camera>() == NULL)
-			{
-				object->position.y =
-					sin((glfwGetTime() + object->position.x + object->position.z) / 10.0f) * 1.5f;
-			}
+			// // constil. Fix it with script components!!!
+			// if (object->gameObject->GetComponent<Camera>() == NULL)
+			// {
+			// 	object->position.y =
+			// 		sin((glfwGetTime() + object->position.x + object->position.z) / 10.0f) * 1.5f;
+			// }
+			object->gameObject->CallUpdates();
 
 			rendererTimeBuf = glfwGetTime();
 			Renderer* renderer = object->gameObject->GetComponent<Renderer>();

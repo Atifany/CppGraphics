@@ -20,6 +20,16 @@ glad/glad.h
 GLFW/glfw3.h
 -
 
+/home/atifany/Desktop/CppGraphics/inc/CubeScript.h
+GLFW/glfw3.h
+-
+Component.h
+/home/atifany/Desktop/CppGraphics/inc/Component.h
+GameObject.h
+/home/atifany/Desktop/CppGraphics/inc/GameObject.h
+Transform.h
+/home/atifany/Desktop/CppGraphics/inc/Transform.h
+
 /home/atifany/Desktop/CppGraphics/inc/GameObject.h
 vector
 -
@@ -1599,4 +1609,6 @@ iomanip
 /home/atifany/Desktop/CppGraphics/inc/GameObject.h
 ../inc/Renderer.h
 /home/atifany/Desktop/CppGraphics/inc/Renderer.h
+../inc/CubeScript.h
+/home/atifany/Desktop/CppGraphics/inc/CubeScript.h
 

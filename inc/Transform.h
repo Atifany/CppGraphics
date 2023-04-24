@@ -19,7 +19,6 @@ class Transform : public Component
 		glm::vec3					position;
 		Quaternion					quaternion;
 		std::vector<Transform*>		children;
-		GameObject*					gameObject;
 
 		glm::vec3 GetWorldCoords();
 		void SetParent(Transform* _parent);
