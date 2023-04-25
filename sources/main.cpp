@@ -18,7 +18,8 @@
 #include "../inc/Component.h"
 #include "../inc/GameObject.h"
 #include "../inc/Renderer.h"
-#include "../inc/CubeScript.h"
+#include "../scripts/inc/CubeScript.h"
+#include "../scripts/inc/PlayerMovement.h"
 
 static const float fov = 90.0f;
 
@@ -30,12 +31,11 @@ float deltaTime = 0.0f;
 static float lastFrame = 0.0f;
 
 // Setup camera
-float cameraSpeed = 8.0f; // player movespeed
 Transform *origin = new Transform();
 GameObject *camera = new GameObject();
 
 CoreData c_d;
-Input input;
+Input* input = new Input();
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void CalculateDeltaTime();
@@ -99,7 +99,7 @@ int main()
 	// User input callbacks
 	glfwSetKeyCallback(c_d.window, KeyCallbackSet);
 	glfwSetInputMode(c_d.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-	glfwSetCursorPosCallback(c_d.window, MouseCallback);
+	glfwSetCursorPosCallback(c_d.window, MouseCallbackSet);
 
 	// Enable transparency component
 	glEnable(GL_BLEND);
@@ -109,7 +109,12 @@ int main()
 
 	origin->SetParent(NULL);
 	Camera *cameraComp = new Camera();
+	cameraComp->input = input;
+	PlayerMovement* playerMoveScript = new PlayerMovement();
+	playerMoveScript->input = input;
+	playerMoveScript->speed = 10.0f;
 	camera->AddComponent(cameraComp);
+	camera->AddComponent(playerMoveScript);
 	camera->GetComponent<Transform>()->position.x = -15.0f;
 
 	Texture* grassBlockTexture = new Texture(GL_TEXTURE_2D, texturePath);
@@ -175,6 +180,9 @@ int main()
 	// run the app
 	while (!glfwWindowShouldClose(c_d.window))
 	{
+		// Process callbacks and events.
+		glfwPollEvents();
+		
 		CalculateDeltaTime();
 
 		// Clears the window.
@@ -193,12 +201,6 @@ int main()
 		shader.UpdateLightUniforms();
 		for (Transform *object : origin->children)
 		{
-			// // constil. Fix it with script components!!!
-			// if (object->gameObject->GetComponent<Camera>() == NULL)
-			// {
-			// 	object->position.y =
-			// 		sin((glfwGetTime() + object->position.x + object->position.z) / 10.0f) * 1.5f;
-			// }
 			object->gameObject->CallUpdates();
 
 			rendererTimeBuf = glfwGetTime();
@@ -212,13 +214,11 @@ int main()
 
 		// Swaps front and back screen buffers.
 		glfwSwapBuffers(c_d.window);
-		// Process callbacks and events.
-		glfwPollEvents();
 
 		// User input.
 		KeyReciever();
 		// set values to keys.
-		input.KeyCallBackProcess();
+		input->KeyCallBackProcess();
 
 		PutBenchMarktoTerminal(rendererTime);
 	}

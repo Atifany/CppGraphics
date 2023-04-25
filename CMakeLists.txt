@@ -17,6 +17,9 @@ add_executable(ft_minecraft
 	sources/Component.cpp
 	sources/LightSource.cpp
 
+	scripts/sources/CubeScript.cpp
+	scripts/sources/PlayerMovement.cpp
+
 #	GLAD library
 	inc/glad/glad.c
 

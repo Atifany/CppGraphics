@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.o"
   "CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o"
+  "CMakeFiles/ft_minecraft.dir/scripts/sources/CubeScript.cpp.o"
+  "CMakeFiles/ft_minecraft.dir/scripts/sources/PlayerMovement.cpp.o"
   "CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.o"
   "CMakeFiles/ft_minecraft.dir/sources/Component.cpp.o"
   "CMakeFiles/ft_minecraft.dir/sources/CoreData.cpp.o"

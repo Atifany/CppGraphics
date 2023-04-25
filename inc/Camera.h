@@ -1,6 +1,6 @@
 #pragma once
 
-#include "glm/glm.hpp"
+#include "Input.h"
 #include "Transform.h"
 
 class Camera : public Component
@@ -10,10 +10,13 @@ class Camera : public Component
 		~Camera();
 		Camera(const Camera& other);
 		Camera& operator=(const Camera& other);
+		void Update() override;
 
 		glm::vec3	upDirection;
 		float		sensivity;
 		float		fov;
+		bool		isWireFrameModeOn;
+		Input*		input;
 
 	private:
 };

@@ -177,6 +177,60 @@ inc/stb_image/stb_image_implementation.cpp.s:
 	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.s
 .PHONY : inc/stb_image/stb_image_implementation.cpp.s
 
+scripts/sources/CubeScript.o: scripts/sources/CubeScript.cpp.o
+
+.PHONY : scripts/sources/CubeScript.o
+
+# target to build an object file
+scripts/sources/CubeScript.cpp.o:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/scripts/sources/CubeScript.cpp.o
+.PHONY : scripts/sources/CubeScript.cpp.o
+
+scripts/sources/CubeScript.i: scripts/sources/CubeScript.cpp.i
+
+.PHONY : scripts/sources/CubeScript.i
+
+# target to preprocess a source file
+scripts/sources/CubeScript.cpp.i:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/scripts/sources/CubeScript.cpp.i
+.PHONY : scripts/sources/CubeScript.cpp.i
+
+scripts/sources/CubeScript.s: scripts/sources/CubeScript.cpp.s
+
+.PHONY : scripts/sources/CubeScript.s
+
+# target to generate assembly for a file
+scripts/sources/CubeScript.cpp.s:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/scripts/sources/CubeScript.cpp.s
+.PHONY : scripts/sources/CubeScript.cpp.s
+
+scripts/sources/PlayerMovement.o: scripts/sources/PlayerMovement.cpp.o
+
+.PHONY : scripts/sources/PlayerMovement.o
+
+# target to build an object file
+scripts/sources/PlayerMovement.cpp.o:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/scripts/sources/PlayerMovement.cpp.o
+.PHONY : scripts/sources/PlayerMovement.cpp.o
+
+scripts/sources/PlayerMovement.i: scripts/sources/PlayerMovement.cpp.i
+
+.PHONY : scripts/sources/PlayerMovement.i
+
+# target to preprocess a source file
+scripts/sources/PlayerMovement.cpp.i:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/scripts/sources/PlayerMovement.cpp.i
+.PHONY : scripts/sources/PlayerMovement.cpp.i
+
+scripts/sources/PlayerMovement.s: scripts/sources/PlayerMovement.cpp.s
+
+.PHONY : scripts/sources/PlayerMovement.s
+
+# target to generate assembly for a file
+scripts/sources/PlayerMovement.cpp.s:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/scripts/sources/PlayerMovement.cpp.s
+.PHONY : scripts/sources/PlayerMovement.cpp.s
+
 sources/Camera.o: sources/Camera.cpp.o
 
 .PHONY : sources/Camera.o
@@ -570,6 +624,12 @@ help:
 	@echo "... inc/stb_image/stb_image_implementation.o"
 	@echo "... inc/stb_image/stb_image_implementation.i"
 	@echo "... inc/stb_image/stb_image_implementation.s"
+	@echo "... scripts/sources/CubeScript.o"
+	@echo "... scripts/sources/CubeScript.i"
+	@echo "... scripts/sources/CubeScript.s"
+	@echo "... scripts/sources/PlayerMovement.o"
+	@echo "... scripts/sources/PlayerMovement.i"
+	@echo "... scripts/sources/PlayerMovement.s"
 	@echo "... sources/Camera.o"
 	@echo "... sources/Camera.i"
 	@echo "... sources/Camera.s"

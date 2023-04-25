@@ -2,8 +2,11 @@
 
 #include "../inc/Input.h"
 
+Input::Input()
+{
+	this->mousePos = glm::vec2(400.0f, 300.0f);
+}
 
-Input::Input() {}
 Input::~Input() {}
 
 // Detects keys being pressed and released and sets an appropriate state to each key.
@@ -52,4 +55,16 @@ void Input::KeyCallBackProcess()
 		else
 			it++;
 	}
+}
+
+// Stores latest mouse position
+void Input::MouseCallBack(GLFWwindow* window, double xpos, double ypos)
+{
+	this->mousePos.x = xpos;
+	this->mousePos.y = ypos;
+}
+
+glm::vec2 Input::GetMousePos()
+{
+	return this->mousePos;
 }

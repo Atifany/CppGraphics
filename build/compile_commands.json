@@ -71,6 +71,16 @@
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/scripts/sources/CubeScript.cpp.o -c /home/atifany/Desktop/CppGraphics/scripts/sources/CubeScript.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/scripts/sources/CubeScript.cpp"
+},
+{
+  "directory": "/home/atifany/Desktop/CppGraphics/build",
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/scripts/sources/PlayerMovement.cpp.o -c /home/atifany/Desktop/CppGraphics/scripts/sources/PlayerMovement.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/scripts/sources/PlayerMovement.cpp"
+},
+{
+  "directory": "/home/atifany/Desktop/CppGraphics/build",
   "command": "/usr/bin/gcc   -g   -o CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.o   -c /home/atifany/Desktop/CppGraphics/inc/glad/glad.c",
   "file": "/home/atifany/Desktop/CppGraphics/inc/glad/glad.c"
 },
