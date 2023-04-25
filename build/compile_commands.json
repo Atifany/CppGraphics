@@ -1,92 +1,92 @@
 [
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/sources/Quaternion.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Quaternion.cpp",
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/sources/Quaternion.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Quaternion.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/sources/Quaternion.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/sources/Transform.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Transform.cpp",
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/sources/Transform.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Transform.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/sources/Transform.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/sources/main.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/main.cpp",
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/sources/main.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/main.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/sources/main.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/sources/process_input.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/process_input.cpp",
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/sources/process_input.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/process_input.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/sources/process_input.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/sources/CoreData.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/CoreData.cpp",
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/sources/CoreData.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/CoreData.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/sources/CoreData.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Shader.cpp",
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Shader.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/sources/Shader.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Camera.cpp",
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Camera.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/sources/Camera.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/sources/Input.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Input.cpp",
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/sources/Input.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Input.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/sources/Input.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/sources/Renderer.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Renderer.cpp",
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/sources/Renderer.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Renderer.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/sources/Renderer.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/sources/Texture.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Texture.cpp",
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/sources/Texture.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Texture.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/sources/Texture.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/sources/Material.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Material.cpp",
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/sources/Material.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Material.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/sources/Material.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/GameObject.cpp",
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/sources/GameObject.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/GameObject.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/sources/GameObject.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/sources/Component.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Component.cpp",
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/sources/Component.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Component.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/sources/Component.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/sources/LightSource.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/LightSource.cpp",
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/sources/LightSource.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/LightSource.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/sources/LightSource.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/scripts/sources/CubeScript.cpp.o -c /home/atifany/Desktop/CppGraphics/scripts/sources/CubeScript.cpp",
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/scripts/sources/CubeScript.cpp.o -c /home/atifany/Desktop/CppGraphics/scripts/sources/CubeScript.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/scripts/sources/CubeScript.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/scripts/sources/PlayerMovement.cpp.o -c /home/atifany/Desktop/CppGraphics/scripts/sources/PlayerMovement.cpp",
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/scripts/sources/PlayerMovement.cpp.o -c /home/atifany/Desktop/CppGraphics/scripts/sources/PlayerMovement.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/scripts/sources/PlayerMovement.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/gcc   -g   -o CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.o   -c /home/atifany/Desktop/CppGraphics/inc/glad/glad.c",
+  "command": "/usr/bin/gcc  -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.o   -c /home/atifany/Desktop/CppGraphics/inc/glad/glad.c",
   "file": "/home/atifany/Desktop/CppGraphics/inc/glad/glad.c"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++    -g   -o CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o -c /home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image_implementation.cpp",
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o -c /home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image_implementation.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image_implementation.cpp"
 }
 ]

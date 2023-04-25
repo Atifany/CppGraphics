@@ -10,7 +10,8 @@
 	{
 		"commands" : 
 		[
-			"add_executable"
+			"add_executable",
+			"target_include_directories"
 		],
 		"files" : 
 		[
@@ -26,6 +27,12 @@
 				"file" : 0,
 				"line" : 4,
 				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 30,
+				"parent" : 0
 			}
 		]
 	},
@@ -36,6 +43,13 @@
 			[
 				{
 					"fragment" : "-g  "
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"path" : "/usr/include/freetype2"
 				}
 			],
 			"language" : "CXX",
@@ -67,6 +81,13 @@
 					"fragment" : "-g  "
 				}
 			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"path" : "/usr/include/freetype2"
+				}
+			],
 			"language" : "C",
 			"sourceIndexes" : 
 			[
@@ -89,6 +110,10 @@
 			},
 			{
 				"fragment" : "-lglfw",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lfreetype",
 				"role" : "libraries"
 			},
 			{

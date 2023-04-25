@@ -5,6 +5,9 @@
 #include <vector>
 #include <iomanip>
 
+#include <freetype2/ft2build.h>
+#include FT_FREETYPE_H
+
 #include "../inc/colors.h"
 
 #include "../inc/stb_image/stb_image.h"
@@ -76,6 +79,16 @@ static int InitGLAD()
 	return 0;
 }
 
+static int InitFT2(FT_Library* ft)
+{
+	if (FT_Init_FreeType(ft))
+	{
+		std::cout << "Error: failed to initialize FreeType library.\n";
+		return -1;
+	}
+	return 0;
+}
+
 int main()
 {
 	c_d.windowWidth = 1920;
@@ -87,6 +100,11 @@ int main()
 		return errorCode;
 
 	errorCode = InitGLAD();
+	if (errorCode != 0)
+		return errorCode;
+
+	FT_Library ft;
+	errorCode = InitFT2(&ft);
 	if (errorCode != 0)
 		return errorCode;
 
