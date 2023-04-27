@@ -17,17 +17,17 @@ class Renderer : public Component
 {
 	public:
 		Renderer();
-		Renderer(unsigned int textureTarget, const std::string& texturePath, Material* _material);
-		Renderer(Texture* _texture, Material* _material);
+		Renderer(Texture* _texture, Material* _material, Shader* _shader);
 		~Renderer();
 		//Renderer(const Renderer& other);
 		//Renderer& operator=(const Renderer& other);
 
 		void	BuildBuffers();
-		void	Draw(Shader& shader, GameObject* camera, glm::vec3 position, Quaternion quaternion);
+		void	Draw(GameObject* camera);
 
 		Texture*	texture;
 		Material*	material;
+		Shader*		shader;
 
 	private:
 		std::vector<float>	vertices;

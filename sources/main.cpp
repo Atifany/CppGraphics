@@ -29,6 +29,7 @@ static const float fov = 90.0f;
 static const std::string vertexShaderPath = "../shaders/vertex_shader.shader";
 static const std::string fragmentShaderPath = "../shaders/fragment_shader.shader";
 static const std::string texturePath = "../textures/GrassBlock.png";
+static const std::string fontPath = "../fonts/arial/arial.ttf";
 
 float deltaTime = 0.0f;
 static float lastFrame = 0.0f;
@@ -43,6 +44,15 @@ Input* input = new Input();
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void CalculateDeltaTime();
 static void PutBenchMarktoTerminal(float rendererTime);
+
+struct Character
+{
+	unsigned int	textureId;
+	glm::ivec2		size;
+	glm::ivec2		bearing;
+	unsigned int	advance;
+};
+std::map<char, Character> Characters;
 
 static int InitGLFWWindow()
 {
@@ -79,13 +89,59 @@ static int InitGLAD()
 	return 0;
 }
 
-static int InitFT2(FT_Library* ft)
+static int InitFT2(FT_Library* ft, FT_Face* face)
 {
 	if (FT_Init_FreeType(ft))
 	{
 		std::cout << "Error: failed to initialize FreeType library.\n";
 		return -1;
 	}
+	if (FT_New_Face(*ft, "../fonts/arial/arial.ttf", 0, face))
+	{
+		std::cout << "Error: failed to load font.\n";
+		return -1;
+	}
+
+	// Read pixel data by 1 byte. Default was 4 bytes.
+	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+
+	FT_Set_Pixel_Sizes(*face, 0, 48);
+	// load all glyphs to characters map
+	for (unsigned char c = 0; c < 128; c++)
+	{
+		// load glyph
+		int errCode = FT_Load_Char(*face, c, FT_LOAD_RENDER);
+		if (errCode != 0)
+		{
+			std::cout << "Error: failed to load glyph " << c << " with code " << errCode << "\n";
+			continue;
+		}
+		// generate texture
+		unsigned int texture;
+		glGenTextures(1, &texture);
+		glBindTexture(GL_TEXTURE_2D, texture);
+
+		glTexParameteri(texture, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(texture, GL_TEXTURE_WRAP_T, GL_REPEAT);
+		glTexParameteri(texture, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+		glTexParameteri(texture, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+		glTexImage2D(texture, 0, GL_RED, (*face)->glyph->bitmap.width, (*face)->glyph->bitmap.rows, 0,
+			GL_RED, GL_UNSIGNED_BYTE, (*face)->glyph->bitmap.buffer);
+		
+		Character character = {
+			texture,
+			glm::ivec2((*face)->glyph->bitmap.width, (*face)->glyph->bitmap.rows),
+			glm::ivec2((*face)->glyph->bitmap_left, (*face)->glyph->bitmap_top),
+			(unsigned int)(*face)->glyph->advance.x };
+		Characters.insert(std::pair<char, Character>(c, character));
+	}
+	glBindTexture(GL_TEXTURE_2D, 0);
+	// Return pixel read allignment to default 4
+	glPixelStorei(GL_UNPACK_ALIGNMENT, 4);
+	// clean
+	FT_Done_Face(*face);
+	FT_Done_FreeType(*ft);
+
 	return 0;
 }
 
@@ -103,16 +159,20 @@ int main()
 	if (errorCode != 0)
 		return errorCode;
 
-	FT_Library ft;
-	errorCode = InitFT2(&ft);
+	FT_Library*	ft = new FT_Library();
+	FT_Face*	face = new FT_Face();
+	errorCode = InitFT2(ft, face);
 	if (errorCode != 0)
 		return errorCode;
+	FT_Set_Pixel_Sizes(*face, 0, 48);
+	delete ft;
+	delete face;
 
-	Shader shader(vertexShaderPath, fragmentShaderPath);
-	if (shader.program == 0)
+	Shader* shader = new Shader(vertexShaderPath, fragmentShaderPath);
+	if (shader->program == 0)
 		return -1;
-	shader.Use();
-	shader.UniformSetInt("textureToDraw", 0);
+	shader->Use();
+	shader->UniformSetInt("textureToDraw", 0);
 
 	// User input callbacks
 	glfwSetKeyCallback(c_d.window, KeyCallbackSet);
@@ -181,7 +241,7 @@ int main()
 	{
 		for (int z = 0; z < 20; z++)
 		{
-			Renderer* renderer = new Renderer(grassBlockTexture, grassBlockMaterial);
+			Renderer* renderer = new Renderer(grassBlockTexture, grassBlockMaterial, shader);
 			CubeScript* script = new CubeScript();
 			cube = new GameObject();
 			cube->AddComponent(renderer);
@@ -207,8 +267,8 @@ int main()
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		shader.UpdateViewMatrix(camera);
-		shader.UpdateProjectionMatrix(c_d, camera);
+		shader->UpdateViewMatrix(camera);
+		shader->UpdateProjectionMatrix(c_d, camera);
 
 		rendererTime = 0.0f;
 
@@ -216,7 +276,7 @@ int main()
 		SpotLight *sl = dynamic_cast<SpotLight *>(lightSource);
 		sl->direction = camera->GetComponent<Transform>()->quaternion.Forward();
 
-		shader.UpdateLightUniforms();
+		shader->UpdateLightUniforms();
 		for (Transform *object : origin->children)
 		{
 			object->gameObject->CallUpdates();
@@ -225,7 +285,7 @@ int main()
 			Renderer* renderer = object->gameObject->GetComponent<Renderer>();
 			if (renderer != NULL)
 			{
-				renderer->Draw(shader, camera, object->GetWorldCoords(), object->quaternion);
+				renderer->Draw(camera);
 			}
 			rendererTime += glfwGetTime() - rendererTimeBuf;
 		}

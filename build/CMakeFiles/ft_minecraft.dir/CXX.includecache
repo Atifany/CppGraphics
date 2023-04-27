@@ -1590,6 +1590,10 @@ GLFW/glfw3.h
 ../../inc/Input.h
 /home/atifany/Desktop/CppGraphics/inc/Input.h
 
+/home/atifany/Desktop/CppGraphics/sources/Renderer.cpp
+../inc/Renderer.h
+/home/atifany/Desktop/CppGraphics/inc/Renderer.h
+
 /home/atifany/Desktop/CppGraphics/sources/main.cpp
 iostream
 -
