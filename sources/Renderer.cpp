@@ -79,8 +79,8 @@ void Renderer::BuildBuffers()
 	glGenBuffers(1, &(this->VBO));
 
 	glBindVertexArray(this->VAO);
-
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	
 	float verticesBuf[this->vertices.size()];
 	std::copy(this->vertices.begin(), this->vertices.end(), verticesBuf);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(verticesBuf), verticesBuf, GL_STATIC_DRAW);
@@ -92,6 +92,10 @@ void Renderer::BuildBuffers()
 	glEnableVertexAttribArray(1);
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
 	glEnableVertexAttribArray(2);
+
+	// Release bind
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindVertexArray(0);
 }
 
 void Renderer::Draw(GameObject* camera)

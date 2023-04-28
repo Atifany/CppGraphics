@@ -104,6 +104,16 @@ LightSource.h
 GameObject.h
 /home/atifany/Desktop/CppGraphics/inc/GameObject.h
 
+/home/atifany/Desktop/CppGraphics/inc/Text.h
+string
+-
+character.h
+/home/atifany/Desktop/CppGraphics/inc/character.h
+Component.h
+/home/atifany/Desktop/CppGraphics/inc/Component.h
+Shader.h
+/home/atifany/Desktop/CppGraphics/inc/Shader.h
+
 /home/atifany/Desktop/CppGraphics/inc/Texture.h
 string
 -
@@ -121,6 +131,10 @@ Quaternion.h
 /home/atifany/Desktop/CppGraphics/inc/Quaternion.h
 Component.h
 /home/atifany/Desktop/CppGraphics/inc/Component.h
+
+/home/atifany/Desktop/CppGraphics/inc/character.h
+glm/glm.hpp
+/home/atifany/Desktop/CppGraphics/inc/glm/glm.hpp
 
 /home/atifany/Desktop/CppGraphics/inc/colors.h
 
@@ -1590,10 +1604,6 @@ GLFW/glfw3.h
 ../../inc/Input.h
 /home/atifany/Desktop/CppGraphics/inc/Input.h
 
-/home/atifany/Desktop/CppGraphics/sources/Renderer.cpp
-../inc/Renderer.h
-/home/atifany/Desktop/CppGraphics/inc/Renderer.h
-
 /home/atifany/Desktop/CppGraphics/sources/main.cpp
 iostream
 -
@@ -1611,6 +1621,8 @@ freetype2/ft2build.h
 -
 ../inc/colors.h
 /home/atifany/Desktop/CppGraphics/inc/colors.h
+../inc/character.h
+/home/atifany/Desktop/CppGraphics/inc/character.h
 ../inc/stb_image/stb_image.h
 /home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image.h
 ../inc/Shader.h
@@ -1633,6 +1645,8 @@ freetype2/ft2build.h
 /home/atifany/Desktop/CppGraphics/inc/GameObject.h
 ../inc/Renderer.h
 /home/atifany/Desktop/CppGraphics/inc/Renderer.h
+../inc/Text.h
+/home/atifany/Desktop/CppGraphics/inc/Text.h
 ../scripts/inc/CubeScript.h
 /home/atifany/Desktop/CppGraphics/scripts/inc/CubeScript.h
 ../scripts/inc/PlayerMovement.h

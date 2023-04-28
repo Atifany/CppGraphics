@@ -16,6 +16,7 @@ add_executable(ft_minecraft
 	sources/GameObject.cpp
 	sources/Component.cpp
 	sources/LightSource.cpp
+	sources/Text.cpp
 
 	scripts/sources/CubeScript.cpp
 	scripts/sources/PlayerMovement.cpp
@@ -25,6 +26,8 @@ add_executable(ft_minecraft
 
 	#	stb_image library
 	inc/stb_image/stb_image_implementation.cpp
+	# TEXTWTF/main.cpp
+	# inc/glad/glad.c
 )
 
 target_include_directories(ft_minecraft PRIVATE "/usr/include/freetype2/")

@@ -501,6 +501,33 @@ sources/Shader.cpp.s:
 	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.s
 .PHONY : sources/Shader.cpp.s
 
+sources/Text.o: sources/Text.cpp.o
+
+.PHONY : sources/Text.o
+
+# target to build an object file
+sources/Text.cpp.o:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Text.cpp.o
+.PHONY : sources/Text.cpp.o
+
+sources/Text.i: sources/Text.cpp.i
+
+.PHONY : sources/Text.i
+
+# target to preprocess a source file
+sources/Text.cpp.i:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Text.cpp.i
+.PHONY : sources/Text.cpp.i
+
+sources/Text.s: sources/Text.cpp.s
+
+.PHONY : sources/Text.s
+
+# target to generate assembly for a file
+sources/Text.cpp.s:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/sources/Text.cpp.s
+.PHONY : sources/Text.cpp.s
+
 sources/Texture.o: sources/Texture.cpp.o
 
 .PHONY : sources/Texture.o
@@ -660,6 +687,9 @@ help:
 	@echo "... sources/Shader.o"
 	@echo "... sources/Shader.i"
 	@echo "... sources/Shader.s"
+	@echo "... sources/Text.o"
+	@echo "... sources/Text.i"
+	@echo "... sources/Text.s"
 	@echo "... sources/Texture.o"
 	@echo "... sources/Texture.i"
 	@echo "... sources/Texture.s"

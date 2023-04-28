@@ -13,6 +13,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ft_minecraft.dir/sources/Quaternion.cpp.o"
   "CMakeFiles/ft_minecraft.dir/sources/Renderer.cpp.o"
   "CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o"
+  "CMakeFiles/ft_minecraft.dir/sources/Text.cpp.o"
   "CMakeFiles/ft_minecraft.dir/sources/Texture.cpp.o"
   "CMakeFiles/ft_minecraft.dir/sources/Transform.cpp.o"
   "CMakeFiles/ft_minecraft.dir/sources/main.cpp.o"

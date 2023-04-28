@@ -9,6 +9,7 @@
 #include FT_FREETYPE_H
 
 #include "../inc/colors.h"
+#include "../inc/character.h"
 
 #include "../inc/stb_image/stb_image.h"
 #include "../inc/Shader.h"
@@ -21,6 +22,7 @@
 #include "../inc/Component.h"
 #include "../inc/GameObject.h"
 #include "../inc/Renderer.h"
+#include "../inc/Text.h"
 #include "../scripts/inc/CubeScript.h"
 #include "../scripts/inc/PlayerMovement.h"
 
@@ -28,6 +30,8 @@ static const float fov = 90.0f;
 
 static const std::string vertexShaderPath = "../shaders/vertex_shader.shader";
 static const std::string fragmentShaderPath = "../shaders/fragment_shader.shader";
+static const std::string textVertexShaderPath = "../shaders/TextVertex.shader";
+static const std::string textFragmentShaderPath = "../shaders/TextFragment.shader";
 static const std::string texturePath = "../textures/GrassBlock.png";
 static const std::string fontPath = "../fonts/arial/arial.ttf";
 
@@ -39,19 +43,12 @@ Transform *origin = new Transform();
 GameObject *camera = new GameObject();
 
 CoreData c_d;
-Input* input = new Input();
+Input *input = new Input();
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void CalculateDeltaTime();
 static void PutBenchMarktoTerminal(float rendererTime);
 
-struct Character
-{
-	unsigned int	textureId;
-	glm::ivec2		size;
-	glm::ivec2		bearing;
-	unsigned int	advance;
-};
 std::map<char, Character> Characters;
 
 static int InitGLFWWindow()
@@ -89,7 +86,7 @@ static int InitGLAD()
 	return 0;
 }
 
-static int InitFT2(FT_Library* ft, FT_Face* face)
+static int InitFT2(FT_Library *ft, FT_Face *face)
 {
 	if (FT_Init_FreeType(ft))
 	{
@@ -121,18 +118,18 @@ static int InitFT2(FT_Library* ft, FT_Face* face)
 		glGenTextures(1, &texture);
 		glBindTexture(GL_TEXTURE_2D, texture);
 
-		glTexParameteri(texture, GL_TEXTURE_WRAP_S, GL_REPEAT);
-		glTexParameteri(texture, GL_TEXTURE_WRAP_T, GL_REPEAT);
-		glTexParameteri(texture, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-		glTexParameteri(texture, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-		glTexImage2D(texture, 0, GL_RED, (*face)->glyph->bitmap.width, (*face)->glyph->bitmap.rows, 0,
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, (*face)->glyph->bitmap.width, (*face)->glyph->bitmap.rows, 0,
 			GL_RED, GL_UNSIGNED_BYTE, (*face)->glyph->bitmap.buffer);
-		
+
 		Character character = {
 			texture,
 			glm::ivec2((*face)->glyph->bitmap.width, (*face)->glyph->bitmap.rows),
 			glm::ivec2((*face)->glyph->bitmap_left, (*face)->glyph->bitmap_top),
-			(unsigned int)(*face)->glyph->advance.x };
+			static_cast<unsigned int>((*face)->glyph->advance.x)};
 		Characters.insert(std::pair<char, Character>(c, character));
 	}
 	glBindTexture(GL_TEXTURE_2D, 0);
@@ -159,20 +156,24 @@ int main()
 	if (errorCode != 0)
 		return errorCode;
 
-	FT_Library*	ft = new FT_Library();
-	FT_Face*	face = new FT_Face();
+	Shader *shader = new Shader(vertexShaderPath, fragmentShaderPath);
+	if (shader->program == 0)
+		return -1;
+
+	Shader *textShader = new Shader(textVertexShaderPath, textFragmentShaderPath);
+	if (textShader->program == 0)
+		return -1;
+	textShader->Use();
+	textShader->UpdateProjectionMatrix(c_d, NULL);
+
+	FT_Library *ft = new FT_Library();
+	FT_Face *face = new FT_Face();
 	errorCode = InitFT2(ft, face);
 	if (errorCode != 0)
 		return errorCode;
 	FT_Set_Pixel_Sizes(*face, 0, 48);
 	delete ft;
 	delete face;
-
-	Shader* shader = new Shader(vertexShaderPath, fragmentShaderPath);
-	if (shader->program == 0)
-		return -1;
-	shader->Use();
-	shader->UniformSetInt("textureToDraw", 0);
 
 	// User input callbacks
 	glfwSetKeyCallback(c_d.window, KeyCallbackSet);
@@ -188,16 +189,24 @@ int main()
 	origin->SetParent(NULL);
 	Camera *cameraComp = new Camera();
 	cameraComp->input = input;
-	PlayerMovement* playerMoveScript = new PlayerMovement();
+	PlayerMovement *playerMoveScript = new PlayerMovement();
 	playerMoveScript->input = input;
 	playerMoveScript->speed = 10.0f;
 	camera->AddComponent(cameraComp);
 	camera->AddComponent(playerMoveScript);
 	camera->GetComponent<Transform>()->position.x = -15.0f;
 
-	Texture* grassBlockTexture = new Texture(GL_TEXTURE_2D, texturePath);
+	Text *FPSText = new Text(textShader, "This is sample text");
+	FPSText->x = 60.0f;
+	FPSText->y = 60.0f;
+	FPSText->scale = 1.0f;
+	FPSText->color = glm::vec3(0.5f, 0.8f, 0.2f);
+	GameObject* canvas = new GameObject();
+	canvas->AddComponent(FPSText);
+
+	Texture *grassBlockTexture = new Texture(GL_TEXTURE_2D, texturePath);
 	grassBlockTexture->Load();
-	Material* grassBlockMaterial = new Material(
+	Material *grassBlockMaterial = new Material(
 		glm::vec3(0.8f, 0.8f, 0.8f),
 		glm::vec3(0.6f, 0.6f, 0.6f),
 		glm::vec3(0.0f, 0.0f, 0.0f), 32.0f);
@@ -241,8 +250,8 @@ int main()
 	{
 		for (int z = 0; z < 20; z++)
 		{
-			Renderer* renderer = new Renderer(grassBlockTexture, grassBlockMaterial, shader);
-			CubeScript* script = new CubeScript();
+			Renderer *renderer = new Renderer(grassBlockTexture, grassBlockMaterial, shader);
+			CubeScript *script = new CubeScript();
 			cube = new GameObject();
 			cube->AddComponent(renderer);
 			cube->AddComponent(script);
@@ -260,7 +269,7 @@ int main()
 	{
 		// Process callbacks and events.
 		glfwPollEvents();
-		
+
 		CalculateDeltaTime();
 
 		// Clears the window.
@@ -281,13 +290,13 @@ int main()
 		{
 			object->gameObject->CallUpdates();
 
-			rendererTimeBuf = glfwGetTime();
-			Renderer* renderer = object->gameObject->GetComponent<Renderer>();
-			if (renderer != NULL)
-			{
-				renderer->Draw(camera);
-			}
-			rendererTime += glfwGetTime() - rendererTimeBuf;
+			// Renderer *renderer = object->gameObject->GetComponent<Renderer>();
+			// if (renderer != NULL)
+			// 	renderer->Draw(camera);
+
+			Text* text = object->gameObject->GetComponent<Text>();
+			if (text != NULL)
+				text->DrawText();
 		}
 
 		// Swaps front and back screen buffers.

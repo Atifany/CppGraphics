@@ -129,9 +129,14 @@ void Shader::UpdateViewMatrix(GameObject* camera)
 
 void Shader::UpdateProjectionMatrix(CoreData& c_d, GameObject* camera)
 {
-	Camera* cameraComp = camera->GetComponent<Camera>();
-	this->projectionMatrix = glm::perspective(glm::radians(cameraComp->fov),
-		(float)c_d.windowWidth / (float)c_d.windowHeight, 0.1f, 100.0f);
+	if (camera != NULL)
+	{
+		Camera* cameraComp = camera->GetComponent<Camera>();
+		this->projectionMatrix = glm::perspective(glm::radians(cameraComp->fov),
+			(float)c_d.windowWidth / (float)c_d.windowHeight, 0.1f, 100.0f);
+		return;
+	}
+	this->projectionMatrix = glm::ortho(0.0f, (float)(c_d.windowWidth), 0.0f, (float)(c_d.windowHeight), 0.1f, 100.0f);
 }
 
 void Shader::UpdateLightUniforms()

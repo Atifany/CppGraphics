@@ -71,6 +71,11 @@
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/sources/Text.cpp.o -c /home/atifany/Desktop/CppGraphics/sources/Text.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/sources/Text.cpp"
+},
+{
+  "directory": "/home/atifany/Desktop/CppGraphics/build",
   "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/scripts/sources/CubeScript.cpp.o -c /home/atifany/Desktop/CppGraphics/scripts/sources/CubeScript.cpp",
   "file": "/home/atifany/Desktop/CppGraphics/scripts/sources/CubeScript.cpp"
 },

@@ -64,11 +64,11 @@ void main()
 	vec3 norm = normalize(normal);
 	vec3 viewDir = normalize(viewPos - fragPos);
 	
-	for (int i = 0; dirLights[i].ambient.x >= 0.0f; i++)
+	for (int i = 0; dirLights[i].ambient.x >= 0.0f && i < NBR_OF_DIRLIGHTS_ALLOWED; i++)
 		resultLight += CalcDirLight(dirLights[i], norm, viewDir);
-	for (int i = 0; pointLights[i].ambient.x >= 0.0f; i++)
+	for (int i = 0; pointLights[i].ambient.x >= 0.0f && i < NBR_OF_POINTLIGHTS_ALLOWED; i++)
 		resultLight += CalcPointLight(pointLights[i], norm, viewDir);
-	for (int i = 0; spotLights[i].ambient.x >= 0.0f; i++)
+	for (int i = 0; spotLights[i].ambient.x >= 0.0f && i < NBR_OF_SPOTLIGHTS_ALLOWED; i++)
 		resultLight += CalcSpotLight(spotLights[i], norm, viewDir);
 
 	FragColor = texture(textureToDraw, texCoord) * vec4(resultLight, 1.0f);

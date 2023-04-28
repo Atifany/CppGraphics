@@ -27,6 +27,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/atifany/Desktop/CppGraphics/sources/Quaternion.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/Quaternion.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/Renderer.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/Renderer.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/Shader.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/Shader.cpp.o"
+  "/home/atifany/Desktop/CppGraphics/sources/Text.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/Text.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/Texture.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/Texture.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/Transform.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/Transform.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/main.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/main.cpp.o"
