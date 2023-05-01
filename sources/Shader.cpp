@@ -136,7 +136,7 @@ void Shader::UpdateProjectionMatrix(CoreData& c_d, GameObject* camera)
 			(float)c_d.windowWidth / (float)c_d.windowHeight, 0.1f, 100.0f);
 		return;
 	}
-	this->projectionMatrix = glm::ortho(0.0f, (float)(c_d.windowWidth), 0.0f, (float)(c_d.windowHeight), 0.1f, 100.0f);
+	this->projectionMatrix = glm::ortho(0.0f, (float)(c_d.windowWidth), 0.0f, (float)(c_d.windowHeight));
 }
 
 void Shader::UpdateLightUniforms()

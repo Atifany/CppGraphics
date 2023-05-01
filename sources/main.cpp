@@ -47,7 +47,7 @@ Input *input = new Input();
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void CalculateDeltaTime();
-static void PutBenchMarktoTerminal(float rendererTime);
+static void PutBenchMarktoTerminal(float rendererTime, GameObject* FPSText);
 
 std::map<char, Character> Characters;
 
@@ -98,11 +98,11 @@ static int InitFT2(FT_Library *ft, FT_Face *face)
 		std::cout << "Error: failed to load font.\n";
 		return -1;
 	}
+	FT_Set_Pixel_Sizes(*face, 0, 48);
 
 	// Read pixel data by 1 byte. Default was 4 bytes.
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
-	FT_Set_Pixel_Sizes(*face, 0, 48);
 	// load all glyphs to characters map
 	for (unsigned char c = 0; c < 128; c++)
 	{
@@ -196,11 +196,11 @@ int main()
 	camera->AddComponent(playerMoveScript);
 	camera->GetComponent<Transform>()->position.x = -15.0f;
 
-	Text *FPSText = new Text(textShader, "This is sample text");
-	FPSText->x = 60.0f;
-	FPSText->y = 60.0f;
-	FPSText->scale = 1.0f;
-	FPSText->color = glm::vec3(0.5f, 0.8f, 0.2f);
+	Text *FPSText = new Text(textShader, "FPS: 0");
+	FPSText->x = 10.0f;
+	FPSText->y = c_d.windowHeight - 30.0f;
+	FPSText->scale = 0.5f;
+	FPSText->color = glm::vec3(1.0f, 0.0f, 0.0f);
 	GameObject* canvas = new GameObject();
 	canvas->AddComponent(FPSText);
 
@@ -290,9 +290,9 @@ int main()
 		{
 			object->gameObject->CallUpdates();
 
-			// Renderer *renderer = object->gameObject->GetComponent<Renderer>();
-			// if (renderer != NULL)
-			// 	renderer->Draw(camera);
+			Renderer *renderer = object->gameObject->GetComponent<Renderer>();
+			if (renderer != NULL)
+				renderer->Draw(camera);
 
 			Text* text = object->gameObject->GetComponent<Text>();
 			if (text != NULL)
@@ -307,7 +307,7 @@ int main()
 		// set values to keys.
 		input->KeyCallBackProcess();
 
-		PutBenchMarktoTerminal(rendererTime);
+		PutBenchMarktoTerminal(rendererTime, canvas);
 	}
 	glfwSetInputMode(c_d.window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 
@@ -316,7 +316,7 @@ int main()
 	return 0;
 }
 
-static void PutBenchMarktoTerminal(float rendererTime)
+static void PutBenchMarktoTerminal(float rendererTime, GameObject* canvas)
 {
 	static char flasher = '|';
 	static int framesElapsed = 0;
@@ -324,7 +324,7 @@ static void PutBenchMarktoTerminal(float rendererTime)
 
 	framesElapsed++;
 	float curTime = glfwGetTime();
-	std::string color = GRN;
+	glm::vec3 color = glm::vec3(0.0f, 1.0f, 0.0f);
 
 	if (curTime - lastChecked >= 1.0f)
 	{
@@ -333,15 +333,18 @@ static void PutBenchMarktoTerminal(float rendererTime)
 		else
 			flasher = '|';
 		if (framesElapsed >= 60)
-			color = GRN;
+			glm::vec3(0.0f, 1.0f, 0.0f);
 		else if (framesElapsed >= 30)
-			color = YEL;
+			glm::vec3(1.0f, 1.0f, 0.0f);
 		else
-			color = RED;
+			glm::vec3(1.0f, 0.0f, 0.0f);
 
 		lastChecked = curTime;
-		std::cout << "\033[1A\033[:KDebug: FPS = " << color << framesElapsed << NC << " "
-				  << "RenderTime = " << color << rendererTime * 1000 << NC << " " << flasher << "\n";
+		
+		canvas->GetComponent<Text>()->text = "FPS: " + std::to_string(framesElapsed);
+		canvas->GetComponent<Text>()->color = color;
+		// std::cout << "\033[1A\033[:KDebug: FPS = " << color << framesElapsed << NC << " "
+		// 		  << "RenderTime = " << color << rendererTime * 1000 << NC << " " << flasher << "\n";
 		framesElapsed = 0;
 	}
 }
