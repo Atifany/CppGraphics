@@ -5,12 +5,13 @@
 Input::Input()
 {
 	this->mousePos = glm::vec2(400.0f, 300.0f);
+	this->keysPressed.insert(std::pair<int, int>(-1, 0));
 }
 
 Input::~Input() {}
 
 // Detects keys being pressed and released and sets an appropriate state to each key.
-void Input::KeyCallback(int key,int action)
+void Input::KeyCallback(int key, int action)
 {
 	if (action == GLFW_PRESS)
 	{

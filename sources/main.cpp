@@ -47,7 +47,7 @@ Input *input = new Input();
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void CalculateDeltaTime();
-static void PutBenchMarktoTerminal(float rendererTime, GameObject* FPSText);
+static void PutBenchMarktoTerminal(float rendererTime, GameObject* fpsDisplay, GameObject* rendererTimeDisplay);
 
 std::map<char, Character> Characters;
 
@@ -204,6 +204,14 @@ int main()
 	GameObject* canvas = new GameObject();
 	canvas->AddComponent(FPSText);
 
+	Text *rendererTimeText = new Text(textShader, "Renderer time: 0ms");
+	rendererTimeText->x = 10.0f;
+	rendererTimeText->y = c_d.windowHeight - 50.0f;
+	rendererTimeText->scale = 0.5f;
+	rendererTimeText->color = glm::vec3(1.0f, 1.0f, 1.0f);
+	GameObject* canvas1 = new GameObject();
+	canvas1->AddComponent(rendererTimeText);
+
 	Texture *grassBlockTexture = new Texture(GL_TEXTURE_2D, texturePath);
 	grassBlockTexture->Load();
 	Material *grassBlockMaterial = new Material(
@@ -246,9 +254,9 @@ int main()
 	// pointLight2->GetComponent<Transform>()->position = glm::vec3(5.0f, 2.5f, 5.0f);
 
 	GameObject *cube;
-	for (int x = 0; x < 20; x++)
+	for (int x = 0; x < 40; x++)
 	{
-		for (int z = 0; z < 20; z++)
+		for (int z = 0; z < 40; z++)
 		{
 			Renderer *renderer = new Renderer(grassBlockTexture, grassBlockMaterial, shader);
 			CubeScript *script = new CubeScript();
@@ -285,10 +293,14 @@ int main()
 		SpotLight *sl = dynamic_cast<SpotLight *>(lightSource);
 		sl->direction = camera->GetComponent<Transform>()->quaternion.Forward();
 
+		rendererTimeBuf = glfwGetTime();
 		shader->UpdateLightUniforms();
+		rendererTime += glfwGetTime() - rendererTimeBuf;
 		for (Transform *object : origin->children)
 		{
 			object->gameObject->CallUpdates();
+
+			rendererTimeBuf = glfwGetTime();
 
 			Renderer *renderer = object->gameObject->GetComponent<Renderer>();
 			if (renderer != NULL)
@@ -297,6 +309,8 @@ int main()
 			Text* text = object->gameObject->GetComponent<Text>();
 			if (text != NULL)
 				text->DrawText();
+
+			rendererTime += glfwGetTime() - rendererTimeBuf;
 		}
 
 		// Swaps front and back screen buffers.
@@ -307,7 +321,7 @@ int main()
 		// set values to keys.
 		input->KeyCallBackProcess();
 
-		PutBenchMarktoTerminal(rendererTime, canvas);
+		PutBenchMarktoTerminal(rendererTime, canvas, canvas1);
 	}
 	glfwSetInputMode(c_d.window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 
@@ -316,7 +330,7 @@ int main()
 	return 0;
 }
 
-static void PutBenchMarktoTerminal(float rendererTime, GameObject* canvas)
+static void PutBenchMarktoTerminal(float rendererTime, GameObject* fpsDisplay, GameObject* rendererTimeDisplay)
 {
 	static char flasher = '|';
 	static int framesElapsed = 0;
@@ -328,24 +342,24 @@ static void PutBenchMarktoTerminal(float rendererTime, GameObject* canvas)
 
 	if (curTime - lastChecked >= 1.0f)
 	{
-		if (flasher == '|')
-			flasher = ' ';
-		else
-			flasher = '|';
 		if (framesElapsed >= 60)
-			glm::vec3(0.0f, 1.0f, 0.0f);
+			color = glm::vec3(0.0f, 1.0f, 0.0f);
 		else if (framesElapsed >= 30)
-			glm::vec3(1.0f, 1.0f, 0.0f);
+			color = glm::vec3(1.0f, 1.0f, 0.0f);
 		else
-			glm::vec3(1.0f, 0.0f, 0.0f);
-
-		lastChecked = curTime;
+			color = glm::vec3(1.0f, 0.0f, 0.0f);
 		
-		canvas->GetComponent<Text>()->text = "FPS: " + std::to_string(framesElapsed);
-		canvas->GetComponent<Text>()->color = color;
-		// std::cout << "\033[1A\033[:KDebug: FPS = " << color << framesElapsed << NC << " "
-		// 		  << "RenderTime = " << color << rendererTime * 1000 << NC << " " << flasher << "\n";
+		// put fps
+		fpsDisplay->GetComponent<Text>()->text = "FPS: " + std::to_string(framesElapsed);
+		fpsDisplay->GetComponent<Text>()->color = color;
+		lastChecked = curTime;
 		framesElapsed = 0;
+
+		// put renderer time
+		char rendererTimeString[100];
+		sprintf(rendererTimeString, "Renderer time: %.3fms", rendererTime * 1000);
+		rendererTimeDisplay->GetComponent<Text>()->text = std::string(rendererTimeString);
+		rendererTimeDisplay->GetComponent<Text>()->color = color;
 	}
 }
 
