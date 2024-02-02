@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/atifany/Desktop/CppGraphics/inc/glad/glad.c" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.o"
+  "/home/atifany/Desktop/CppGraphics/inc/glad/src/glad.c" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

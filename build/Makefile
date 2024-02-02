@@ -123,32 +123,32 @@ ft_minecraft/fast:
 	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/build
 .PHONY : ft_minecraft/fast
 
-inc/glad/glad.o: inc/glad/glad.c.o
+inc/glad/src/glad.o: inc/glad/src/glad.c.o
 
-.PHONY : inc/glad/glad.o
+.PHONY : inc/glad/src/glad.o
 
 # target to build an object file
-inc/glad/glad.c.o:
-	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.o
-.PHONY : inc/glad/glad.c.o
+inc/glad/src/glad.c.o:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.o
+.PHONY : inc/glad/src/glad.c.o
 
-inc/glad/glad.i: inc/glad/glad.c.i
+inc/glad/src/glad.i: inc/glad/src/glad.c.i
 
-.PHONY : inc/glad/glad.i
+.PHONY : inc/glad/src/glad.i
 
 # target to preprocess a source file
-inc/glad/glad.c.i:
-	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.i
-.PHONY : inc/glad/glad.c.i
+inc/glad/src/glad.c.i:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.i
+.PHONY : inc/glad/src/glad.c.i
 
-inc/glad/glad.s: inc/glad/glad.c.s
+inc/glad/src/glad.s: inc/glad/src/glad.c.s
 
-.PHONY : inc/glad/glad.s
+.PHONY : inc/glad/src/glad.s
 
 # target to generate assembly for a file
-inc/glad/glad.c.s:
-	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/inc/glad/glad.c.s
-.PHONY : inc/glad/glad.c.s
+inc/glad/src/glad.c.s:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.s
+.PHONY : inc/glad/src/glad.c.s
 
 inc/stb_image/stb_image_implementation.o: inc/stb_image/stb_image_implementation.cpp.o
 
@@ -645,9 +645,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ft_minecraft"
-	@echo "... inc/glad/glad.o"
-	@echo "... inc/glad/glad.i"
-	@echo "... inc/glad/glad.s"
+	@echo "... inc/glad/src/glad.o"
+	@echo "... inc/glad/src/glad.i"
+	@echo "... inc/glad/src/glad.s"
 	@echo "... inc/stb_image/stb_image_implementation.o"
 	@echo "... inc/stb_image/stb_image_implementation.i"
 	@echo "... inc/stb_image/stb_image_implementation.s"

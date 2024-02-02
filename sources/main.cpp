@@ -1,9 +1,10 @@
 #include <iostream>
-#include <glad/glad.h>
+#include "../inc/glad/include/glad/glad.h"
 #include <GLFW/glfw3.h>
 #include <cmath>
 #include <vector>
 #include <iomanip>
+
 
 #include <freetype2/ft2build.h>
 #include FT_FREETYPE_H

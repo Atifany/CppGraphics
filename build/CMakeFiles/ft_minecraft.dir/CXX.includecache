@@ -15,8 +15,6 @@ Transform.h
 /home/atifany/Desktop/CppGraphics/inc/Component.h
 
 /home/atifany/Desktop/CppGraphics/inc/CoreData.h
-glad/glad.h
--
 GLFW/glfw3.h
 -
 
@@ -36,8 +34,6 @@ Transform.h
 
 /home/atifany/Desktop/CppGraphics/inc/Input.h
 map
--
-glad/glad.h
 -
 GLFW/glfw3.h
 -
@@ -67,8 +63,6 @@ string
 -
 iostream
 -
-glad/glad.h
--
 stb_image/stb_image.h
 /home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image.h
 Shader.h
@@ -87,8 +81,8 @@ string
 -
 vector
 -
-glad/glad.h
--
+glad/include/glad/glad.h
+/home/atifany/Desktop/CppGraphics/inc/glad/include/glad/glad.h
 glm/glm.hpp
 /home/atifany/Desktop/CppGraphics/inc/glm/glm.hpp
 glm/gtc/matrix_transform.hpp
@@ -119,8 +113,8 @@ string
 -
 iostream
 -
-glad/glad.h
--
+glad/include/glad/glad.h
+/home/atifany/Desktop/CppGraphics/inc/glad/include/glad/glad.h
 stb_image/stb_image.h
 /home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image.h
 
@@ -137,6 +131,10 @@ glm/glm.hpp
 /home/atifany/Desktop/CppGraphics/inc/glm/glm.hpp
 
 /home/atifany/Desktop/CppGraphics/inc/colors.h
+
+/home/atifany/Desktop/CppGraphics/inc/glad/include/glad/glad.h
+KHR/khrplatform.h
+-
 
 /home/atifany/Desktop/CppGraphics/inc/glm/common.hpp
 detail/qualifier.hpp
@@ -1589,8 +1587,6 @@ GLFW/glfw3.h
 /home/atifany/Desktop/CppGraphics/inc/Transform.h
 
 /home/atifany/Desktop/CppGraphics/scripts/inc/PlayerMovement.h
-glad/glad.h
--
 GLFW/glfw3.h
 -
 ../../inc/Component.h
@@ -1604,11 +1600,19 @@ GLFW/glfw3.h
 ../../inc/Input.h
 /home/atifany/Desktop/CppGraphics/inc/Input.h
 
+/home/atifany/Desktop/CppGraphics/sources/Renderer.cpp
+../inc/Renderer.h
+/home/atifany/Desktop/CppGraphics/inc/Renderer.h
+
+/home/atifany/Desktop/CppGraphics/sources/Texture.cpp
+../inc/Texture.h
+/home/atifany/Desktop/CppGraphics/inc/Texture.h
+
 /home/atifany/Desktop/CppGraphics/sources/main.cpp
 iostream
 -
-glad/glad.h
--
+../inc/glad/include/glad/glad.h
+/home/atifany/Desktop/CppGraphics/inc/glad/include/glad/glad.h
 GLFW/glfw3.h
 -
 cmath

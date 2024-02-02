@@ -22,7 +22,7 @@ add_executable(ft_minecraft
 	scripts/sources/PlayerMovement.cpp
 	
 	#	GLAD library
-	inc/glad/glad.c
+	inc/glad/src/glad.c
 
 	#	stb_image library
 	inc/stb_image/stb_image_implementation.cpp
@@ -30,6 +30,8 @@ add_executable(ft_minecraft
 	# inc/glad/glad.c
 )
 
+# find_package(glfw3 REQUIRED)
+
 target_include_directories(ft_minecraft PRIVATE "/usr/include/freetype2/")
 	
-target_link_libraries(ft_minecraft glfw freetype ${CMAKE_DL_LIBS} )
+target_link_libraries(ft_minecraft glfw GL freetype ${CMAKE_DL_LIBS} )
