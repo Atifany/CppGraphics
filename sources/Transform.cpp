@@ -50,6 +50,21 @@ Transform::~Transform()
 		}
 		this->children.clear();
 	}
+
+	// remove this from previous parent's children list.
+	if (this->parent != NULL)
+	{
+		std::vector<Transform*>::iterator it = this->parent->children.begin();
+		for (it; it != this->parent->children.end(); ++it)
+		{
+			if (*it == this)
+			{
+				this->parent->children.erase(it);
+				break;
+			}
+		}
+	}
+
 	this->SetParent(NULL);
 }
 
