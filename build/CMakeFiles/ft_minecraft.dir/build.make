@@ -281,15 +281,15 @@ CMakeFiles/ft_minecraft.dir/scripts/sources/PlayerMovement.cpp.s: cmake_force
 CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.o: CMakeFiles/ft_minecraft.dir/flags.make
 CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.o: ../inc/glad/src/glad.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.o   -c /home/atifany/Desktop/CppGraphics/inc/glad/src/glad.c
+	/usr/bin/c89-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.o   -c /home/atifany/Desktop/CppGraphics/inc/glad/src/glad.c
 
 CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atifany/Desktop/CppGraphics/inc/glad/src/glad.c > CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.i
+	/usr/bin/c89-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atifany/Desktop/CppGraphics/inc/glad/src/glad.c > CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.i
 
 CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atifany/Desktop/CppGraphics/inc/glad/src/glad.c -o CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.s
+	/usr/bin/c89-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atifany/Desktop/CppGraphics/inc/glad/src/glad.c -o CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.s
 
 CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o: CMakeFiles/ft_minecraft.dir/flags.make
 CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o: ../inc/stb_image/stb_image_implementation.cpp
