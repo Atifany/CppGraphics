@@ -22,7 +22,8 @@ class GameObject
 		template <typename T>
 		void	AddComponent(T* component);
 
-		void	CallUpdates();
+		void	CallUpdates(GameObject* camera);
+		void	RenderMe(GameObject* camera);
 
 	private:
 		std::vector<Component*> components;

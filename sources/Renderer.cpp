@@ -100,7 +100,7 @@ void Renderer::BuildBuffers()
 
 void Renderer::Draw(GameObject* camera)
 {
-	Transform* t = this->gameObject->GetComponent<Transform>();
+	Transform* t = this->gameObject->GetComponent<Transform>()->GetWorldCoords();
 	this->texture->Bind(GL_TEXTURE0);
 
 	this->shader->Use();
@@ -122,5 +122,8 @@ void Renderer::Draw(GameObject* camera)
 
 	glBindVertexArray(this->VAO);
 	glDrawArrays(GL_TRIANGLES, 0, this->vertices.size() / 5);
+	std::cout << "Debug: renderer passed.\n";
+	
+	delete t;
 }
 

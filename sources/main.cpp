@@ -228,13 +228,13 @@ int main()
 		glm::vec3(0.0f, 1.0f, 0.0f), 0.91f, 0.82f);
 	camera->AddComponent(spotLight);
 
-	GameObject *lightTestObject = new GameObject();
-	DirectionalLight *dirLight = new DirectionalLight(
-		glm::vec3(1.0f, 1.0f, 1.0f),
-		glm::vec3(1.0f, 1.0f, 1.0f),
-		glm::vec3(1.0f, 1.0f, 1.0f),
-		0.1f, 0.0f, glm::vec3(0.0f, -1.0f, 0.0f));
-	lightTestObject->AddComponent(dirLight);
+	// GameObject *lightTestObject = new GameObject();
+	// DirectionalLight *dirLight = new DirectionalLight(
+	// 	glm::vec3(1.0f, 1.0f, 1.0f),
+	// 	glm::vec3(1.0f, 1.0f, 1.0f),
+	// 	glm::vec3(1.0f, 1.0f, 1.0f),
+	// 	0.1f, 0.0f, glm::vec3(0.0f, -1.0f, 0.0f));
+	// lightTestObject->AddComponent(dirLight);
 
 	GameObject *pointLight1 = new GameObject();
 	PointLight *p1 = new PointLight(
@@ -254,20 +254,40 @@ int main()
 	// pointLight2->AddComponent(p2);
 	// pointLight2->GetComponent<Transform>()->position = glm::vec3(5.0f, 2.5f, 5.0f);
 
-	GameObject *cube;
-	for (int x = 0; x < 40; x++)
-	{
-		for (int z = 0; z < 40; z++)
-		{
-			Renderer *renderer = new Renderer(grassBlockTexture, grassBlockMaterial, shader);
-			CubeScript *script = new CubeScript();
-			cube = new GameObject();
-			cube->AddComponent(renderer);
-			cube->AddComponent(script);
+	GameObject *cubeParent;
+	GameObject *cubeChild;
 
-			cube->GetComponent<Transform>()->position = glm::vec3(x, 0.0f, z);
-		}
-	}
+	Renderer *rendererParent = new Renderer(grassBlockTexture, grassBlockMaterial, shader);
+	cubeParent = new GameObject();
+	cubeParent->AddComponent(rendererParent);
+	cubeParent->GetComponent<Transform>()->position = glm::vec3(11.0f, 11.0f, 5.0f);
+	CubeScript *scriptParent = new CubeScript();
+	cubeParent->AddComponent(scriptParent);
+
+	Renderer *rendererChild = new Renderer(grassBlockTexture, grassBlockMaterial, shader);
+	cubeChild = new GameObject();
+	cubeChild->AddComponent(rendererChild);
+	cubeChild->GetComponent<Transform>()->SetParent(cubeParent->GetComponent<Transform>());
+	cubeChild->GetComponent<Transform>()->position = glm::vec3(2.0f, 1.0f, 1.0f);
+	// CubeScript *scriptChild = new CubeScript();
+	// cubeChild->AddComponent(scriptChild);
+
+
+	// wawy square grid generator
+	// GameObject *cube;
+	// for (int x = 0; x < 50; x++)
+	// {
+	// 	for (int z = 0; z < 50; z++)
+	// 	{
+	// 		Renderer *renderer = new Renderer(grassBlockTexture, grassBlockMaterial, shader);
+	// 		CubeScript *script = new CubeScript();
+	// 		cube = new GameObject();
+	// 		cube->AddComponent(renderer);
+	// 		cube->AddComponent(script);
+
+	// 		cube->GetComponent<Transform>()->position = glm::vec3(x, 0.0f, z);
+	// 	}
+	// }
 
 	float rendererTime = 0.0f;
 	float rendererTimeBuf = 0.0f;
@@ -297,15 +317,12 @@ int main()
 		rendererTimeBuf = glfwGetTime();
 		shader->UpdateLightUniforms();
 		rendererTime += glfwGetTime() - rendererTimeBuf;
+
 		for (Transform *object : origin->children)
 		{
-			object->gameObject->CallUpdates();
-
 			rendererTimeBuf = glfwGetTime();
 
-			Renderer *renderer = object->gameObject->GetComponent<Renderer>();
-			if (renderer != NULL)
-				renderer->Draw(camera);
+			object->gameObject->CallUpdates(camera);
 
 			Text* text = object->gameObject->GetComponent<Text>();
 			if (text != NULL)
@@ -327,6 +344,10 @@ int main()
 	glfwSetInputMode(c_d.window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 
 	glfwTerminate();
+	delete origin; origin = NULL;
+	delete cubeParent; cubeParent = NULL;
+	delete cubeChild; cubeChild = NULL;
+
 	std::cout << "Debug: program finished.\n";
 	return 0;
 }
