@@ -177,6 +177,33 @@ inc/stb_image/stb_image_implementation.cpp.s:
 	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.s
 .PHONY : inc/stb_image/stb_image_implementation.cpp.s
 
+scripts/sources/ChunkBehavior.o: scripts/sources/ChunkBehavior.cpp.o
+
+.PHONY : scripts/sources/ChunkBehavior.o
+
+# target to build an object file
+scripts/sources/ChunkBehavior.cpp.o:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.o
+.PHONY : scripts/sources/ChunkBehavior.cpp.o
+
+scripts/sources/ChunkBehavior.i: scripts/sources/ChunkBehavior.cpp.i
+
+.PHONY : scripts/sources/ChunkBehavior.i
+
+# target to preprocess a source file
+scripts/sources/ChunkBehavior.cpp.i:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.i
+.PHONY : scripts/sources/ChunkBehavior.cpp.i
+
+scripts/sources/ChunkBehavior.s: scripts/sources/ChunkBehavior.cpp.s
+
+.PHONY : scripts/sources/ChunkBehavior.s
+
+# target to generate assembly for a file
+scripts/sources/ChunkBehavior.cpp.s:
+	$(MAKE) -f CMakeFiles/ft_minecraft.dir/build.make CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.s
+.PHONY : scripts/sources/ChunkBehavior.cpp.s
+
 scripts/sources/CubeScript.o: scripts/sources/CubeScript.cpp.o
 
 .PHONY : scripts/sources/CubeScript.o
@@ -651,6 +678,9 @@ help:
 	@echo "... inc/stb_image/stb_image_implementation.o"
 	@echo "... inc/stb_image/stb_image_implementation.i"
 	@echo "... inc/stb_image/stb_image_implementation.s"
+	@echo "... scripts/sources/ChunkBehavior.o"
+	@echo "... scripts/sources/ChunkBehavior.i"
+	@echo "... scripts/sources/ChunkBehavior.s"
 	@echo "... scripts/sources/CubeScript.o"
 	@echo "... scripts/sources/CubeScript.i"
 	@echo "... scripts/sources/CubeScript.s"

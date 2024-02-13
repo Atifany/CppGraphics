@@ -17,7 +17,6 @@ GameObject::~GameObject()
 
 void GameObject::CallUpdates(GameObject* camera)
 {
-	this->RenderMe(camera);
 	for (Component* component : this->components)
 	{
 		component->Update();
@@ -27,6 +26,7 @@ void GameObject::CallUpdates(GameObject* camera)
 	{
 		child->gameObject->CallUpdates(camera);
 	}
+	this->RenderMe(camera);
 }
 
 void GameObject::RenderMe(GameObject* camera)

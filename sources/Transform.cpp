@@ -126,3 +126,8 @@ void Transform::SetParent(Transform* _parent)
 		_parent->children.push_back(this);
 }
 
+Transform* Transform::GetParent()
+{
+	return (this->parent);
+}
+

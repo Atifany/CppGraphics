@@ -24,6 +24,7 @@
 #include "../inc/GameObject.h"
 #include "../inc/Renderer.h"
 #include "../inc/Text.h"
+#include "../scripts/inc/ChunkBehavior.h"
 #include "../scripts/inc/CubeScript.h"
 #include "../scripts/inc/PlayerMovement.h"
 
@@ -254,25 +255,6 @@ int main()
 	// pointLight2->AddComponent(p2);
 	// pointLight2->GetComponent<Transform>()->position = glm::vec3(5.0f, 2.5f, 5.0f);
 
-	GameObject *cubeParent;
-	GameObject *cubeChild;
-
-	Renderer *rendererParent = new Renderer(grassBlockTexture, grassBlockMaterial, shader);
-	cubeParent = new GameObject();
-	cubeParent->AddComponent(rendererParent);
-	cubeParent->GetComponent<Transform>()->position = glm::vec3(11.0f, 11.0f, 5.0f);
-	CubeScript *scriptParent = new CubeScript();
-	cubeParent->AddComponent(scriptParent);
-
-	Renderer *rendererChild = new Renderer(grassBlockTexture, grassBlockMaterial, shader);
-	cubeChild = new GameObject();
-	cubeChild->AddComponent(rendererChild);
-	cubeChild->GetComponent<Transform>()->SetParent(cubeParent->GetComponent<Transform>());
-	cubeChild->GetComponent<Transform>()->position = glm::vec3(2.0f, 1.0f, 1.0f);
-	// CubeScript *scriptChild = new CubeScript();
-	// cubeChild->AddComponent(scriptChild);
-
-
 	// wawy square grid generator
 	// GameObject *cube;
 	// for (int x = 0; x < 50; x++)
@@ -288,6 +270,11 @@ int main()
 	// 		cube->GetComponent<Transform>()->position = glm::vec3(x, 0.0f, z);
 	// 	}
 	// }
+
+	GameObject* chunk = new GameObject();
+	ChunkBehavior* chunkBehavior = new ChunkBehavior();
+	chunk->AddComponent(chunkBehavior);
+	chunk->GetComponent<ChunkBehavior>()->GenerateChunk(grassBlockTexture, grassBlockMaterial, shader);
 
 	float rendererTime = 0.0f;
 	float rendererTimeBuf = 0.0f;
@@ -345,8 +332,6 @@ int main()
 
 	glfwTerminate();
 	delete origin; origin = NULL;
-	delete cubeParent; cubeParent = NULL;
-	delete cubeChild; cubeChild = NULL;
 
 	std::cout << "Debug: program finished.\n";
 	return 0;

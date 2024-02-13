@@ -15,6 +15,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   )
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image_implementation.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o"
+  "/home/atifany/Desktop/CppGraphics/scripts/sources/ChunkBehavior.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.o"
   "/home/atifany/Desktop/CppGraphics/scripts/sources/CubeScript.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/scripts/sources/CubeScript.cpp.o"
   "/home/atifany/Desktop/CppGraphics/scripts/sources/PlayerMovement.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/scripts/sources/PlayerMovement.cpp.o"
   "/home/atifany/Desktop/CppGraphics/sources/Camera.cpp" "/home/atifany/Desktop/CppGraphics/build/CMakeFiles/ft_minecraft.dir/sources/Camera.cpp.o"

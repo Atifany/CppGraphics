@@ -22,6 +22,7 @@ class Transform : public Component
 
 		Transform* GetWorldCoords();
 		void SetParent(Transform* _parent);
+		Transform* GetParent();
 
 	private:
 		Transform*					parent;
