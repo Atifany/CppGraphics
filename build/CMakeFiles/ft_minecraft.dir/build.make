@@ -278,18 +278,18 @@ CMakeFiles/ft_minecraft.dir/scripts/sources/PlayerMovement.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ft_minecraft.dir/scripts/sources/PlayerMovement.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/atifany/Desktop/CppGraphics/scripts/sources/PlayerMovement.cpp -o CMakeFiles/ft_minecraft.dir/scripts/sources/PlayerMovement.cpp.s
 
-CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.o: CMakeFiles/ft_minecraft.dir/flags.make
-CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.o: ../scripts/sources/ChunkBehavior.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.o -c /home/atifany/Desktop/CppGraphics/scripts/sources/ChunkBehavior.cpp
+CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkLoader.cpp.o: CMakeFiles/ft_minecraft.dir/flags.make
+CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkLoader.cpp.o: ../scripts/sources/ChunkLoader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atifany/Desktop/CppGraphics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkLoader.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkLoader.cpp.o -c /home/atifany/Desktop/CppGraphics/scripts/sources/ChunkLoader.cpp
 
-CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/atifany/Desktop/CppGraphics/scripts/sources/ChunkBehavior.cpp > CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.i
+CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkLoader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkLoader.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/atifany/Desktop/CppGraphics/scripts/sources/ChunkLoader.cpp > CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkLoader.cpp.i
 
-CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/atifany/Desktop/CppGraphics/scripts/sources/ChunkBehavior.cpp -o CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.s
+CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkLoader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkLoader.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/atifany/Desktop/CppGraphics/scripts/sources/ChunkLoader.cpp -o CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkLoader.cpp.s
 
 CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.o: CMakeFiles/ft_minecraft.dir/flags.make
 CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.o: ../inc/glad/src/glad.c
@@ -336,7 +336,7 @@ ft_minecraft_OBJECTS = \
 "CMakeFiles/ft_minecraft.dir/sources/Text.cpp.o" \
 "CMakeFiles/ft_minecraft.dir/scripts/sources/CubeScript.cpp.o" \
 "CMakeFiles/ft_minecraft.dir/scripts/sources/PlayerMovement.cpp.o" \
-"CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.o" \
+"CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkLoader.cpp.o" \
 "CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.o" \
 "CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o"
 
@@ -360,7 +360,7 @@ ft_minecraft: CMakeFiles/ft_minecraft.dir/sources/LightSource.cpp.o
 ft_minecraft: CMakeFiles/ft_minecraft.dir/sources/Text.cpp.o
 ft_minecraft: CMakeFiles/ft_minecraft.dir/scripts/sources/CubeScript.cpp.o
 ft_minecraft: CMakeFiles/ft_minecraft.dir/scripts/sources/PlayerMovement.cpp.o
-ft_minecraft: CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.o
+ft_minecraft: CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkLoader.cpp.o
 ft_minecraft: CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.o
 ft_minecraft: CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o
 ft_minecraft: CMakeFiles/ft_minecraft.dir/build.make

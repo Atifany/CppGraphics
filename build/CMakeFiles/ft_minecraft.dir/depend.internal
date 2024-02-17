@@ -7,7 +7,7 @@ CMakeFiles/ft_minecraft.dir/inc/glad/src/glad.c.o
 CMakeFiles/ft_minecraft.dir/inc/stb_image/stb_image_implementation.cpp.o
  /home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image.h
  /home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image_implementation.cpp
-CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.o
+CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkLoader.cpp.o
  /home/atifany/Desktop/CppGraphics/inc/Camera.h
  /home/atifany/Desktop/CppGraphics/inc/Component.h
  /home/atifany/Desktop/CppGraphics/inc/CoreData.h
@@ -223,8 +223,8 @@ CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.o
  /home/atifany/Desktop/CppGraphics/inc/glm/vec4.hpp
  /home/atifany/Desktop/CppGraphics/inc/glm/vector_relational.hpp
  /home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image.h
- /home/atifany/Desktop/CppGraphics/scripts/inc/ChunkBehavior.h
- /home/atifany/Desktop/CppGraphics/scripts/sources/ChunkBehavior.cpp
+ /home/atifany/Desktop/CppGraphics/scripts/inc/ChunkLoader.h
+ /home/atifany/Desktop/CppGraphics/scripts/sources/ChunkLoader.cpp
 CMakeFiles/ft_minecraft.dir/scripts/sources/CubeScript.cpp.o
  /home/atifany/Desktop/CppGraphics/inc/Component.h
  /home/atifany/Desktop/CppGraphics/inc/GameObject.h
@@ -2569,7 +2569,7 @@ CMakeFiles/ft_minecraft.dir/sources/main.cpp.o
  /home/atifany/Desktop/CppGraphics/inc/glm/vector_relational.hpp
  /home/atifany/Desktop/CppGraphics/inc/process_input.h
  /home/atifany/Desktop/CppGraphics/inc/stb_image/stb_image.h
- /home/atifany/Desktop/CppGraphics/scripts/inc/ChunkBehavior.h
+ /home/atifany/Desktop/CppGraphics/scripts/inc/ChunkLoader.h
  /home/atifany/Desktop/CppGraphics/scripts/inc/CubeScript.h
  /home/atifany/Desktop/CppGraphics/scripts/inc/PlayerMovement.h
  /home/atifany/Desktop/CppGraphics/sources/main.cpp

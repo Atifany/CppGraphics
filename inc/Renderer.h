@@ -17,6 +17,8 @@ class Renderer : public Component
 {
 	public:
 		Renderer();
+		Renderer(const Renderer& other);
+		Renderer& operator=(const Renderer& other);
 		Renderer(Texture* _texture, Material* _material, Shader* _shader);
 		~Renderer();
 		//Renderer(const Renderer& other);

@@ -24,7 +24,7 @@
 #include "../inc/GameObject.h"
 #include "../inc/Renderer.h"
 #include "../inc/Text.h"
-#include "../scripts/inc/ChunkBehavior.h"
+#include "../scripts/inc/ChunkLoader.h"
 #include "../scripts/inc/CubeScript.h"
 #include "../scripts/inc/PlayerMovement.h"
 
@@ -40,9 +40,8 @@ static const std::string fontPath = "../fonts/arial/arial.ttf";
 float deltaTime = 0.0f;
 static float lastFrame = 0.0f;
 
-// Setup camera
 Transform *origin = new Transform();
-GameObject *camera = new GameObject();
+Renderer* cubeRenderer;
 
 CoreData c_d;
 Input *input = new Input();
@@ -189,11 +188,24 @@ int main()
 	glEnable(GL_DEPTH_TEST);
 
 	origin->SetParent(NULL);
-	Camera *cameraComp = new Camera();
+
+	Texture *grassBlockTexture = new Texture(GL_TEXTURE_2D, texturePath);
+	grassBlockTexture->Load();
+	Material *grassBlockMaterial = new Material(
+		glm::vec3(0.8f, 0.8f, 0.8f),
+		glm::vec3(0.6f, 0.6f, 0.6f),
+		glm::vec3(0.0f, 0.0f, 0.0f), 32.0f);
+
+	cubeRenderer = new Renderer(grassBlockTexture, grassBlockMaterial, shader);
+
+	GameObject* camera = new GameObject();
+	Camera* cameraComp = new Camera();
 	cameraComp->input = input;
-	PlayerMovement *playerMoveScript = new PlayerMovement();
+	PlayerMovement* playerMoveScript = new PlayerMovement();
 	playerMoveScript->input = input;
 	playerMoveScript->speed = 10.0f;
+	ChunkLoader* chunkLoader = new ChunkLoader();
+	camera->AddComponent(chunkLoader);
 	camera->AddComponent(cameraComp);
 	camera->AddComponent(playerMoveScript);
 	camera->GetComponent<Transform>()->position.x = -15.0f;
@@ -213,13 +225,6 @@ int main()
 	rendererTimeText->color = glm::vec3(1.0f, 1.0f, 1.0f);
 	GameObject* canvas1 = new GameObject();
 	canvas1->AddComponent(rendererTimeText);
-
-	Texture *grassBlockTexture = new Texture(GL_TEXTURE_2D, texturePath);
-	grassBlockTexture->Load();
-	Material *grassBlockMaterial = new Material(
-		glm::vec3(0.8f, 0.8f, 0.8f),
-		glm::vec3(0.6f, 0.6f, 0.6f),
-		glm::vec3(0.0f, 0.0f, 0.0f), 32.0f);
 
 	SpotLight *spotLight = new SpotLight(
 		glm::vec3(1.0f, 1.0f, 1.0f),
@@ -272,29 +277,27 @@ int main()
 	// }
 
 	GameObject* cubeP = new GameObject();
-	Renderer* cubePRenderer = new Renderer(grassBlockTexture, grassBlockMaterial, shader);
-	cubeP->AddComponent(cubePRenderer);
+	cubeP->AddComponent(new Renderer(*cubeRenderer));
 	cubeP->GetComponent<Transform>()->position = glm::vec3(15.0f, 10.0f, 15.0f);
 
 	GameObject* cubeC = new GameObject();
-	Renderer* cubeCRenderer = new Renderer(grassBlockTexture, grassBlockMaterial, shader);
-	cubeC->AddComponent(cubeCRenderer);
+	cubeC->AddComponent(new Renderer(*cubeRenderer));
 	cubeC->GetComponent<Transform>()->position = glm::vec3(1.0f, 1.0f, 1.0f);
 	cubeC->GetComponent<Transform>()->SetParent(cubeP->GetComponent<Transform>());
 
-	GameObject* chunk;
-	ChunkBehavior* chunkBehavior;
-	for (int x = 0; x < 2; x++)
-	{
-		for  (int z = 0; z < 2; z++)
-		{
-			chunk = new GameObject();
-			chunk->GetComponent<Transform>()->position = glm::vec3(x*16, x+z, z*16);
-			chunkBehavior = new ChunkBehavior();
-			chunk->AddComponent(chunkBehavior);
-			chunk->GetComponent<ChunkBehavior>()->GenerateChunk(grassBlockTexture, grassBlockMaterial, shader);
-		}
-	}
+	// GameObject* chunk;
+	// ChunkBehavior* chunkBehavior;
+	// for (int x = 0; x < 2; x++)
+	// {
+	// 	for  (int z = 0; z < 2; z++)
+	// 	{
+	// 		chunk = new GameObject();
+	// 		chunk->GetComponent<Transform>()->position = glm::vec3(x*16, x+z, z*16);
+	// 		chunkBehavior = new ChunkBehavior();
+	// 		chunk->AddComponent(chunkBehavior);
+	// 		chunk->GetComponent<ChunkBehavior>()->GenerateChunk(grassBlockTexture, grassBlockMaterial, shader);
+	// 	}
+	// }
 
 	float rendererTime = 0.0f;
 	float rendererTimeBuf = 0.0f;
@@ -325,7 +328,8 @@ int main()
 		shader->UpdateLightUniforms();
 		rendererTime += glfwGetTime() - rendererTimeBuf;
 
-		for (Transform *object : origin->children)
+		std::vector<Transform*> currentChildren = origin->children;
+		for (Transform *object : currentChildren)
 		{
 			rendererTimeBuf = glfwGetTime();
 

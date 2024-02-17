@@ -70,6 +70,32 @@ Renderer::Renderer(Texture* _texture, Material* _material, Shader* _shader)
 	this->BuildBuffers();
 }
 
+Renderer::Renderer(const Renderer& other)
+{
+	this->vertices = std::vector<float>(other.vertices);
+	this->VAO = 0;
+	this->VBO = 0;
+	this->texture = other.texture;
+	this->material = other.material;
+	this->shader = other.shader;
+
+	this->BuildBuffers();
+}
+
+Renderer& Renderer::operator=(const Renderer& other)
+{
+	this->vertices = std::vector<float>(other.vertices);
+	this->VAO = 0;
+	this->VBO = 0;
+	this->texture = other.texture;
+	this->material = other.material;
+	this->shader = other.shader;
+
+	this->BuildBuffers();
+
+	return *this;
+}
+
 Renderer::~Renderer() {}
 
 void Renderer::BuildBuffers()

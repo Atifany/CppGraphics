@@ -86,8 +86,8 @@
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",
-  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkBehavior.cpp.o -c /home/atifany/Desktop/CppGraphics/scripts/sources/ChunkBehavior.cpp",
-  "file": "/home/atifany/Desktop/CppGraphics/scripts/sources/ChunkBehavior.cpp"
+  "command": "/usr/bin/g++   -I/usr/include/freetype2  -g   -o CMakeFiles/ft_minecraft.dir/scripts/sources/ChunkLoader.cpp.o -c /home/atifany/Desktop/CppGraphics/scripts/sources/ChunkLoader.cpp",
+  "file": "/home/atifany/Desktop/CppGraphics/scripts/sources/ChunkLoader.cpp"
 },
 {
   "directory": "/home/atifany/Desktop/CppGraphics/build",

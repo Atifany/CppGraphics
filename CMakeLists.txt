@@ -20,7 +20,7 @@ add_executable(ft_minecraft
 
 	scripts/sources/CubeScript.cpp
 	scripts/sources/PlayerMovement.cpp
-	scripts/sources/ChunkBehavior.cpp
+	scripts/sources/ChunkLoader.cpp
 	
 	#	GLAD library
 	inc/glad/src/glad.c
