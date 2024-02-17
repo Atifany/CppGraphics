@@ -271,10 +271,30 @@ int main()
 	// 	}
 	// }
 
-	GameObject* chunk = new GameObject();
-	ChunkBehavior* chunkBehavior = new ChunkBehavior();
-	chunk->AddComponent(chunkBehavior);
-	chunk->GetComponent<ChunkBehavior>()->GenerateChunk(grassBlockTexture, grassBlockMaterial, shader);
+	GameObject* cubeP = new GameObject();
+	Renderer* cubePRenderer = new Renderer(grassBlockTexture, grassBlockMaterial, shader);
+	cubeP->AddComponent(cubePRenderer);
+	cubeP->GetComponent<Transform>()->position = glm::vec3(15.0f, 10.0f, 15.0f);
+
+	GameObject* cubeC = new GameObject();
+	Renderer* cubeCRenderer = new Renderer(grassBlockTexture, grassBlockMaterial, shader);
+	cubeC->AddComponent(cubeCRenderer);
+	cubeC->GetComponent<Transform>()->position = glm::vec3(1.0f, 1.0f, 1.0f);
+	cubeC->GetComponent<Transform>()->SetParent(cubeP->GetComponent<Transform>());
+
+	GameObject* chunk;
+	ChunkBehavior* chunkBehavior;
+	for (int x = 0; x < 2; x++)
+	{
+		for  (int z = 0; z < 2; z++)
+		{
+			chunk = new GameObject();
+			chunk->GetComponent<Transform>()->position = glm::vec3(x*16, x+z, z*16);
+			chunkBehavior = new ChunkBehavior();
+			chunk->AddComponent(chunkBehavior);
+			chunk->GetComponent<ChunkBehavior>()->GenerateChunk(grassBlockTexture, grassBlockMaterial, shader);
+		}
+	}
 
 	float rendererTime = 0.0f;
 	float rendererTimeBuf = 0.0f;

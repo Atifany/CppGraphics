@@ -100,13 +100,13 @@ void Renderer::BuildBuffers()
 
 void Renderer::Draw(GameObject* camera)
 {
-	Transform* t = this->gameObject->GetComponent<Transform>()->GetWorldCoords();
+	glm::vec3 worldPos = this->gameObject->GetComponent<Transform>()->GetWorldPos();
 	this->texture->Bind(GL_TEXTURE0);
 
 	this->shader->Use();
 	glm::mat4 modelMatrix = glm::mat4(1.0f);
-	modelMatrix = glm::translate(modelMatrix, t->position);
-	glm::vec4 axisAngle = t->quaternion.AxisRotation();
+	modelMatrix = glm::translate(modelMatrix, worldPos);
+	glm::vec4 axisAngle = this->gameObject->GetComponent<Transform>()->quaternion.AxisRotation();
 	modelMatrix = glm::rotate(modelMatrix, axisAngle.w,
 		glm::normalize(glm::vec3(axisAngle.x, axisAngle.y, axisAngle.z)));
 
@@ -123,7 +123,5 @@ void Renderer::Draw(GameObject* camera)
 	glBindVertexArray(this->VAO);
 	glDrawArrays(GL_TRIANGLES, 0, this->vertices.size() / 5);
 	std::cout << "Debug: renderer passed.\n";
-	
-	delete t;
 }
 

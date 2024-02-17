@@ -20,7 +20,7 @@ class Transform : public Component
 		Quaternion					quaternion;
 		std::vector<Transform*>		children;
 
-		Transform* GetWorldCoords();
+		glm::vec3 GetWorldPos();
 		void SetParent(Transform* _parent);
 		Transform* GetParent();
 

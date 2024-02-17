@@ -79,23 +79,14 @@ Transform& Transform::operator=(const Transform& other)
 	return *this;
 }
 
-Transform* Transform::GetWorldCoords()
+glm::vec3 Transform::GetWorldPos()
 {
 	if (this->parent == NULL)
-		return (new Transform(*this));
+		return (this->position);
 
-	Transform* globalTransform = new Transform(*this);
-	Transform* parentGlobal = this->parent->GetWorldCoords();
-	globalTransform->children.clear();
-	globalTransform->SetParent(NULL);
-	parentGlobal->children.clear();
-	parentGlobal->SetParent(NULL);
-	globalTransform->position += parentGlobal->position;
-	globalTransform->quaternion += parentGlobal->quaternion;
+	glm::vec3 globalPos = this->position + this->parent->GetWorldPos();
 
-	delete parentGlobal;
-	parentGlobal = NULL;
-	return globalTransform;
+	return globalPos;
 }
 
 void Transform::SetParent(Transform* _parent)
