@@ -4,7 +4,7 @@ Camera::Camera()
 {
 	this->upDirection = glm::vec3(0.0f, 1.0f, 0.0f);
 	this->sensivity = 0.15f;
-	this->fov = 45.0f;
+	this->fov = 90.0f;
 	this->isWireFrameModeOn = false;
 	this->input = NULL;
 }

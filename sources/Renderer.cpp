@@ -148,6 +148,6 @@ void Renderer::Draw(GameObject* camera)
 
 	glBindVertexArray(this->VAO);
 	glDrawArrays(GL_TRIANGLES, 0, this->vertices.size() / 5);
-	std::cout << "Debug: renderer passed.\n";
+	// std::cout << "Debug: renderer passed.\n";
 }
 

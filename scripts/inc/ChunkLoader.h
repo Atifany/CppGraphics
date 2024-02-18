@@ -21,6 +21,8 @@ class ChunkLoader : public Component
 		void Update() override;
 
 	private:
+		bool IsChunkLoadedByCoords(int chunkX, int chunkZ);
+
 		int chunkLoadingDistance; // distance in chunks that shall be rendered
 		std::list<GameObject*> loadedChunks;
 		glm::vec3 cameraPrevPos;

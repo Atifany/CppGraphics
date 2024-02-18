@@ -2,6 +2,14 @@
 
 extern Renderer* cubeRenderer;
 
+// returns true if a is no further from b then e.
+static bool IsClose(float a, float b, float e)
+{
+	if (a >= b - e && a <= b + e)
+		return true;
+	return false;
+}
+
 ChunkLoader::ChunkLoader()
 {
 	this->chunkLoadingDistance = 1;
@@ -51,15 +59,29 @@ void ChunkLoader::Update()
 {
 	glm::vec3 cameraPos = this->gameObject->GetComponent<Transform>()->position;
 
-	if (this->loadedChunks.empty() == true)
+	for (int x = (int)(floor(cameraPos.x/16)) - this->chunkLoadingDistance;
+		x <= (int)(floor(cameraPos.x/16)) + this->chunkLoadingDistance; x++)
 	{
-		for (int x = cameraPos.x/16 - this->chunkLoadingDistance; x <= cameraPos.x/16 + this->chunkLoadingDistance + 1; x++)
+		for (int z = (int)(floor(cameraPos.z/16) )- this->chunkLoadingDistance;
+			z <= (int)(floor(cameraPos.z/16)) + this->chunkLoadingDistance; z++)
 		{
-			for (int z = cameraPos.z/16 - this->chunkLoadingDistance; z <= cameraPos.z/16 + this->chunkLoadingDistance; z++)
-			{
-				// run through loaded chunks and see if there is a chunk with x z coords. Or make a stuff with prevPos savings.
+			if (this->IsChunkLoadedByCoords(x, z) == false)
 				this->LoadChunk(x, z);
-			}
 		}
 	}
+
+	this->cameraPrevPos = cameraPos;
+}
+
+bool ChunkLoader::IsChunkLoadedByCoords(int chunkX, int chunkZ)
+{
+	for (const auto& i : this->loadedChunks)
+	{
+		if (IsClose(i->GetComponent<Transform>()->position.x/16, chunkX, 0.5f) == true
+			&& IsClose(i->GetComponent<Transform>()->position.z/16, chunkZ, 0.5f))
+		{
+			return true;
+		}
+	}
+	return false;
 }
